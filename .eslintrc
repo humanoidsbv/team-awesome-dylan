@@ -1,0 +1,15 @@
+{
+    "extends": ["airbnb", "prettier"],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "plugins": ["babel", "prettier"],
+    "root": true,
+    "rules": {
+      "comma-dangle": ["error", "never"],
+      "prettier/prettier": ["error"]
+    }
+  }
+  
