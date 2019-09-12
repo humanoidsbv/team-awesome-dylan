@@ -1,0 +1,15 @@
+.NewTimeEntry {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #35ac45;
+    color: #ffffff;
+    font-size: 14px;
+}
+@media (min-width: 901px){ 
+    .NewTimeEntry {
+        display: none;
+    }
+}
