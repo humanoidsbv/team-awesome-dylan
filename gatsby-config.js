@@ -1,10 +1,10 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: 'gatsby-plugin-postcss',
       options: {
         cssLoaderOptions: {
-          camelCase: false,
+          camelCase: false
         },
         postCssPlugins: [
           require('postcss-import'),
@@ -25,4 +25,4 @@ module.exports = {
       }
     }
   ]
-}
+};
