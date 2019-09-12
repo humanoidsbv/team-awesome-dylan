@@ -29,8 +29,8 @@ class Header extends React.Component {
         <Logo />
         <Navigation isMenuVisible={isMenuVisible} />
         <MenuToggle
-          toggleMenu={this.toggleMenu}
           isMenuVisible={isMenuVisible}
+          toggleMenu={this.toggleMenu}
         />
         <ProfileButton />
       </header>
