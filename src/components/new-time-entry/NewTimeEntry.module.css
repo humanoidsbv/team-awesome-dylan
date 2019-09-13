@@ -4,9 +4,11 @@
     color: #ffffff;
     display: flex;
     font-size: 14px;
+    font-family: proximanova;
     height: 36px;
     justify-content: center;
     width: 100%;
+    margin-top: 75px;
 }
 
 @media (min-width: 901px){ 

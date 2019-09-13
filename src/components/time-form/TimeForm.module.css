@@ -10,6 +10,7 @@
     color: #68768c;
     font-size: 12px;
     padding: 16px;
+    font-family: proximanova;
 }
 
 .inputs {
@@ -18,4 +19,5 @@
     border-radius: 4px;
     border: solid 1px #ced0da;
     background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+    font-family: proximanova;
 }
