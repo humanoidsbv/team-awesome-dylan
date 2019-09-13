@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './Header.module.css';
 import Logo from '../logo/Logo';
@@ -6,36 +6,25 @@ import Navigation from '../navigation/Navigation';
 import MenuToggle from '../menu-toggle/MenuToggle';
 import ProfileButton from '../profile-button/ProfileButton';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isMenuVisible: false };
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
+function Header() {
+  const [visibilityMenu, makeMenuVisible] = useState(false);
 
-  toggleMenu() {
-    const { isMenuVisible } = this.state;
-    this.setState({ isMenuVisible: !isMenuVisible });
-  }
+  const toggleMenu = () => {
+    makeMenuVisible(!visibilityMenu);
+  };
 
-  render() {
-    const { isMenuVisible } = this.state;
-    return (
-      <header
-        className={`${styles.header} ${
-          isMenuVisible ? styles.headerMenuVisible : ''
-        }`}
-      >
-        <Logo />
-        <Navigation isMenuVisible={isMenuVisible} />
-        <MenuToggle
-          isMenuVisible={isMenuVisible}
-          toggleMenu={this.toggleMenu}
-        />
-        <ProfileButton />
-      </header>
-    );
-  }
+  return (
+    <header
+      className={`${styles.header} ${
+        visibilityMenu ? styles.headerMenuVisible : ''
+      }`}
+    >
+      <Logo />
+      <Navigation visibilityMenu={visibilityMenu} />
+      <MenuToggle visibilityMenu toggleMenu={toggleMenu} />
+      <ProfileButton />
+    </header>
+  );
 }
 
 export default Header;

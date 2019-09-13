@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'proximanova';
+    src: url('/static/fonts/proxima-nova/ProximaNova-Regular.otf')
+        format('otf');
+}
+
+.layout {
+    max-width: '1170px';
+    margin: '0 auto';
+    padding: '80px 16px 0 16px';
+}

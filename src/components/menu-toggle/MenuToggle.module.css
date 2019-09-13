@@ -6,6 +6,9 @@
     position: absolute;
     right: 0;
     top: 0;
+    color: #ffffff;
+    fill:#ffffff;
+    padding: 10px;
 }
 
 @media (min-width: 901px){ 
@@ -16,7 +19,6 @@
 
 .icon {
     color: #ffffff;
-    font-size: 28px;
 }
 
 .hideIcon {
