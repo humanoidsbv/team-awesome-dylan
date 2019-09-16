@@ -1,13 +1,13 @@
 .toggle {
     background-color: transparent;
     border: none;
+    color: #ffffff;
+    fill:#ffffff;
     outline: none;
+    padding: 10px;
     position: absolute;
     right: 0;
     top: 8px;
-    color: #ffffff;
-    fill:#ffffff;
-    padding: 10px;
 }
 
 @media (min-width: 901px){

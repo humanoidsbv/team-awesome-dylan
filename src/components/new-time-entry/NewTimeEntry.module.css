@@ -11,7 +11,7 @@
     margin-top: 75px;
 }
 
-@media (min-width: 901px){ 
+@media (min-width: 901px){
     .NewTimeEntry {
         display: none;
     }
