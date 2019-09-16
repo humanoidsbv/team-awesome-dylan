@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './TimeForm.module.css';
 
 const TimeForm = () => (
-  <div>
+  <>
     <form className={styles.timeForm}>
       <label className={styles.labels}>
         EMPLOYER
@@ -26,7 +26,7 @@ const TimeForm = () => (
         <input className={styles.inputs} type="text" name="name" />
       </label>
     </form>
-  </div>
+  </>
 );
 
 export default TimeForm;

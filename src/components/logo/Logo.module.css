@@ -8,7 +8,7 @@
   text-decoration: none;
 }
 
-@media (min-width: 901px){
+@media (min-width: 901px) {
   .logo {
     display: none;
   }

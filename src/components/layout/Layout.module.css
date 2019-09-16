@@ -11,9 +11,9 @@
 }
 
 .layout {
-  max-width: '1580px';
-  margin: '0 auto';
-  padding: '80px 16px 0 16px';
+  max-width: 1580px;
+  margin: 0 auto;
+  padding: 80px 16px 0 16px;
 }
 
 @media (min-width: 901px) {

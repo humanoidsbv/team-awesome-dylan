@@ -1,8 +1,7 @@
 import React from 'react';
-import employeeAvatar from '../../../static/icons/picture-tnt.jpg';
+import employeeAvatar from '../../../static/pictures/picture-tnt.jpg';
 import HumanoidsIcon from '../../assets/icons/logo-humanoids.svg';
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
-
 import styles from './ProfileButton.module.css';
 
 const ProfileButton = () => (
