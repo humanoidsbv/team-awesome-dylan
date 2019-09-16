@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import IconClose from '../../assets/icons/icon-close.svg';
 import IconMenu from '../../assets/icons/icon-menu.svg';
 

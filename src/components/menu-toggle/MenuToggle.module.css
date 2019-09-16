@@ -2,7 +2,7 @@
     background-color: transparent;
     border: none;
     color: #ffffff;
-    fill:#ffffff;
+    fill: #ffffff;
     outline: none;
     padding: 10px;
     position: absolute;
@@ -10,7 +10,7 @@
     top: 8px;
 }
 
-@media (min-width: 901px){
+@media (min-width: 901px) {
     .toggle {
         display: none;
     }

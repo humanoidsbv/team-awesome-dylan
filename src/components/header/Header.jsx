@@ -7,10 +7,10 @@ import ProfileButton from '../profile-button/ProfileButton';
 import styles from './Header.module.css';
 
 function Header() {
-  const [isMenuVisible, makeMenuVisible] = useState(false);
+  const [isMenuVisible, setMenuVisibility] = useState(false);
 
   const toggleMenu = () => {
-    makeMenuVisible(!isMenuVisible);
+    setMenuVisibility(!isMenuVisible);
   };
 
   return (
