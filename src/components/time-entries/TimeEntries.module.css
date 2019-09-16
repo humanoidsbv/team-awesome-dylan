@@ -1,0 +1,17 @@
+.TimeEntries {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 67px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .TimeEntries {
+    align-items: center;
+    max-width: 1170px;
+    width: 100%;
+  }
+}

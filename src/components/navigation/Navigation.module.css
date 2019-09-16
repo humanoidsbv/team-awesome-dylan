@@ -1,0 +1,49 @@
+.navigation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  font-family: proximanova;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.navigationVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.item {
+  color: #ffffff;
+  font-family: proximanova;
+  font-size: 14px;
+  margin-left: 12px;
+  margin-top: 24px;
+  padding: 4px 8px;
+  text-align: start;
+  text-decoration: none;
+}
+
+.itemActive {
+  background-color: #1166a5;
+  border-radius: 4px;
+}
+
+@media (min-width: 901px) {
+  .navigation {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    padding: 0;
+    visibility: visible;
+  }
+  .item {
+    margin-top: 0px;
+  }
+  .item:first-child {
+    margin-left: 0;
+  }
+}
