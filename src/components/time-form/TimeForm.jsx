@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styles from './TimeForm.module.css';
+// import styles from './TimeForm.module.css';
 
 const TimeForm = () => (
   <>
-    <form className={styles.timeForm}>
+    {/* <form className={styles.timeForm}>
       <label className={styles.labels}>
         EMPLOYER
         <input className={styles.inputs} type="text" name="name" />
@@ -25,7 +25,7 @@ const TimeForm = () => (
         TO
         <input className={styles.inputs} type="text" name="name" />
       </label>
-    </form>
+    </form> */}
   </>
 );
 
