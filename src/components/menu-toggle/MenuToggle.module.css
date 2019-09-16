@@ -1,17 +1,16 @@
 .toggle {
     background-color: transparent;
     border: none;
-    margin-top: 6px;
     outline: none;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 8px;
     color: #ffffff;
     fill:#ffffff;
     padding: 10px;
 }
 
-@media (min-width: 901px){ 
+@media (min-width: 901px){
     .toggle {
         display: none;
     }

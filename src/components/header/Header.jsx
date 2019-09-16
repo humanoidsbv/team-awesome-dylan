@@ -7,21 +7,21 @@ import ProfileButton from '../profile-button/ProfileButton';
 import styles from './Header.module.css';
 
 function Header() {
-  const [visibilityMenu, makeMenuVisible] = useState(false);
+  const [isMenuVisible, makeMenuVisible] = useState(false);
 
   const toggleMenu = () => {
-    makeMenuVisible(!visibilityMenu);
+    makeMenuVisible(!isMenuVisible);
   };
 
   return (
     <header
       className={`${styles.header} ${
-        visibilityMenu ? styles.headerMenuVisible : ''
+        isMenuVisible ? styles.headerMenuVisible : ''
       }`}
     >
       <Logo />
-      <Navigation visibilityMenu={visibilityMenu} />
-      <MenuToggle visibilityMenu={visibilityMenu} toggleMenu={toggleMenu} />
+      <Navigation isMenuVisible={isMenuVisible} />
+      <MenuToggle isMenuVisible={isMenuVisible} toggleMenu={toggleMenu} />
       <ProfileButton />
     </header>
   );

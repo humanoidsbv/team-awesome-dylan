@@ -8,9 +8,20 @@
   position: fixed;
   right: 0;
   top: 0;
-  transition: .3s;
+  transition: .3s ease-in-out;
 }
 
 .headerMenuVisible {
   height: 100vh;
+}
+
+@media screen and (min-width: 901px) {
+  .header {
+    flex-direction: row;
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+  .headerMenuVisible {
+    height: 50px;
+  }
 }
