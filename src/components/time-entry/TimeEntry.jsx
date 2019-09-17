@@ -3,9 +3,9 @@ import React from 'react';
 import styles from './TimeEntry.module.css';
 
 const TimeEntry = () => (
-  <div className={styles.TimeEntry}>
-    <span className={styles.Task}>Port of Rotterdam</span>
-    <span className={styles.TimeStamp}>09:00-17:00</span>
+  <div className={styles.timeEntry}>
+    <span className={styles.client}>Port of Rotterdam</span>
+    <span className={styles.timeStamp}>09:00-17:00</span>
   </div>
 );
 

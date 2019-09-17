@@ -1,0 +1,21 @@
+.timeStamp {
+  font-size: 16px;
+  color:#7f8fa4;
+  font-family: proximanova;
+  position: relative;
+  padding: 40px 0px 30px 0px;
+  /* box-sizing: border-box;
+  margin-bottom: 10px; */
+}
+
+.duration {
+  position: absolute;
+  right: 0;
+}
+
+@media (min-width: 901px) {
+  .duration {
+    display: none;
+  }
+}
+    
