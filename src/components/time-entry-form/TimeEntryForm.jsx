@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './TimeForm.module.css';
+import styles from './TimeEntryForm.module.css';
 import IconClose from '../../assets/icons/icon-close.svg';
 
-const TimeForm = () => (
+const TimeEntryForm = () => (
   <form className={styles.timeForm}>
     <IconClose className={styles.iconClose} />
     <label className={styles.labelClient}>
@@ -21,7 +21,7 @@ const TimeForm = () => (
       </select>
     </label>
     <label className={styles.labelDate}>
-      Date
+      DATE
       <input
         className={styles.inputDate}
         type="date"
@@ -42,4 +42,4 @@ const TimeForm = () => (
   </form>
 );
 
-export default TimeForm;
+export default TimeEntryForm;

@@ -2,13 +2,13 @@ import React from 'react';
 
 import styles from './TimeEntries.module.css';
 import TimeEntry from '../time-entry/TimeEntry';
-import TimeStamp from '../time-stamp/TimeStamp';
+import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 
 const TimeEntries = () => (
   <div className={styles.timeEntries}>
-    <TimeStamp className={styles.timeStamp} />
+    <TimeEntryHeading />
     <TimeEntry />
-    <TimeStamp className={styles.timeStamp} />
+    <TimeEntryHeading />
     <TimeEntry />
     <TimeEntry />
   </div>
