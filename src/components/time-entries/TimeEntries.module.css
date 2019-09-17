@@ -1,9 +1,9 @@
-.timeEntries {
+.timeEntriesContainer {
   width: 100%;
 }
 
 @media (min-width: 901px) {
-  .timeEntries {
+  .timeEntriesContainer {
     align-items: center;
     max-width: 1170px;
     width: 100%;

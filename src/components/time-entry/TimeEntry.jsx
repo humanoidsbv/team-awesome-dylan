@@ -1,18 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './TimeEntry.module.css';
 
-const TimeEntry = () => (
+const TimeEntry = ({ client, startTime, endTime, clientDuration }) => (
   <div className={styles.timeEntry}>
-    <span className={styles.client}>Port of Rotterdam</span>
+    <span className={styles.client}>{client}</span>
     <div className={styles.timeStamp}>
-      <span>09:00 - 17:00</span>
+      <span>{`${startTime} - ${endTime}`}</span>
       <span className={styles.duration}>
         <br />
-        08:00:00
+        {clientDuration}
       </span>
     </div>
   </div>
 );
+
+TimeEntry.propTypes = {
+  client: PropTypes.string.isRequired,
+  startTime: PropTypes.string.isRequired,
+  endTime: PropTypes.string.isRequired,
+  clientDuration: PropTypes.number.isRequired
+};
 
 export default TimeEntry;
