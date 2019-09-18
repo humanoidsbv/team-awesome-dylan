@@ -18,9 +18,9 @@ const TimeEntry = ({ client, startTime, endTime, clientDuration }) => (
 
 TimeEntry.propTypes = {
   client: PropTypes.string.isRequired,
-  startTime: PropTypes.string.isRequired,
+  clientDuration: PropTypes.number.isRequired,
   endTime: PropTypes.string.isRequired,
-  clientDuration: PropTypes.number.isRequired
+  startTime: PropTypes.string.isRequired
 };
 
 export default TimeEntry;
