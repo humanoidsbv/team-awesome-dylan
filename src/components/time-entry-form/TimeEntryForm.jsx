@@ -1,45 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import styles from './TimeEntryForm.module.css';
 import IconClose from '../../assets/icons/icon-close.svg';
+import styles from './TimeEntryForm.module.css';
 
-const TimeEntryForm = () => (
-  <form className={styles.timeForm}>
-    <IconClose className={styles.iconClose} />
-    <label className={styles.labelClient}>
-      CLIENT
-      <select name="Clients" className={styles.inputClient}>
-        <option value="Port of Rotterdam">Port of Rotterdam</option>
-        <option value="Hike One">Hike One</option>
-      </select>
-    </label>
-    <label className={styles.labelActivity}>
-      ACTIVITY
-      <select name="Activity" className={styles.inputActivity}>
-        <option value="Design">Design</option>
-        <option value="Development">Development</option>
-      </select>
-    </label>
-    <label className={styles.labelDate}>
-      DATE
-      <input
-        className={styles.inputDate}
-        type="date"
-        defaultValue="2019-09-17"
-      />
-    </label>
-    <label className={styles.labelsTime}>
-      FROM
-      <input className={styles.inputsTime} type="time" defaultValue="09:00" />
-    </label>
-    <label className={styles.labelsTime}>
-      TO
-      <input className={styles.inputsTime} type="time" defaultValue="17:00" />
-    </label>
-    <button className={styles.buttonTimeEntry} type="button">
-      Add
-    </button>
-  </form>
-);
+function TimeEntryForm({ createTimeEntry }) {
+  const [activity, setActivity] = useState('Design');
+  const [client, setClient] = useState('Port of Rotterdam');
+  const [date, setDate] = useState('2018-07-29');
+  const [endTime, setEndTime] = useState('17:00');
+  const [startTime, setStartTime] = useState('09:00');
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    createTimeEntry({
+      activity,
+      client,
+      endTimestamp: `${date} ${endTime}`,
+      id: Math.random(),
+      startTimestamp: `${date} ${startTime}`
+    });
+  };
+
+  return (
+    <form className={styles.timeForm} onSubmit={handleSubmit}>
+      <IconClose className={styles.iconClose} />
+      <label className={styles.labelClient} htmlFor="client">
+        CLIENT
+        <input
+          className={styles.inputClient}
+          id="client"
+          onChange={({ target }) => setClient(target.value)}
+          type="text"
+          value={client}
+        />
+      </label>
+      <label className={styles.labelActivity} htmlFor="activity">
+        ACTIVITY
+        <input
+          className={styles.inputActivity}
+          id="activity"
+          onChange={({ target }) => setActivity(target.value)}
+          type="text"
+          value={activity}
+        />
+      </label>
+      <label className={styles.labelDate} htmlFor="date">
+        DATE
+        <input
+          className={styles.inputDate}
+          id="date"
+          onChange={({ target }) => setDate(target.value)}
+          type="text"
+          value={date}
+        />
+      </label>
+      <label className={styles.labelsTime} htmlFor="startTime">
+        FROM
+        <input
+          className={styles.inputsTime}
+          id="startTime"
+          onChange={({ target }) => setStartTime(target.value)}
+          type="text"
+          value={startTime}
+        />
+      </label>
+      <label className={styles.labelsTime} htmlFor="endTime">
+        TO
+        <input
+          className={styles.inputsTime}
+          id="endTime"
+          onChange={({ target }) => setEndTime(target.value)}
+          type="text"
+          value={endTime}
+        />
+      </label>
+      <button className={styles.buttonTimeEntry} type="submit">
+        Add
+      </button>
+    </form>
+  );
+}
+
+TimeEntryForm.propTypes = {
+  createTimeEntry: PropTypes.func.isRequired
+};
 
 export default TimeEntryForm;
