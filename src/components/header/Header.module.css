@@ -9,6 +9,7 @@
   right: 0;
   top: 0;
   transition: .3s ease-in-out;
+  z-index: 1000;
 }
 
 .headerMenuVisible {

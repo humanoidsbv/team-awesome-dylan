@@ -1,0 +1,197 @@
+.timeForm {
+  background-color: #f5f8fa;
+  border-radius: 4px;
+  border: solid 1px #e6eaee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0px 20px 6px 16px;
+  position: relative;
+}
+
+@media (min-width: 901px) {
+  .timeForm {
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1170px; 
+  }
+}
+
+.labelClient {
+  color: #68768c;
+  display: block;
+  font-family: proximanova;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 16px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .labelClient {
+    max-width: 245px;
+  }
+}
+
+.labelActivity {
+  color: #68768c;
+  display: block;
+  font-family: proximanova;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 16px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .labelActivity {
+    max-width: 245px;
+  }
+}
+
+.labelDate {
+  color: #68768c;
+  display: block;
+  font-family: proximanova;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 16px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .labelDate {
+    max-width: 130px;
+  }
+}
+
+.inputClient {
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border-radius: 4px;
+  border: solid 1px #ced0da;
+  color: #354052;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  margin-top: 12px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.inputActivity {
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border-radius: 4px;
+  border: solid 1px #ced0da;
+  color: #354052;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  margin-top: 12px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.inputDate {
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border-radius: 4px;
+  border: solid 1px #ced0da;
+  box-sizing: border-box;
+  color: #354052;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  margin-top: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.inputDate::-webkit-inner-spin-button, 
+.inputDate::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.inputsTime {
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border-radius: 4px;
+  border: solid 1px #ced0da;
+  box-sizing: border-box;
+  display: block;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  margin-top: 12px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.inputsTime::-webkit-inner-spin-button{
+    display: none;
+}
+
+@media (min-width: 901px) {
+  .inputsTime {
+    width: auto;
+  }
+}
+
+.labelsTime {
+  color: #68768c;
+  display: block;
+  font-family: proximanova;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 16px;
+  width: calc(50% - 7px);
+}
+
+@media (min-width: 901px) {
+  .labelsTime {
+    max-width: 64px;
+    margin-left: 13px;
+  }
+}
+
+.buttonTimeEntry {
+background-color: #35ac45;
+border-radius: 4px;
+color: #ffffff;
+display: flex;
+font-family: proximanova;
+font-size: 14px;
+height: 36px;
+justify-content: center;
+margin-bottom: 25px;
+margin-top: 25px;
+width: 100%;
+}
+
+@media (min-width: 901px) {
+  .buttonTimeEntry {
+    margin-left: 150px;
+    margin-top: 40px;
+    max-width: 90px;
+  }
+}
+
+.iconClose {
+  fill: #354052;
+  height: 7.1px;
+  margin: 14px;
+  position: absolute;
+  right: 0;
+  width: 7.1px;
+}
+
+@media (min-width: 901px) {
+  .iconClose {
+    display: none;
+  }
+}

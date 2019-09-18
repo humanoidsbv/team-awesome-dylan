@@ -1,25 +1,32 @@
-.TimeEntry {
+.timeEntry {
   align-content: center;
-  border-left-color: #4f88ef;
-  border-left-width: 4px;
-  border-radius: 4px;
+  align-items: center;
   border: solid 1px #e6eaee;
+  border-left:  4px solid #4f88ef;
+  border-radius: 4px;
   display:flex;
   font-family: proximanova;
   justify-content: space-between;
-  width: 100%;
 }
 
-.Task {
+.client {
   color: #354052;
   font-family: proximanova;
   font-size: 16px;
   padding: 32px 16px;
 }
 
-.TimeStamp {
+.timeStamp {
   color: #354052;
   font-family: proximanova;
   font-size: 16px;
   padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.duration {
+  text-align: right;
+  color:#7f8fa4;
 }
