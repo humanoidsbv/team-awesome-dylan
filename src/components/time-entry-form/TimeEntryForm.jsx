@@ -5,20 +5,24 @@ import IconClose from '../../assets/icons/icon-close.svg';
 import styles from './TimeEntryForm.module.css';
 
 function TimeEntryForm({ createTimeEntry }) {
-  const [activity, setActivity] = useState('Design');
-  const [client, setClient] = useState('Port of Rotterdam');
-  const [date, setDate] = useState('2018-07-29');
-  const [endTime, setEndTime] = useState('17:00');
+  const today = new Date()
+    .toISOString()
+    .split('T')
+    .shift();
+
+  const [activity, setActivity] = useState('');
+  const [client, setClient] = useState('');
+  const [date, setDate] = useState(today);
   const [startTime, setStartTime] = useState('09:00');
+  const [stopTime, setStopTime] = useState('17:00');
 
   const handleSubmit = event => {
     event.preventDefault();
     createTimeEntry({
-      activity,
       client,
-      endTimestamp: `${date} ${endTime}`,
       id: Math.random(),
-      startTimestamp: `${date} ${startTime}`
+      startTimestamp: new Date(`${date}T${startTime}`).toISOString(),
+      stopTimestamp: new Date(`${date}T${stopTime}`).toISOString()
     });
   };
 
@@ -27,23 +31,32 @@ function TimeEntryForm({ createTimeEntry }) {
       <IconClose className={styles.iconClose} />
       <label className={styles.labelClient} htmlFor="client">
         CLIENT
-        <input
+        <select
           className={styles.inputClient}
           id="client"
           onChange={({ target }) => setClient(target.value)}
-          type="text"
           value={client}
-        />
+        >
+          <option disabled value="">
+            -- select an option --
+          </option>
+          <option value="Port of Rotterdam">Port of Rotterdam</option>
+          <option value="Hike One">Hike One</option>
+        </select>
       </label>
       <label className={styles.labelActivity} htmlFor="activity">
         ACTIVITY
-        <input
+        <select
           className={styles.inputActivity}
           id="activity"
           onChange={({ target }) => setActivity(target.value)}
-          type="text"
           value={activity}
-        />
+        >
+          <option disabled value="">
+            -- select an option --
+          </option>
+          <option value="design">Design</option>
+        </select>
       </label>
       <label className={styles.labelDate} htmlFor="date">
         DATE
@@ -51,7 +64,7 @@ function TimeEntryForm({ createTimeEntry }) {
           className={styles.inputDate}
           id="date"
           onChange={({ target }) => setDate(target.value)}
-          type="text"
+          type="date"
           value={date}
         />
       </label>
@@ -61,18 +74,18 @@ function TimeEntryForm({ createTimeEntry }) {
           className={styles.inputsTime}
           id="startTime"
           onChange={({ target }) => setStartTime(target.value)}
-          type="text"
+          type="time"
           value={startTime}
         />
       </label>
-      <label className={styles.labelsTime} htmlFor="endTime">
+      <label className={styles.labelsTime} htmlFor="stopTime">
         TO
         <input
           className={styles.inputsTime}
           id="endTime"
-          onChange={({ target }) => setEndTime(target.value)}
-          type="text"
-          value={endTime}
+          onChange={({ target }) => setStopTime(target.value)}
+          type="type"
+          value={stopTime}
         />
       </label>
       <button className={styles.buttonTimeEntry} type="submit">
