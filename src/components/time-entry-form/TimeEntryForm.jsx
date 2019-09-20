@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import IconClose from '../../assets/icons/icon-close.svg';
@@ -15,9 +15,32 @@ function TimeEntryForm({ createTimeEntry }) {
   const [date, setDate] = useState(today);
   const [startTime, setStartTime] = useState('09:00');
   const [stopTime, setStopTime] = useState('17:00');
+  const [formState, setFormState] = useState(true);
+  const [validity, setValidity] = useState({
+    clientVhStateElement: true,
+    activityVhStateElement: true
+  });
+
+  const handleBlur = event => {
+    console.log(event.target.name);
+    console.log(event.target.checkValidity());
+    setValidity({
+      ...validity,
+      [event.target.name]: event.target.checkValidity()
+    });
+  };
+
+  const formRef = useRef(null);
+  console.log(formRef);
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    const formStatus = formRef.current.checkValidity();
+    console.log(formStatus);
+    setFormState(formStatus);
+    if (formStatus === false) return false;
+
     createTimeEntry({
       client,
       id: Math.random(),
@@ -27,43 +50,61 @@ function TimeEntryForm({ createTimeEntry }) {
   };
 
   return (
-    <form className={styles.timeForm} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.timeEntryForm} ${
+        formState ? styles.timeEntryForm : styles.timeEntryFormInvalid
+      }`}
+      onSubmit={handleSubmit}
+      ref={formRef}
+    >
       <IconClose className={styles.iconClose} />
       <label className={styles.labelClient} htmlFor="client">
         CLIENT
-        <select
-          className={styles.inputClient}
+        <input
+          className={`${styles.inputClientValid} ${
+            validity.clientVhStateElement
+              ? styles.inputClientValid
+              : styles.inputClientInvalid
+          }`}
           id="client"
+          maxLength="35"
+          minLength="2"
+          name="clientVhStateElement"
+          onBlur={handleBlur}
           onChange={({ target }) => setClient(target.value)}
+          placeholder="--enter a client--"
+          required
           value={client}
-        >
-          <option disabled value="">
-            -- select an option --
-          </option>
-          <option value="Port of Rotterdam">Port of Rotterdam</option>
-          <option value="Hike One">Hike One</option>
-        </select>
+        />
       </label>
       <label className={styles.labelActivity} htmlFor="activity">
         ACTIVITY
-        <select
-          className={styles.inputActivity}
+        <input
+          className={`${styles.inputActivityValid} ${
+            validity.activityVhStateElement
+              ? styles.inputActivityValid
+              : styles.inputActivityInvalid
+          }`}
           id="activity"
+          maxLength="35"
+          minLength="2"
+          name="activityVhStateElement"
+          onBlur={handleBlur}
           onChange={({ target }) => setActivity(target.value)}
+          placeholder="--enter an activity--"
+          required
           value={activity}
-        >
-          <option disabled value="">
-            -- select an option --
-          </option>
-          <option value="design">Design</option>
-        </select>
+        />
       </label>
       <label className={styles.labelDate} htmlFor="date">
         DATE
         <input
           className={styles.inputDate}
           id="date"
+          name="DateVhStateElement"
+          onBlur={handleBlur}
           onChange={({ target }) => setDate(target.value)}
+          required
           type="date"
           value={date}
         />
@@ -73,7 +114,10 @@ function TimeEntryForm({ createTimeEntry }) {
         <input
           className={styles.inputsTime}
           id="startTime"
+          name="fromTimeVhStateElement"
+          onBlur={handleBlur}
           onChange={({ target }) => setStartTime(target.value)}
+          required
           type="time"
           value={startTime}
         />
@@ -83,12 +127,22 @@ function TimeEntryForm({ createTimeEntry }) {
         <input
           className={styles.inputsTime}
           id="endTime"
+          name="toTimeVhStateElement"
+          onBlur={handleBlur}
           onChange={({ target }) => setStopTime(target.value)}
+          required
           type="type"
           value={stopTime}
         />
       </label>
-      <button className={styles.buttonTimeEntry} type="submit">
+      <button
+        className={`${styles.buttonTimeEntry} ${
+          validity.activityVhStateElement
+            ? styles.buttonTimeEntryValid
+            : styles.buttonTimeEntryInvalid
+        }`}
+        type="submit"
+      >
         Add
       </button>
     </form>
