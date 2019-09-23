@@ -1,10 +1,22 @@
 {
   "time-entries": [
     {
-      "client": "Port of Rotterdam",
-      "id": "1",
-      "startTimestamp": "2019-09-17T07:00:00.000Z",
-      "stopTimestamp": "2019-09-17T16:30:00.000Z"
+      "client": "test",
+      "id": 0.11519406058411641,
+      "startTimestamp": "2019-09-23T07:00:00.000Z",
+      "stopTimestamp": "2019-09-23T15:00:00.000Z"
+    },
+    {
+      "client": "aaa",
+      "id": 0.6524250995148186,
+      "startTimestamp": "2019-09-23T07:00:00.000Z",
+      "stopTimestamp": "2019-09-23T15:00:00.000Z"
+    },
+    {
+      "client": "hadd",
+      "id": 0.9091069447924418,
+      "startTimestamp": "2019-09-23T07:00:00.000Z",
+      "stopTimestamp": "2019-09-23T15:00:00.000Z"
     }
   ]
 }

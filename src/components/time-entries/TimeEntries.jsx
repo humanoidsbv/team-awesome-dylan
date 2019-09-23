@@ -4,34 +4,28 @@ import styles from './TimeEntries.module.css';
 import TimeEntry from '../time-entry/TimeEntry';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
+import fetchData from '../../services/fetchData';
+import saveData from '../../services/saveData';
+import removeData from '../../services/removeData';
 
 function TimeEntries() {
   const [timeEntries, setTimeEntries] = useState([]);
 
-  async function fetchData() {
-    const response = await fetch(
-      'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
-    );
-    setTimeEntries(await response.json());
-  }
-
-  function saveData(newTimeEntry) {
-    fetch('http://localhost:3000/time-entries', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newTimeEntry)
-    });
-  }
-
   useEffect(() => {
-    fetchData();
+    async function fetchTimeEntries() {
+      setTimeEntries(await fetchData());
+    }
+    fetchTimeEntries();
   }, []);
 
   function createTimeEntry(newTimeEntry) {
     saveData(newTimeEntry);
     setTimeEntries([newTimeEntry, ...timeEntries]);
+  }
+
+  function deleteTimeEntry(id) {
+    removeData(id);
+    setTimeEntries(timeEntries.filter(timeEntry => timeEntry.id !== id));
   }
 
   return (
@@ -52,7 +46,8 @@ function TimeEntries() {
               )}
               <TimeEntry
                 client={client}
-                key={id}
+                deleteTimeEntry={deleteTimeEntry}
+                id={id}
                 startTime={startTimestamp}
                 stopTime={stopTimestamp}
               />

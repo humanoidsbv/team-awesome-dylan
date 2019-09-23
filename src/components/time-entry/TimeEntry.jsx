@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import IconDelete from '../../assets/icons/icon-delete.svg';
 
 import styles from './TimeEntry.module.css';
 
-const TimeEntry = ({ client, startTime, stopTime }) => {
+const TimeEntry = ({ id, client, deleteTimeEntry, startTime, stopTime }) => {
   const clientDurationParse =
     (Date.parse(stopTime) - Date.parse(startTime)) / 60 / 60 / 1000;
 
@@ -12,15 +13,6 @@ const TimeEntry = ({ client, startTime, stopTime }) => {
   const totalClientDuration = `${durationHours}:${durationMinutes
     .toString()
     .padStart(2, '0')}`;
-
-  // function dateStringify() {
-  //   new Date().toLocaleTimeString('nl-NL', {
-  //     hour: '2-digit',
-  //     minute: '2-digit'
-  //   });
-  // }
-
-  // dateStringify(startTime)
 
   const timeNotation = { hour: '2-digit', minute: '2-digit' };
 
@@ -34,9 +26,22 @@ const TimeEntry = ({ client, startTime, stopTime }) => {
     timeNotation
   );
 
+  const handleDelete = () => {
+    console.log(id);
+    deleteTimeEntry(id);
+  };
+
   return (
     <div className={styles.timeEntry}>
       <span className={styles.client}>{client}</span>
+      <button
+        className={styles.deleteButton}
+        onClick={handleDelete}
+        type="button"
+      >
+        <IconDelete className={styles.iconClose} />
+        Delete
+      </button>
       <div className={styles.timeStamp}>
         <span>{`${startTimeString} - ${stopTimeString}`}</span>
         <span className={styles.duration}>
@@ -49,7 +54,9 @@ const TimeEntry = ({ client, startTime, stopTime }) => {
 };
 
 TimeEntry.propTypes = {
+  id: PropTypes.number.isRequired,
   client: PropTypes.string.isRequired,
+  deleteTimeEntry: PropTypes.func.isRequired,
   startTime: PropTypes.string.isRequired,
   stopTime: PropTypes.string.isRequired
 };
