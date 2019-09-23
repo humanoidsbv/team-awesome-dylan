@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './TimeEntries.module.css';
-import TimeEntry from '../time-entry/TimeEntry';
-import TimeEntryForm from '../time-entry-form/TimeEntryForm';
-import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
-import fetchData from '../../services/fetchData';
 import saveData from '../../services/saveData';
 import removeData from '../../services/removeData';
+import fetchData from '../../services/fetchData';
+import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
+import TimeEntryForm from '../time-entry-form/TimeEntryForm';
+import TimeEntry from '../time-entry/TimeEntry';
 
 function TimeEntries() {
   const [timeEntries, setTimeEntries] = useState([]);

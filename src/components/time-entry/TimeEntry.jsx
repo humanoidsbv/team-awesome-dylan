@@ -27,7 +27,6 @@ const TimeEntry = ({ id, client, deleteTimeEntry, startTime, stopTime }) => {
   );
 
   const handleDelete = () => {
-    console.log(id);
     deleteTimeEntry(id);
   };
 
