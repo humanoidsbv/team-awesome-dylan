@@ -5,54 +5,6 @@
       "id": "1",
       "startTimestamp": "2019-09-17T07:00:00.000Z",
       "stopTimestamp": "2019-09-17T16:30:00.000Z"
-    },
-    {
-      "client": "test",
-      "id": 0.4707971311686405,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "test 2",
-      "id": 0.5635825545908402,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "true?",
-      "id": 0.5878664614537745,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "",
-      "id": 0.4284199416901353,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "test 6",
-      "id": 0.5817281750121615,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "aaaa",
-      "id": 0.19719486075539305,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "joeee",
-      "id": 0.23259416857237847,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
-    },
-    {
-      "client": "test",
-      "id": 0.16870396525307352,
-      "startTimestamp": "2019-09-20T07:00:00.000Z",
-      "stopTimestamp": "2019-09-20T15:00:00.000Z"
     }
   ]
 }

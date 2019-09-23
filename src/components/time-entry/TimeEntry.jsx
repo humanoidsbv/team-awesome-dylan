@@ -13,15 +13,26 @@ const TimeEntry = ({ client, startTime, stopTime }) => {
     .toString()
     .padStart(2, '0')}`;
 
-  const startTimeString = new Date(startTime).toLocaleTimeString('nl-NL', {
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+  // function dateStringify() {
+  //   new Date().toLocaleTimeString('nl-NL', {
+  //     hour: '2-digit',
+  //     minute: '2-digit'
+  //   });
+  // }
 
-  const stopTimeString = new Date(stopTime).toLocaleTimeString('nl-NL', {
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+  // dateStringify(startTime)
+
+  const timeNotation = { hour: '2-digit', minute: '2-digit' };
+
+  const startTimeString = new Date(startTime).toLocaleTimeString(
+    'nl-NL',
+    timeNotation
+  );
+
+  const stopTimeString = new Date(stopTime).toLocaleTimeString(
+    'nl-NL',
+    timeNotation
+  );
 
   return (
     <div className={styles.timeEntry}>

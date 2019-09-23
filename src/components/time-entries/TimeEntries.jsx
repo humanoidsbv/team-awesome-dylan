@@ -8,29 +8,31 @@ import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 function TimeEntries() {
   const [timeEntries, setTimeEntries] = useState([]);
 
+  async function fetchData() {
+    const response = await fetch(
+      'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
+    );
+    setTimeEntries(await response.json());
+  }
+
+  function saveData(newTimeEntry) {
+    fetch('http://localhost:3000/time-entries', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTimeEntry)
+    });
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
-      );
-      setTimeEntries(await response.json());
-    }
     fetchData();
   }, []);
 
-  const createTimeEntry = newTimeEntry => {
-    async function saveData() {
-      fetch('http://localhost:3000/time-entries', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newTimeEntry)
-      });
-    }
-    saveData();
+  function createTimeEntry(newTimeEntry) {
+    saveData(newTimeEntry);
     setTimeEntries([newTimeEntry, ...timeEntries]);
-  };
+  }
 
   return (
     <div className={styles.timeEntriesContainer}>

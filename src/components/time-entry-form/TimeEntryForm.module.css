@@ -2,6 +2,7 @@
   background-color: #f5f8fa;
   border-radius: 4px;
   border: solid 1px #e6eaee;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -151,12 +152,14 @@
   border: solid 1px #fb6375;
 } 
 
+
 .inputsTime::-webkit-inner-spin-button{
     display: none;
 }
 
 @media (min-width: 901px) {
   .inputsTime {
+    max-width: 80px;
     width: auto;
   }
 }
@@ -178,7 +181,7 @@
   }
 }
 
-.buttonTimeEntry {
+.buttonTimeEntryValid {
 background-color: #35ac45;
 border-radius: 4px;
 color: #ffffff;
@@ -202,7 +205,7 @@ width: 100%;
 
 
 @media (min-width: 901px) {
-  .buttonTimeEntry {
+  .buttonTimeEntryValid {
     margin-left: 150px;
     margin-top: 40px;
     max-width: 90px;

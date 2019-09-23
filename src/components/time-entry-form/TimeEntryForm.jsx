@@ -17,13 +17,11 @@ function TimeEntryForm({ createTimeEntry }) {
   const [stopTime, setStopTime] = useState('17:00');
   const [formState, setFormState] = useState(true);
   const [validity, setValidity] = useState({
-    clientVhStateElement: true,
-    activityVhStateElement: true
+    client: true,
+    activity: true
   });
 
   const handleBlur = event => {
-    console.log(event.target.name);
-    console.log(event.target.checkValidity());
     setValidity({
       ...validity,
       [event.target.name]: event.target.checkValidity()
@@ -31,13 +29,11 @@ function TimeEntryForm({ createTimeEntry }) {
   };
 
   const formRef = useRef(null);
-  console.log(formRef);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     const formStatus = formRef.current.checkValidity();
-    console.log(formStatus);
     setFormState(formStatus);
     if (formStatus === false) return false;
 
@@ -62,14 +58,14 @@ function TimeEntryForm({ createTimeEntry }) {
         CLIENT
         <input
           className={`${styles.inputClientValid} ${
-            validity.clientVhStateElement
+            validity.client
               ? styles.inputClientValid
               : styles.inputClientInvalid
           }`}
           id="client"
           maxLength="35"
           minLength="2"
-          name="clientVhStateElement"
+          name="client"
           onBlur={handleBlur}
           onChange={({ target }) => setClient(target.value)}
           placeholder="--enter a client--"
@@ -81,14 +77,14 @@ function TimeEntryForm({ createTimeEntry }) {
         ACTIVITY
         <input
           className={`${styles.inputActivityValid} ${
-            validity.activityVhStateElement
+            validity.activity
               ? styles.inputActivityValid
               : styles.inputActivityInvalid
           }`}
           id="activity"
           maxLength="35"
           minLength="2"
-          name="activityVhStateElement"
+          name="activity"
           onBlur={handleBlur}
           onChange={({ target }) => setActivity(target.value)}
           placeholder="--enter an activity--"
@@ -101,7 +97,7 @@ function TimeEntryForm({ createTimeEntry }) {
         <input
           className={styles.inputDate}
           id="date"
-          name="DateVhStateElement"
+          name="date"
           onBlur={handleBlur}
           onChange={({ target }) => setDate(target.value)}
           required
@@ -114,7 +110,7 @@ function TimeEntryForm({ createTimeEntry }) {
         <input
           className={styles.inputsTime}
           id="startTime"
-          name="fromTimeVhStateElement"
+          name="fromTime"
           onBlur={handleBlur}
           onChange={({ target }) => setStartTime(target.value)}
           required
@@ -127,7 +123,7 @@ function TimeEntryForm({ createTimeEntry }) {
         <input
           className={styles.inputsTime}
           id="endTime"
-          name="toTimeVhStateElement"
+          name="toTime"
           onBlur={handleBlur}
           onChange={({ target }) => setStopTime(target.value)}
           required
@@ -136,8 +132,12 @@ function TimeEntryForm({ createTimeEntry }) {
         />
       </label>
       <button
-        className={`${styles.buttonTimeEntry} ${
-          validity.activityVhStateElement
+        className={`${styles.buttonTimeEntryValid} ${
+          validity.activity
+            ? styles.buttonTimeEntryValid
+            : styles.buttonTimeEntryInvalid
+        } ${
+          validity.client
             ? styles.buttonTimeEntryValid
             : styles.buttonTimeEntryInvalid
         }`}
