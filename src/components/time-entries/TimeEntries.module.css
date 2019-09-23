@@ -9,3 +9,22 @@
     width: 100%;
   }
 }
+
+.NewTimeEntryButton {
+  background-color: #35ac45;
+  border-radius: 4px;
+  color: #ffffff;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-top: 70px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .NewTimeEntryButton {
+    display: none;
+  }
+}

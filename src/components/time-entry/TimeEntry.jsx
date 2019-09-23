@@ -4,7 +4,7 @@ import IconDelete from '../../assets/icons/icon-delete.svg';
 
 import styles from './TimeEntry.module.css';
 
-const TimeEntry = ({ id, client, deleteTimeEntry, startTime, stopTime }) => {
+const TimeEntry = ({ client, deleteTimeEntry, id, startTime, stopTime }) => {
   const clientDurationParse =
     (Date.parse(stopTime) - Date.parse(startTime)) / 60 / 60 / 1000;
 

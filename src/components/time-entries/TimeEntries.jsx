@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
+import {
+  fetchData,
+  removeData,
+  saveData
+} from '../../services/time-entries-api';
 import styles from './TimeEntries.module.css';
-import saveData from '../../services/saveData';
-import removeData from '../../services/removeData';
-import fetchData from '../../services/fetchData';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
@@ -23,13 +25,18 @@ function TimeEntries() {
     setTimeEntries([newTimeEntry, ...timeEntries]);
   }
 
-  function deleteTimeEntry(id) {
-    removeData(id);
-    setTimeEntries(timeEntries.filter(timeEntry => timeEntry.id !== id));
+  function deleteTimeEntry(timeEntryId) {
+    removeData(timeEntryId);
+    setTimeEntries(
+      timeEntries.filter(timeEntry => timeEntry.id !== timeEntryId)
+    );
   }
 
   return (
     <div className={styles.timeEntriesContainer}>
+      <button type="button" className={styles.NewTimeEntryButton}>
+        + New Time Entry
+      </button>
       <TimeEntryForm createTimeEntry={createTimeEntry} />
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
