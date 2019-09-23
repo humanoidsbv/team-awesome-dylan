@@ -13,7 +13,6 @@ function TimeEntryForm({ createTimeEntry }) {
   const [activity, setActivity] = useState('');
   const [client, setClient] = useState('');
   const [date, setDate] = useState(today);
-  const [formState, setFormState] = useState(false);
   const [startTime, setStartTime] = useState('09:00');
   const [stopTime, setStopTime] = useState('17:00');
   const [validity, setValidity] = useState({});
@@ -33,10 +32,6 @@ function TimeEntryForm({ createTimeEntry }) {
     setClient('');
     setActivity('');
 
-    const formStatus = formRef.current.checkValidity();
-    setFormState(formStatus);
-    if (formStatus === false) return false;
-
     createTimeEntry({
       client,
       id: Math.random(),
@@ -47,9 +42,7 @@ function TimeEntryForm({ createTimeEntry }) {
 
   return (
     <form
-      className={`${styles.timeEntryForm} ${
-        formState ? styles.timeEntryForm : styles.timeEntryFormInvalid
-      }`}
+      className={styles.timeEntryForm}
       onSubmit={handleSubmit}
       ref={formRef}
     >

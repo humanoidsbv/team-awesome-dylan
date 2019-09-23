@@ -12,7 +12,7 @@
 }
 
 @media (min-width: 901px) {
-  .timeForm {
+  .timeEntryForm {
     align-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
