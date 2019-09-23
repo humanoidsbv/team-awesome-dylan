@@ -13,13 +13,10 @@ function TimeEntryForm({ createTimeEntry }) {
   const [activity, setActivity] = useState('');
   const [client, setClient] = useState('');
   const [date, setDate] = useState(today);
+  const [formState, setFormState] = useState(false);
   const [startTime, setStartTime] = useState('09:00');
   const [stopTime, setStopTime] = useState('17:00');
-  const [formState, setFormState] = useState(true);
-  const [validity, setValidity] = useState({
-    client: true,
-    activity: true
-  });
+  const [validity, setValidity] = useState({});
 
   const handleBlur = event => {
     setValidity({
@@ -32,6 +29,9 @@ function TimeEntryForm({ createTimeEntry }) {
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    setClient('');
+    setActivity('');
 
     const formStatus = formRef.current.checkValidity();
     setFormState(formStatus);
@@ -58,9 +58,9 @@ function TimeEntryForm({ createTimeEntry }) {
         CLIENT
         <input
           className={`${styles.inputClientValid} ${
-            validity.client
-              ? styles.inputClientValid
-              : styles.inputClientInvalid
+            validity.client === false
+              ? styles.inputClientInvalid
+              : styles.inputClientValid
           }`}
           id="client"
           maxLength="35"
@@ -77,9 +77,9 @@ function TimeEntryForm({ createTimeEntry }) {
         ACTIVITY
         <input
           className={`${styles.inputActivityValid} ${
-            validity.activity
-              ? styles.inputActivityValid
-              : styles.inputActivityInvalid
+            validity.activity === false
+              ? styles.inputActivityInvalid
+              : styles.inputActivityValid
           }`}
           id="activity"
           maxLength="35"
@@ -132,16 +132,9 @@ function TimeEntryForm({ createTimeEntry }) {
         />
       </label>
       <button
-        className={`${styles.buttonTimeEntryValid} ${
-          validity.activity
-            ? styles.buttonTimeEntryValid
-            : styles.buttonTimeEntryInvalid
-        } ${
-          validity.client
-            ? styles.buttonTimeEntryValid
-            : styles.buttonTimeEntryInvalid
-        }`}
+        className={`${styles.buttonTimeEntry}`}
         type="submit"
+        disabled={!formRef.current || !formRef.current.checkValidity()}
       >
         Add
       </button>

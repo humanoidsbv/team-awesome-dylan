@@ -181,7 +181,7 @@
   }
 }
 
-.buttonTimeEntryValid {
+.buttonTimeEntry {
 background-color: #35ac45;
 border-radius: 4px;
 color: #ffffff;
@@ -192,20 +192,17 @@ height: 36px;
 justify-content: center;
 margin-bottom: 25px;
 margin-top: 25px;
-opacity: 1;
-visibility: visible;
+transition: 0.3s ease-in-out;
 width: 100%;
 }
 
-.buttonTimeEntryInvalid {
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
+.buttonTimeEntry[disabled] {
+  background-color: red;
 }
 
 
 @media (min-width: 901px) {
-  .buttonTimeEntryValid {
+  .buttonTimeEntry {
     margin-left: 150px;
     margin-top: 40px;
     max-width: 90px;
