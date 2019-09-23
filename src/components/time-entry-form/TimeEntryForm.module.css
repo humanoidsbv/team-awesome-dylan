@@ -1,7 +1,8 @@
-.timeForm {
+.timeEntryForm {
   background-color: #f5f8fa;
   border-radius: 4px;
   border: solid 1px #e6eaee;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,7 +12,7 @@
 }
 
 @media (min-width: 901px) {
-  .timeForm {
+  .timeEntryForm {
     align-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -67,10 +68,11 @@
   }
 }
 
-.inputClient {
+.inputClientValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
   border: solid 1px #ced0da;
+  box-sizing: border-box;
   color: #354052;
   font-family: proximanova;
   font-size: 14px;
@@ -81,10 +83,15 @@
   width: 100%;
 }
 
-.inputActivity {
+.inputClientInvalid {
+  border: solid 1px #fb6375;
+} 
+
+.inputActivityValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
   border: solid 1px #ced0da;
+  box-sizing: border-box;
   color: #354052;
   font-family: proximanova;
   font-size: 14px;
@@ -94,6 +101,11 @@
   padding-left: 10px;
   width: 100%;
 }
+
+.inputActivityInvalid {
+  border: solid 1px #fb6375;
+} 
+
 
 .inputDate {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
@@ -110,6 +122,10 @@
   padding-right: 10px;
   width: 100%;
 }
+
+.inputDate:invalid {
+  border: solid 1px #fb6375;
+} 
 
 .inputDate::-webkit-inner-spin-button, 
 .inputDate::-webkit-calendar-picker-indicator {
@@ -132,12 +148,18 @@
   width: 100%;
 }
 
+.inputsTime:invalid {
+  border: solid 1px #fb6375;
+} 
+
+
 .inputsTime::-webkit-inner-spin-button{
     display: none;
 }
 
 @media (min-width: 901px) {
   .inputsTime {
+    max-width: 80px;
     width: auto;
   }
 }
@@ -170,8 +192,14 @@ height: 36px;
 justify-content: center;
 margin-bottom: 25px;
 margin-top: 25px;
+transition: 0.3s ease-in-out;
 width: 100%;
 }
+
+.buttonTimeEntry[disabled] {
+  background-color: red;
+}
+
 
 @media (min-width: 901px) {
   .buttonTimeEntry {

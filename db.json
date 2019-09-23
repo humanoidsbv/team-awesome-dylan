@@ -1,0 +1,10 @@
+{
+  "time-entries": [
+    {
+      "client": "Port of Rotterdam",
+      "id": "1",
+      "startTimestamp": "2019-09-17T07:00:00.000Z",
+      "stopTimestamp": "2019-09-17T16:30:00.000Z"
+    }
+  ]
+}
