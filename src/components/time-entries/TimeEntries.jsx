@@ -1,32 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
+import {
+  fetchData,
+  removeData,
+  saveData
+} from '../../services/time-entries-api';
 import styles from './TimeEntries.module.css';
-import TimeEntry from '../time-entry/TimeEntry';
-import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
+import TimeEntryForm from '../time-entry-form/TimeEntryForm';
+import TimeEntry from '../time-entry/TimeEntry';
 
 function TimeEntries() {
   const [timeEntries, setTimeEntries] = useState([]);
 
-  async function fetchData() {
-    const response = await fetch(
-      'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
-    );
-    setTimeEntries(await response.json());
-  }
-
-  function saveData(newTimeEntry) {
-    fetch('http://localhost:3000/time-entries', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newTimeEntry)
-    });
-  }
-
   useEffect(() => {
-    fetchData();
+    async function fetchTimeEntries() {
+      setTimeEntries(await fetchData());
+    }
+    fetchTimeEntries();
   }, []);
 
   function createTimeEntry(newTimeEntry) {
@@ -34,8 +25,18 @@ function TimeEntries() {
     setTimeEntries([newTimeEntry, ...timeEntries]);
   }
 
+  function deleteTimeEntry(timeEntryId) {
+    removeData(timeEntryId);
+    setTimeEntries(
+      timeEntries.filter(timeEntry => timeEntry.id !== timeEntryId)
+    );
+  }
+
   return (
     <div className={styles.timeEntriesContainer}>
+      <button type="button" className={styles.NewTimeEntryButton}>
+        + New Time Entry
+      </button>
       <TimeEntryForm createTimeEntry={createTimeEntry} />
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
@@ -52,7 +53,8 @@ function TimeEntries() {
               )}
               <TimeEntry
                 client={client}
-                key={id}
+                deleteTimeEntry={deleteTimeEntry}
+                id={id}
                 startTime={startTimestamp}
                 stopTime={stopTimestamp}
               />

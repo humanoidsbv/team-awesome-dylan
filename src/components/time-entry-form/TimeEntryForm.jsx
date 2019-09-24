@@ -17,14 +17,15 @@ function TimeEntryForm({ createTimeEntry }) {
   const [stopTime, setStopTime] = useState('17:00');
   const [validity, setValidity] = useState({});
 
+  const formRef = useRef(null);
+
   const handleBlur = event => {
     setValidity({
       ...validity,
+      form: formRef.current.checkValidity(),
       [event.target.name]: event.target.checkValidity()
     });
   };
-
-  const formRef = useRef(null);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -127,7 +128,7 @@ function TimeEntryForm({ createTimeEntry }) {
       <button
         className={`${styles.buttonTimeEntry}`}
         type="submit"
-        disabled={!formRef.current || !formRef.current.checkValidity()}
+        disabled={validity.form !== true}
       >
         Add
       </button>
