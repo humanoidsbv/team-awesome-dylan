@@ -8,7 +8,10 @@ export {
   FETCH_TIME_ENTRIES_REQUEST_FAILURE,
   DELETE_TIME_ENTRY_REQUEST,
   DELETE_TIME_ENTRY_REQUEST_SUCCESS,
-  DELETE_TIME_ENTRY_REQUEST_FAILURE
+  DELETE_TIME_ENTRY_REQUEST_FAILURE,
+  POST_TIME_ENTRY_REQUEST,
+  POST_TIME_ENTRY_REQUEST_SUCCESS,
+  POST_TIME_ENTRY_REQUEST_FAILURE
 } from './actions';
 
 export {
@@ -17,7 +20,10 @@ export {
   fetchTimeEntriesRequestFailure,
   deleteTimeEntryRequest,
   deleteTimeEntryRequestSuccess,
-  deleteTimeEntryRequestFailure
+  deleteTimeEntryRequestFailure,
+  postTimeEntryRequest,
+  postTimeEntryRequestSuccess,
+  postTimeEntryRequestFailure
 } from './action-creators';
 
 export {

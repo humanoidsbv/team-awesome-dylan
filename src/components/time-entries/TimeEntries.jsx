@@ -6,7 +6,12 @@ import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
 
-function TimeEntries({ timeEntries, fetchTimeEntries, deleteTimeEntry }) {
+function TimeEntries({
+  createTimeEntry,
+  deleteTimeEntry,
+  fetchTimeEntries,
+  timeEntries
+}) {
   useEffect(() => {
     fetchTimeEntries();
   }, []);
@@ -16,7 +21,9 @@ function TimeEntries({ timeEntries, fetchTimeEntries, deleteTimeEntry }) {
       <button type="button" className={styles.NewTimeEntryButton}>
         + New Time Entry
       </button>
-      <TimeEntryForm createTimeEntry={() => null} />
+      <TimeEntryForm
+        createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}
+      />
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
           const startDate = new Date(startTimestamp).toDateString();
@@ -51,8 +58,9 @@ TimeEntries.propTypes = {
       startTimestamp: PropTypes.string
     })
   ),
-  fetchTimeEntries: PropTypes.func.isRequired,
-  deleteTimeEntry: PropTypes.func.isRequired
+  createTimeEntry: PropTypes.func.isRequired,
+  deleteTimeEntry: PropTypes.func.isRequired,
+  fetchTimeEntries: PropTypes.func.isRequired
 };
 
 TimeEntries.defaultProps = {
