@@ -1,4 +1,9 @@
-import { REQUEST_TIME_ENTRIES, REQUEST_TIME_ENTRIES_SUCCESS } from './actions';
+import {
+  FETCH_TIME_ENTRIES_REQUEST,
+  FETCH_TIME_ENTRIES_REQUEST_SUCCESS,
+  DELETE_TIME_ENTRY_REQUEST,
+  DELETE_TIME_ENTRY_REQUEST_SUCCESS
+} from './actions';
 
 const initialState = {
   items: [],
@@ -8,17 +13,30 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case REQUEST_TIME_ENTRIES:
+    case FETCH_TIME_ENTRIES_REQUEST:
       return {
         ...state,
         items: [],
         isLoading: true
       };
 
-    case REQUEST_TIME_ENTRIES_SUCCESS:
+    case FETCH_TIME_ENTRIES_REQUEST_SUCCESS:
       return {
         ...state,
         items: payload,
+        isLoading: false
+      };
+
+    case DELETE_TIME_ENTRY_REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case DELETE_TIME_ENTRY_REQUEST_SUCCESS:
+      return {
+        ...state,
+        items: state.items.filter(item => item.id !== payload),
         isLoading: false
       };
 

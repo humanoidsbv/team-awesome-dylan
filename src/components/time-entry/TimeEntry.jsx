@@ -26,16 +26,12 @@ const TimeEntry = ({ client, deleteTimeEntry, id, startTime, stopTime }) => {
     timeNotation
   );
 
-  const handleDelete = () => {
-    deleteTimeEntry(id);
-  };
-
   return (
     <div className={styles.timeEntry}>
       <span className={styles.client}>{client}</span>
       <button
         className={styles.deleteButton}
-        onClick={handleDelete}
+        onClick={() => deleteTimeEntry(id)}
         type="button"
       >
         <IconDelete className={styles.iconClose} />

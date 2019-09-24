@@ -5,18 +5,14 @@ export async function fetchTimeEntries() {
   return response.json();
 }
 
-export async function removeData(timeEntryId) {
-  const response = await fetch(
-    `http://localhost:3000/time-entries/${timeEntryId}`,
-    {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+export const deleteTimeEntry = timeEntryId => {
+  fetch(`http://localhost:3000/time-entries/${timeEntryId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
     }
-  );
-  return response.json();
-}
+  });
+};
 
 export async function saveData(newTimeEntry) {
   const response = await fetch('http://localhost:3000/time-entries', {

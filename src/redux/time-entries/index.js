@@ -3,15 +3,21 @@ import timeEntriesReducer from './reducer';
 export { timeEntriesSagas } from './sagas';
 
 export {
-  REQUEST_TIME_ENTRIES,
-  REQUEST_TIME_ENTRIES_SUCCESS,
-  REQUEST_TIME_ENTRIES_FAILURE
+  FETCH_TIME_ENTRIES_REQUEST,
+  FETCH_TIME_ENTRIES_REQUEST_SUCCESS,
+  FETCH_TIME_ENTRIES_REQUEST_FAILURE,
+  DELETE_TIME_ENTRY_REQUEST,
+  DELETE_TIME_ENTRY_REQUEST_SUCCESS,
+  DELETE_TIME_ENTRY_REQUEST_FAILURE
 } from './actions';
 
 export {
-  requestTimeEntries,
-  requestTimeEntriesSuccess,
-  requestTimeEntriesFailure
+  fetchTimeEntriesRequest,
+  fetchTimeEntriesRequestSuccess,
+  fetchTimeEntriesRequestFailure,
+  deleteTimeEntryRequest,
+  deleteTimeEntryRequestSuccess,
+  deleteTimeEntryRequestFailure
 } from './action-creators';
 
 export {

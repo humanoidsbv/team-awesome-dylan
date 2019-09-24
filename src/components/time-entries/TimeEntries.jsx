@@ -6,7 +6,7 @@ import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
 
-function TimeEntries({ timeEntries, fetchTimeEntries }) {
+function TimeEntries({ timeEntries, fetchTimeEntries, deleteTimeEntry }) {
   useEffect(() => {
     fetchTimeEntries();
   }, []);
@@ -32,7 +32,7 @@ function TimeEntries({ timeEntries, fetchTimeEntries }) {
               )}
               <TimeEntry
                 client={client}
-                deleteTimeEntry={() => null}
+                deleteTimeEntry={timeEntryID => deleteTimeEntry(timeEntryID)}
                 id={id}
                 startTime={startTimestamp}
                 stopTime={stopTimestamp}
@@ -51,7 +51,8 @@ TimeEntries.propTypes = {
       startTimestamp: PropTypes.string
     })
   ),
-  fetchTimeEntries: PropTypes.func.isRequired
+  fetchTimeEntries: PropTypes.func.isRequired,
+  deleteTimeEntry: PropTypes.func.isRequired
 };
 
 TimeEntries.defaultProps = {

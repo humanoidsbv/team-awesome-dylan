@@ -4,8 +4,9 @@ import { bindActionCreators } from 'redux';
 
 import TimeEntries from './TimeEntries';
 import {
-  requestTimeEntries,
-  timeEntriesItemsSelector
+  fetchTimeEntriesRequest,
+  timeEntriesItemsSelector,
+  deleteTimeEntryRequest
 } from '../../redux/time-entries';
 
 const TimeEntriesContainer = props => <TimeEntries {...props} />;
@@ -17,7 +18,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchTimeEntries: requestTimeEntries
+      fetchTimeEntries: fetchTimeEntriesRequest,
+      deleteTimeEntry: deleteTimeEntryRequest
     },
     dispatch
   );
