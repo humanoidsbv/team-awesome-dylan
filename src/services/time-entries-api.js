@@ -1,4 +1,4 @@
-export async function fetchData() {
+export async function fetchTimeEntries() {
   const response = await fetch(
     'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
   );

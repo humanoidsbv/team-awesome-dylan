@@ -1,43 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import {
-  fetchData,
-  removeData,
-  saveData
-} from '../../services/time-entries-api';
 import styles from './TimeEntries.module.css';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
 
-function TimeEntries() {
-  const [timeEntries, setTimeEntries] = useState([]);
-
+function TimeEntries({ timeEntries, fetchTimeEntries }) {
   useEffect(() => {
-    async function fetchTimeEntries() {
-      setTimeEntries(await fetchData());
-    }
     fetchTimeEntries();
   }, []);
-
-  function createTimeEntry(newTimeEntry) {
-    saveData(newTimeEntry);
-    setTimeEntries([newTimeEntry, ...timeEntries]);
-  }
-
-  function deleteTimeEntry(timeEntryId) {
-    removeData(timeEntryId);
-    setTimeEntries(
-      timeEntries.filter(timeEntry => timeEntry.id !== timeEntryId)
-    );
-  }
 
   return (
     <div className={styles.timeEntriesContainer}>
       <button type="button" className={styles.NewTimeEntryButton}>
         + New Time Entry
       </button>
-      <TimeEntryForm createTimeEntry={createTimeEntry} />
+      <TimeEntryForm createTimeEntry={() => null} />
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
           const startDate = new Date(startTimestamp).toDateString();
@@ -53,7 +32,7 @@ function TimeEntries() {
               )}
               <TimeEntry
                 client={client}
-                deleteTimeEntry={deleteTimeEntry}
+                deleteTimeEntry={() => null}
                 id={id}
                 startTime={startTimestamp}
                 stopTime={stopTimestamp}
@@ -65,5 +44,18 @@ function TimeEntries() {
     </div>
   );
 }
+
+TimeEntries.propTypes = {
+  timeEntries: PropTypes.arrayOf(
+    PropTypes.shape({
+      startTimestamp: PropTypes.string
+    })
+  ),
+  fetchTimeEntries: PropTypes.func.isRequired
+};
+
+TimeEntries.defaultProps = {
+  timeEntries: []
+};
 
 export default TimeEntries;
