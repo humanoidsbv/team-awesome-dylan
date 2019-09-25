@@ -2,7 +2,7 @@ import React from 'react';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import PropTypes from 'prop-types';
 
 import rootReducer from './root-reducer';
