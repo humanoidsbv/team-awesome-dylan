@@ -1,5 +1,6 @@
 {
   "endOfLine": "lf",
+  "ignorePath": true,
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,

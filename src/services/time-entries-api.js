@@ -1,11 +1,11 @@
-export async function fetchData() {
+export async function fetchTimeEntries() {
   const response = await fetch(
     'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
   );
   return response.json();
 }
 
-export async function removeData(timeEntryId) {
+export const deleteTimeEntry = async timeEntryId => {
   const response = await fetch(
     `http://localhost:3000/time-entries/${timeEntryId}`,
     {
@@ -16,9 +16,9 @@ export async function removeData(timeEntryId) {
     }
   );
   return response.json();
-}
+};
 
-export async function saveData(newTimeEntry) {
+export const postTimeEntry = async newTimeEntry => {
   const response = await fetch('http://localhost:3000/time-entries', {
     method: 'POST',
     headers: {
@@ -27,4 +27,4 @@ export async function saveData(newTimeEntry) {
     body: JSON.stringify(newTimeEntry)
   });
   return response.json();
-}
+};

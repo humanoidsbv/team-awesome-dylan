@@ -9,7 +9,11 @@
   "root": true,
   "rules": {
     "comma-dangle": ["error", "never"],
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "import/no-cycle": [0, { "maxDepth": 5 }],
+    "react/jsx-props-no-spreading": [0],
+    "import/no-useless-path-segments": [0, {
+      "noUselessIndex": false
+    }]
   }
 }
-  
