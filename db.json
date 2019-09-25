@@ -17,12 +17,6 @@
       "id": 0.220417854860534,
       "startTimestamp": "2019-09-23T07:00:00.000Z",
       "stopTimestamp": "2019-09-23T15:00:00.000Z"
-    },
-    {
-      "client": "dinsdag test",
-      "id": 0.08467248571951114,
-      "startTimestamp": "2019-09-24T07:00:00.000Z",
-      "stopTimestamp": "2019-09-24T15:00:00.000Z"
     }
   ]
 }

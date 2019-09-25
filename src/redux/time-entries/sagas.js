@@ -7,35 +7,35 @@ import {
 
 import {
   FETCH_TIME_ENTRIES_REQUEST,
-  fetchTimeEntriesRequestSuccess,
-  fetchTimeEntriesRequestFailure,
+  fetchTimeEntriesSuccess,
+  fetchTimeEntriesFailure,
   DELETE_TIME_ENTRY_REQUEST,
-  deleteTimeEntryRequestSuccess,
-  deleteTimeEntryRequestFailure,
-  POST_TIME_ENTRY_REQUEST,
-  postTimeEntryRequestSuccess,
-  postTimeEntryRequestFailure
+  deleteTimeEntrySuccess,
+  deleteTimeEntryFailure,
+  CREATE_TIME_ENTRY_REQUEST,
+  createTimeEntrySuccess,
+  createTimeEntryFailure
 } from '.';
 
-function* requestTimeEntries() {
+function* fetchTimeEntriesRequest() {
   try {
     const response = yield call(fetchTimeEntries);
-    yield put(fetchTimeEntriesRequestSuccess(response));
+    yield put(fetchTimeEntriesSuccess(response));
   } catch (error) {
-    yield put(fetchTimeEntriesRequestFailure(error));
+    yield put(fetchTimeEntriesFailure(error));
   }
 }
 
-export function* watchRequestTimeEntries() {
-  yield takeLatest(FETCH_TIME_ENTRIES_REQUEST, requestTimeEntries);
+export function* watchFetchTimeEntriesRequest() {
+  yield takeLatest(FETCH_TIME_ENTRIES_REQUEST, fetchTimeEntriesRequest);
 }
 
 function* deleteTimeEntryRequest({ payload }) {
   try {
     yield call(deleteTimeEntry, payload);
-    yield put(deleteTimeEntryRequestSuccess(payload));
+    yield put(deleteTimeEntrySuccess(payload));
   } catch (error) {
-    yield put(deleteTimeEntryRequestFailure(error));
+    yield put(deleteTimeEntryFailure(error));
   }
 }
 
@@ -43,23 +43,23 @@ export function* watchDeleteTimeEntry() {
   yield takeLatest(DELETE_TIME_ENTRY_REQUEST, deleteTimeEntryRequest);
 }
 
-function* postTimeEntryRequest({ payload }) {
+function* createTimeEntryRequest({ payload }) {
   try {
     yield call(postTimeEntry, payload);
-    yield put(postTimeEntryRequestSuccess(payload));
+    yield put(createTimeEntrySuccess(payload));
   } catch (error) {
-    yield put(postTimeEntryRequestFailure(error));
+    yield put(createTimeEntryFailure(error));
   }
 }
 
-export function* watchPostTimeEntry() {
-  yield takeLatest(POST_TIME_ENTRY_REQUEST, postTimeEntryRequest);
+export function* watchCreateTimeEntry() {
+  yield takeLatest(CREATE_TIME_ENTRY_REQUEST, createTimeEntryRequest);
 }
 
 export function* timeEntriesSagas() {
   yield all([
-    fork(watchRequestTimeEntries),
+    fork(watchFetchTimeEntriesRequest),
     fork(watchDeleteTimeEntry),
-    fork(watchPostTimeEntry)
+    fork(watchCreateTimeEntry)
   ]);
 }

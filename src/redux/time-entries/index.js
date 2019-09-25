@@ -4,26 +4,26 @@ export { timeEntriesSagas } from './sagas';
 
 export {
   FETCH_TIME_ENTRIES_REQUEST,
-  FETCH_TIME_ENTRIES_REQUEST_SUCCESS,
-  FETCH_TIME_ENTRIES_REQUEST_FAILURE,
+  FETCH_TIME_ENTRIES_SUCCESS,
+  FETCH_TIME_ENTRIES_FAILURE,
   DELETE_TIME_ENTRY_REQUEST,
-  DELETE_TIME_ENTRY_REQUEST_SUCCESS,
-  DELETE_TIME_ENTRY_REQUEST_FAILURE,
-  POST_TIME_ENTRY_REQUEST,
-  POST_TIME_ENTRY_REQUEST_SUCCESS,
-  POST_TIME_ENTRY_REQUEST_FAILURE
+  DELETE_TIME_ENTRY_SUCCESS,
+  DELETE_TIME_ENTRY_FAILURE,
+  CREATE_TIME_ENTRY_REQUEST,
+  CREATE_TIME_ENTRY_SUCCESS,
+  CREATE_TIME_ENTRY_FAILURE
 } from './actions';
 
 export {
   fetchTimeEntriesRequest,
-  fetchTimeEntriesRequestSuccess,
-  fetchTimeEntriesRequestFailure,
+  fetchTimeEntriesSuccess,
+  fetchTimeEntriesFailure,
   deleteTimeEntryRequest,
-  deleteTimeEntryRequestSuccess,
-  deleteTimeEntryRequestFailure,
-  postTimeEntryRequest,
-  postTimeEntryRequestSuccess,
-  postTimeEntryRequestFailure
+  deleteTimeEntrySuccess,
+  deleteTimeEntryFailure,
+  createTimeEntryRequest,
+  createTimeEntrySuccess,
+  createTimeEntryFailure
 } from './action-creators';
 
 export {

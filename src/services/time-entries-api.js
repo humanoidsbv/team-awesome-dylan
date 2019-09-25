@@ -5,21 +5,26 @@ export async function fetchTimeEntries() {
   return response.json();
 }
 
-export const deleteTimeEntry = timeEntryId => {
-  fetch(`http://localhost:3000/time-entries/${timeEntryId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
+export const deleteTimeEntry = async timeEntryId => {
+  const response = await fetch(
+    `http://localhost:3000/time-entries/${timeEntryId}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     }
-  });
+  );
+  return response.status;
 };
 
-export const postTimeEntry = newTimeEntry => {
-  fetch('http://localhost:3000/time-entries', {
+export const postTimeEntry = async newTimeEntry => {
+  const response = await fetch('http://localhost:3000/time-entries', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(newTimeEntry)
   });
+  return response.status;
 };

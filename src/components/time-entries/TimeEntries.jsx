@@ -39,7 +39,7 @@ function TimeEntries({
               )}
               <TimeEntry
                 client={client}
-                deleteTimeEntry={timeEntryID => deleteTimeEntry(timeEntryID)}
+                deleteTimeEntry={timeEntryId => deleteTimeEntry(timeEntryId)}
                 id={id}
                 startTime={startTimestamp}
                 stopTime={stopTimestamp}

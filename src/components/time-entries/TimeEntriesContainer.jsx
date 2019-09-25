@@ -6,7 +6,7 @@ import TimeEntries from './TimeEntries';
 import {
   deleteTimeEntryRequest,
   fetchTimeEntriesRequest,
-  postTimeEntryRequest,
+  createTimeEntryRequest,
   timeEntriesItemsSelector
 } from '../../redux/time-entries';
 
@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      createTimeEntry: postTimeEntryRequest,
+      createTimeEntry: createTimeEntryRequest,
       deleteTimeEntry: deleteTimeEntryRequest,
       fetchTimeEntries: fetchTimeEntriesRequest
     },

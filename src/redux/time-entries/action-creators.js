@@ -1,26 +1,26 @@
 import {
   DELETE_TIME_ENTRY_REQUEST,
-  DELETE_TIME_ENTRY_REQUEST_FAILURE,
-  DELETE_TIME_ENTRY_REQUEST_SUCCESS,
+  DELETE_TIME_ENTRY_FAILURE,
+  DELETE_TIME_ENTRY_SUCCESS,
   FETCH_TIME_ENTRIES_REQUEST,
-  FETCH_TIME_ENTRIES_REQUEST_FAILURE,
-  FETCH_TIME_ENTRIES_REQUEST_SUCCESS,
-  POST_TIME_ENTRY_REQUEST,
-  POST_TIME_ENTRY_REQUEST_FAILURE,
-  POST_TIME_ENTRY_REQUEST_SUCCESS
+  FETCH_TIME_ENTRIES_FAILURE,
+  FETCH_TIME_ENTRIES_SUCCESS,
+  CREATE_TIME_ENTRY_REQUEST,
+  CREATE_TIME_ENTRY_FAILURE,
+  CREATE_TIME_ENTRY_SUCCESS
 } from '.';
 
 export const fetchTimeEntriesRequest = () => ({
   type: FETCH_TIME_ENTRIES_REQUEST
 });
 
-export const fetchTimeEntriesRequestSuccess = items => ({
-  type: FETCH_TIME_ENTRIES_REQUEST_SUCCESS,
+export const fetchTimeEntriesSuccess = items => ({
+  type: FETCH_TIME_ENTRIES_SUCCESS,
   payload: items
 });
 
-export const fetchTimeEntriesRequestFailure = error => ({
-  type: FETCH_TIME_ENTRIES_REQUEST_FAILURE,
+export const fetchTimeEntriesFailure = error => ({
+  type: FETCH_TIME_ENTRIES_FAILURE,
   payload: error
 });
 
@@ -29,27 +29,27 @@ export const deleteTimeEntryRequest = timeEntryID => ({
   payload: timeEntryID
 });
 
-export const deleteTimeEntryRequestSuccess = timeEntryID => ({
-  type: DELETE_TIME_ENTRY_REQUEST_SUCCESS,
+export const deleteTimeEntrySuccess = timeEntryID => ({
+  type: DELETE_TIME_ENTRY_SUCCESS,
   payload: timeEntryID
 });
 
-export const deleteTimeEntryRequestFailure = error => ({
-  type: DELETE_TIME_ENTRY_REQUEST_FAILURE,
+export const deleteTimeEntryFailure = error => ({
+  type: DELETE_TIME_ENTRY_FAILURE,
   payload: error
 });
 
-export const postTimeEntryRequest = newTimeEntry => ({
-  type: POST_TIME_ENTRY_REQUEST,
+export const createTimeEntryRequest = newTimeEntry => ({
+  type: CREATE_TIME_ENTRY_REQUEST,
   payload: newTimeEntry
 });
 
-export const postTimeEntryRequestSuccess = newTimeEntry => ({
-  type: POST_TIME_ENTRY_REQUEST_SUCCESS,
+export const createTimeEntrySuccess = newTimeEntry => ({
+  type: CREATE_TIME_ENTRY_SUCCESS,
   payload: newTimeEntry
 });
 
-export const postTimeEntryRequestFailure = error => ({
-  type: POST_TIME_ENTRY_REQUEST_FAILURE,
+export const createTimeEntryFailure = error => ({
+  type: CREATE_TIME_ENTRY_FAILURE,
   payload: error
 });
