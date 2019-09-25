@@ -1,9 +1,9 @@
 {
   "endOfLine": "lf",
+  "ignorePath": true,
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
-  "useTabs": false,
-  "ignorePath": true
+  "useTabs": false
 }
