@@ -1,10 +1,10 @@
 import {
-  FETCH_TIME_ENTRIES_REQUEST,
-  FETCH_TIME_ENTRIES_SUCCESS,
+  CREATE_TIME_ENTRY_REQUEST,
+  CREATE_TIME_ENTRY_SUCCESS,
   DELETE_TIME_ENTRY_REQUEST,
   DELETE_TIME_ENTRY_SUCCESS,
-  CREATE_TIME_ENTRY_REQUEST,
-  CREATE_TIME_ENTRY_SUCCESS
+  FETCH_TIME_ENTRIES_REQUEST,
+  FETCH_TIME_ENTRIES_SUCCESS
 } from './actions';
 
 const initialState = {
@@ -15,17 +15,16 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case FETCH_TIME_ENTRIES_REQUEST:
+    case CREATE_TIME_ENTRY_REQUEST:
       return {
         ...state,
-        items: [],
         isLoading: true
       };
 
-    case FETCH_TIME_ENTRIES_SUCCESS:
+    case CREATE_TIME_ENTRY_SUCCESS:
       return {
         ...state,
-        items: payload,
+        items: [payload, ...state.items],
         isLoading: false
       };
 
@@ -42,16 +41,17 @@ export default (state = initialState, { type, payload }) => {
         isLoading: false
       };
 
-    case CREATE_TIME_ENTRY_REQUEST:
+    case FETCH_TIME_ENTRIES_REQUEST:
       return {
         ...state,
+        items: [],
         isLoading: true
       };
 
-    case CREATE_TIME_ENTRY_SUCCESS:
+    case FETCH_TIME_ENTRIES_SUCCESS:
       return {
         ...state,
-        items: [payload, ...state.items],
+        items: payload,
         isLoading: false
       };
 

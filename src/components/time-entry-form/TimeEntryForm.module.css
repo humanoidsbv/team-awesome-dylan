@@ -113,6 +113,7 @@
   border: solid 1px #ced0da;
   box-sizing: border-box;
   color: #354052;
+  cursor: pointer;
   font-family: proximanova;
   font-size: 14px;
   font-weight: bold;
@@ -185,6 +186,7 @@
 background-color: #35ac45;
 border-radius: 4px;
 color: #ffffff;
+cursor: pointer;
 display: flex;
 font-family: proximanova;
 font-size: 14px;
@@ -213,6 +215,7 @@ width: 100%;
 }
 
 .iconClose {
+  cursor: pointer;
   fill: #354052;
   height: 7.1px;
   margin: 14px;

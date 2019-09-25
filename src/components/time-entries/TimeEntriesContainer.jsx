@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 
 import TimeEntries from './TimeEntries';
 import {
+  createTimeEntryRequest,
   deleteTimeEntryRequest,
   fetchTimeEntriesRequest,
-  createTimeEntryRequest,
   timeEntriesItemsSelector
 } from '../../redux/time-entries';
 

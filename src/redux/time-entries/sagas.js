@@ -1,33 +1,33 @@
 import { all, fork, call, put, takeLatest } from 'redux-saga/effects';
 import {
-  fetchTimeEntries,
   deleteTimeEntry,
+  fetchTimeEntries,
   postTimeEntry
 } from '../../services/time-entries-api';
 
 import {
-  FETCH_TIME_ENTRIES_REQUEST,
-  fetchTimeEntriesSuccess,
-  fetchTimeEntriesFailure,
-  DELETE_TIME_ENTRY_REQUEST,
-  deleteTimeEntrySuccess,
-  deleteTimeEntryFailure,
   CREATE_TIME_ENTRY_REQUEST,
+  DELETE_TIME_ENTRY_REQUEST,
+  FETCH_TIME_ENTRIES_REQUEST,
+  createTimeEntryFailure,
   createTimeEntrySuccess,
-  createTimeEntryFailure
+  deleteTimeEntryFailure,
+  deleteTimeEntrySuccess,
+  fetchTimeEntriesFailure,
+  fetchTimeEntriesSuccess
 } from '.';
 
-function* fetchTimeEntriesRequest() {
+function* createTimeEntryRequest({ payload }) {
   try {
-    const response = yield call(fetchTimeEntries);
-    yield put(fetchTimeEntriesSuccess(response));
+    yield call(postTimeEntry, payload);
+    yield put(createTimeEntrySuccess(payload));
   } catch (error) {
-    yield put(fetchTimeEntriesFailure(error));
+    yield put(createTimeEntryFailure(error));
   }
 }
 
-export function* watchFetchTimeEntriesRequest() {
-  yield takeLatest(FETCH_TIME_ENTRIES_REQUEST, fetchTimeEntriesRequest);
+export function* watchCreateTimeEntry() {
+  yield takeLatest(CREATE_TIME_ENTRY_REQUEST, createTimeEntryRequest);
 }
 
 function* deleteTimeEntryRequest({ payload }) {
@@ -43,17 +43,17 @@ export function* watchDeleteTimeEntry() {
   yield takeLatest(DELETE_TIME_ENTRY_REQUEST, deleteTimeEntryRequest);
 }
 
-function* createTimeEntryRequest({ payload }) {
+function* fetchTimeEntriesRequest() {
   try {
-    yield call(postTimeEntry, payload);
-    yield put(createTimeEntrySuccess(payload));
+    const response = yield call(fetchTimeEntries);
+    yield put(fetchTimeEntriesSuccess(response));
   } catch (error) {
-    yield put(createTimeEntryFailure(error));
+    yield put(fetchTimeEntriesFailure(error));
   }
 }
 
-export function* watchCreateTimeEntry() {
-  yield takeLatest(CREATE_TIME_ENTRY_REQUEST, createTimeEntryRequest);
+export function* watchFetchTimeEntriesRequest() {
+  yield takeLatest(FETCH_TIME_ENTRIES_REQUEST, fetchTimeEntriesRequest);
 }
 
 export function* timeEntriesSagas() {
