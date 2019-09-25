@@ -15,7 +15,7 @@ export const deleteTimeEntry = async timeEntryId => {
       }
     }
   );
-  return response.status;
+  return response.json();
 };
 
 export const postTimeEntry = async newTimeEntry => {
@@ -26,5 +26,5 @@ export const postTimeEntry = async newTimeEntry => {
     },
     body: JSON.stringify(newTimeEntry)
   });
-  return response.status;
+  return response.json();
 };
