@@ -8,7 +8,6 @@ import {
   teamMembersItemsSelector
 } from '../../redux/team-members';
 
-console.log(fetchTeamMembersRequest);
 const TeamMembersContainer = props => <TeamMembers {...props} />;
 
 const mapStateToProps = state => ({

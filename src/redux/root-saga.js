@@ -4,5 +4,5 @@ import { timeEntriesSagas } from './time-entries';
 import { teamMembersSagas } from './team-members';
 
 export default function* root() {
-  yield all([fork(timeEntriesSagas, teamMembersSagas)]);
+  yield all([fork(timeEntriesSagas), fork(teamMembersSagas)]);
 }

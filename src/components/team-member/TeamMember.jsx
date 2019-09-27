@@ -37,8 +37,7 @@ const TeamMember = ({
         />
         <div className={styles.teamMemberTitle}>
           <span className={styles.teamMemberName}>
-            {firstName}
-            {lastName}
+            {`${firstName} ${lastName}`}
           </span>
           <span className={styles.teamMemberFunction}>{employeeFunction}</span>
         </div>
@@ -72,7 +71,7 @@ const TeamMember = ({
       >
         <div className={styles.extraInfoHeader}>
           <span className={styles.extraInfoHeaderText}>
-            Detailed information about EMPLOYERFIRSTNAME
+            Detailed information about             {firstName}
           </span>
         </div>
         <div className={styles.extraEmployerInfo}>

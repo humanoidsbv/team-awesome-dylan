@@ -17,10 +17,7 @@ function TeamMembers({ fetchTeamMembers, teamMembers }) {
           + New Humanoid
         </button>
         <select type="button" className={styles.sortTeamMembersSelector}>
-          <option value="" disabled selected>
-            Sort by:
-          </option>
-          <option value="hurr">Durr</option>
+          <option value="">Sort by:</option>
         </select>
       </div>
       <div className={styles.teamMembersContainer}>
@@ -31,7 +28,7 @@ function TeamMembers({ fetchTeamMembers, teamMembers }) {
           ({
             firstName,
             lastName,
-            employerFunction,
+            employeeFunction,
             startingDate,
             currentEmployer,
             employeeNumber
@@ -39,7 +36,7 @@ function TeamMembers({ fetchTeamMembers, teamMembers }) {
             <TeamMember
               firstName={firstName}
               lastName={lastName}
-              employerFunction={employerFunction}
+              employeeFunction={employeeFunction}
               startingDate={startingDate}
               currentEmployer={currentEmployer}
               employeeNumber={employeeNumber}

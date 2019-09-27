@@ -28,14 +28,15 @@
 }
 
 .sortTeamMembersSelector {
+  align-items: center;
   border-radius: 4px;
   border: solid 1px #ced0da;
+  color:#7f8fa4;
   cursor: pointer;
   display: flex;
   font-family: proximanova;
   font-size: 14px;
   height: 36px;
-  justify-content: center;
   margin-left: 10px;
   width: 120px;
 }
