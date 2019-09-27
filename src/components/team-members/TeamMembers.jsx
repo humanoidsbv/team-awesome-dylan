@@ -26,20 +26,20 @@ function TeamMembers({ fetchTeamMembers, teamMembers }) {
         </button>
         {teamMembers.map(
           ({
+            currentEmployer,
+            employeeFunction,
+            employeeNumber,
             firstName,
             lastName,
-            employeeFunction,
-            startingDate,
-            currentEmployer,
-            employeeNumber
+            startingDate
           }) => (
             <TeamMember
+              currentEmployer={currentEmployer}
+              employeeFunction={employeeFunction}
+              employeeNumber={employeeNumber}
               firstName={firstName}
               lastName={lastName}
-              employeeFunction={employeeFunction}
               startingDate={startingDate}
-              currentEmployer={currentEmployer}
-              employeeNumber={employeeNumber}
             />
           )
         )}
