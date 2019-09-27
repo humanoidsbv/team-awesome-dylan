@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import TeamMember from '../team-member/TeamMember';
 import styles from './TeamMembers.module.css';
+import TeamMember from '../team-member/TeamMember';
 
-const TeamMembers = () => {
+function TeamMembers({ fetchTeamMembers, teamMembers }) {
+  useEffect(() => {
+    fetchTeamMembers();
+  }, []);
+
   return (
     <div>
       <div className={styles.headerTeamMembers}>
@@ -22,11 +27,41 @@ const TeamMembers = () => {
         <button type="button" className={styles.newHumanoidButton}>
           + New Humanoid
         </button>
-        <TeamMember className={styles.teamMember} />
-        <TeamMember className={styles.teamMember} />
+        {teamMembers.map(
+          ({
+            firstName,
+            lastName,
+            employerFunction,
+            startingDate,
+            currentEmployer,
+            employeeNumber
+          }) => (
+            <TeamMember
+              firstName={firstName}
+              lastName={lastName}
+              employerFunction={employerFunction}
+              startingDate={startingDate}
+              currentEmployer={currentEmployer}
+              employeeNumber={employeeNumber}
+            />
+          )
+        )}
       </div>
     </div>
   );
+}
+
+TeamMembers.propTypes = {
+  teamMembers: PropTypes.arrayOf(
+    PropTypes.shape({
+      firstName: PropTypes.string
+    })
+  ),
+  fetchTeamMembers: PropTypes.func.isRequired
+};
+
+TeamMembers.defaultProps = {
+  teamMembers: []
 };
 
 export default TeamMembers;

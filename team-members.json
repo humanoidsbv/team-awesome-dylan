@@ -1,0 +1,30 @@
+{
+  "team-members": [
+    {
+      "firstName": "Antje",
+      "lastName": "Adriaens",
+      "id": 0.6524250995148186,
+      "employeeFunction": "UX Designer",
+      "employeeNumber": "HUM_001",
+      "currentEmployer": "Hike One",
+      "startingDate": "2019-09-23T07:00:00.000Z",
+      "email": "antje.adriaens@humanoids.nl",
+      "address": "Waldorpstraat 2",
+      "zipCode": "2521CJ",
+      "city": "Den Haag"
+    },
+    {
+      "firstName": "YOLO",
+      "lastName": "CHEF",
+      "id": 2,
+      "employeeFunction": "UX Designer",
+      "employeeNumber": "HUM_001",
+      "currentEmployer": "Hike One",
+      "startingDate": "2019-09-23T07:00:00.000Z",
+      "email": "antje.adriaens@humanoids.nl",
+      "address": "Waldorpstraat 2",
+      "zipCode": "2521CJ",
+      "city": "Den Haag"
+    }
+  ]
+}
