@@ -1,0 +1,28 @@
+
+@media (min-width: 901px) {
+  .teamMembersContainer {
+    max-width: 1170px;
+    width: 100%;
+  }
+}
+
+.newHumanoidButton {
+  background-color: #35ac45;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .newHumanoidButton {
+    display: none;
+  }
+}
