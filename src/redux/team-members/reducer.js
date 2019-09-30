@@ -1,4 +1,6 @@
 import {
+  CREATE_TEAM_MEMBER_REQUEST,
+  CREATE_TEAM_MEMBER_SUCCESS,
   FETCH_TEAM_MEMBERS_REQUEST,
   FETCH_TEAM_MEMBERS_SUCCESS
 } from './actions';
@@ -22,6 +24,19 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         items: payload,
+        isLoading: false
+      };
+
+    case CREATE_TEAM_MEMBER_REQUEST:
+      return {
+        ...state,
+        isLoading: true
+      };
+
+    case CREATE_TEAM_MEMBER_SUCCESS:
+      return {
+        ...state,
+        items: [payload, ...state.items],
         isLoading: false
       };
 

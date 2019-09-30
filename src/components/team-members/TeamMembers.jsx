@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 
 import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
+import TeamMemberForm from '../team-member-form/TeamMemberForm';
 
-function TeamMembers({ fetchTeamMembers, teamMembers }) {
+function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
   useEffect(() => {
     fetchTeamMembers();
   }, []);
 
   return (
     <div>
+      <TeamMemberForm
+        createTeamMember={newTeamMember => createTeamMember(newTeamMember)}
+      />
       <div className={styles.headerTeamMembers}>
         <span className={styles.headerTeamMembersText}> All Humanoids </span>
         <button type="button" className={styles.newHumanoidButtonDesktop}>
@@ -54,6 +58,7 @@ TeamMembers.propTypes = {
       firstName: PropTypes.string
     })
   ),
+  createTeamMember: PropTypes.func.isRequired,
   fetchTeamMembers: PropTypes.func.isRequired
 };
 
