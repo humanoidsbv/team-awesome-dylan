@@ -6,12 +6,12 @@ import styles from './TeamMember.module.css';
 import teamMemberAvatar from '../../../static/pictures/picture-tnt.jpg';
 
 const TeamMember = ({
+  currentEmployer,
+  employeeFunction,
+  employeeNumber,
   firstName,
   lastName,
-  employeeFunction,
-  startingDate,
-  currentEmployer,
-  employeeNumber
+  startingDate
 }) => {
   const [isTeamMemberActive, setTeamMemberActivity] = useState(false);
 
@@ -88,12 +88,12 @@ const TeamMember = ({
 };
 
 TeamMember.propTypes = {
+  currentEmployer: PropTypes.string.isRequired,
+  employeeFunction: PropTypes.string.isRequired,
+  employeeNumber: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  employeeFunction: PropTypes.string.isRequired,
-  startingDate: PropTypes.string.isRequired,
-  currentEmployer: PropTypes.string.isRequired,
-  employeeNumber: PropTypes.string.isRequired
+  startingDate: PropTypes.string.isRequired
 };
 
 export default TeamMember;
