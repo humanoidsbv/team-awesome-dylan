@@ -6,7 +6,7 @@ import styles from './TeamMember.module.css';
 import teamMemberAvatar from '../../../static/pictures/picture-tnt.jpg';
 
 const TeamMember = ({
-  currentEmployer,
+  currentClient,
   employeeFunction,
   employeeNumber,
   firstName,
@@ -48,11 +48,9 @@ const TeamMember = ({
             </span>
             <span className={styles.extraInfoSubDesktop}>Employee number</span>
           </div>
-          <div className={styles.extraEmployerInfo}>
-            <span className={styles.extraInfoMainDesktop}>
-              {currentEmployer}
-            </span>
-            <span className={styles.extraInfoSubDesktop}>Current Employer</span>
+          <div className={styles.extraClientInfo}>
+            <span className={styles.extraInfoMainDesktop}>{currentClient}</span>
+            <span className={styles.extraInfoSubDesktop}>Current Client</span>
           </div>
           <div className={styles.extraStartingDate}>
             <span className={styles.extraInfoMainDesktop}>{startDate}</span>
@@ -76,9 +74,9 @@ const TeamMember = ({
 {firstName}
           </span>
         </div>
-        <div className={styles.extraEmployerInfo}>
-          <span className={styles.extraInfoMain}>{currentEmployer}</span>
-          <span className={styles.extraInfoSub}>Current Employer</span>
+        <div className={styles.extraClientInfo}>
+          <span className={styles.extraInfoMain}>{currentClient}</span>
+          <span className={styles.extraInfoSub}>Current Client</span>
         </div>
         <div className={styles.extraStartingDate}>
           <span className={styles.extraInfoMain}>{startDate}</span>
@@ -90,7 +88,7 @@ const TeamMember = ({
 };
 
 TeamMember.propTypes = {
-  currentEmployer: PropTypes.string.isRequired,
+  currentClient: PropTypes.string.isRequired,
   employeeFunction: PropTypes.string.isRequired,
   employeeNumber: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,

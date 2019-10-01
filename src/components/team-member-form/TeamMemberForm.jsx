@@ -15,7 +15,7 @@ function TeamMemberForm({
 
   const [address, setAddress] = useState('');
   const [bio, setBio] = useState('');
-  const [currentEmployer, setCurrentEmployer] = useState('To be confirmed');
+  const [currentClient, setCurrentClient] = useState('To be confirmed');
   const [emailAddress, setEmailAddress] = useState('');
   const [employeeNumber, setEmployeeNumber] = useState('To be confirmed');
   const [employeeFunction, setEmployeeFunction] = useState('To be confirmed');
@@ -54,7 +54,7 @@ function TeamMemberForm({
     setStartingDate('');
     toggleTeamMemberForm();
     setEmployeeNumber('');
-    setCurrentEmployer('');
+    setCurrentClient('');
   };
 
   const handleSubmit = event => {
@@ -72,12 +72,12 @@ function TeamMemberForm({
     setSocialProfileTwo('');
     setStartingDate('');
     setEmployeeNumber('');
-    setCurrentEmployer('');
+    setCurrentClient('');
 
     createTeamMember({
       address,
       bio,
-      currentEmployer,
+      currentClient,
       emailAddress,
       employeeNumber,
       employeeFunction,
