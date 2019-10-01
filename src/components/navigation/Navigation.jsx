@@ -10,12 +10,12 @@ const Navigation = ({ isMenuVisible }) => (
       isMenuVisible ? styles.navigationVisible : ''
     }`}
   >
-    <Link className={styles.item} activeClassName={styles.active} to="/">
+    <Link className={styles.item} activeClassName={styles.itemActive} to="/">
       Time entries
     </Link>
     <Link
       className={styles.item}
-      activeClassName={styles.active}
+      activeClassName={styles.itemActive}
       to="/team-members"
     >
       Team members

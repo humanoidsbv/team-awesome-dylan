@@ -41,7 +41,7 @@
   width: 156px;
 }
 
-.newHumanoidButtonDesktop {
+.newHumanoidButtonHeader {
   background-color: #35ac45;
   border-radius: 4px;
   color: #ffffff;
@@ -54,10 +54,10 @@
   width: 156px;
 }
 
-.newHumanoidButtonDesktop:disabled {
+.newHumanoidButtonHeader:disabled {
   cursor: auto;
 }
-.newHumanoidButtonDesktopGrey {
+.newHumanoidButtonHeaderGrey {
   background-color: #acacac;
 }
 

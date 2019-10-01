@@ -22,20 +22,20 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
     <div>
       <TeamMemberForm
         createTeamMember={newTeamMember => createTeamMember(newTeamMember)}
-        toggleTeamMemberForm={toggleTeamMemberForm}
         isTeamMemberFormVisible={isTeamMemberFormVisible}
+        toggleTeamMemberForm={toggleTeamMemberForm}
       />
       <div className={styles.headerTeamMembers}>
         <span className={styles.headerTeamMembersText}> All Humanoids </span>
         <button
-          type="button"
-          className={`${styles.newHumanoidButtonDesktop} ${
+          className={`${styles.newHumanoidButtonHeader} ${
             isTeamMemberFormVisible
-              ? styles.newHumanoidButtonDesktopGrey
-              : styles.newHumanoidButtonDesktop
+              ? styles.newHumanoidButtonHeaderGrey
+              : styles.newHumanoidButtonHeader
           }`}
-          onClick={toggleTeamMemberForm}
           disabled={isTeamMemberFormVisible}
+          onClick={toggleTeamMemberForm}
+          type="button"
         >
           + New Humanoid
         </button>
@@ -45,14 +45,14 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
       </div>
       <div className={styles.teamMembersContainer}>
         <button
-          type="button"
           className={`${styles.newHumanoidButton} ${
             isTeamMemberFormVisible
               ? styles.newHumanoidButtonGrey
               : styles.newHumanoidButton
           }`}
-          onClick={toggleTeamMemberForm}
           disabled={isTeamMemberFormVisible}
+          onClick={toggleTeamMemberForm}
+          type="button"
         >
           + New Humanoid
         </button>

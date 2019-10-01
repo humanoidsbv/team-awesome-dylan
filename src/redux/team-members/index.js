@@ -21,10 +21,10 @@ export {
 } from './action-creators';
 
 export {
-  teamMembersRootSelector,
-  teamMembersItemsSelector,
+  teamMembersErrorSelector,
   teamMembersIsLoadingSelector,
-  teamMembersErrorSelector
+  teamMembersItemsSelector,
+  teamMembersRootSelector
 } from './selectors';
 
 export default teamMembersReducer;

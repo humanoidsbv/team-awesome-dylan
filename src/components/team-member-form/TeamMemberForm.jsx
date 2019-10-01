@@ -38,9 +38,7 @@ function TeamMemberForm({
     });
   };
 
-  const handleCancel = event => {
-    event.preventDefault();
-
+  function resetFormStates() {
     setAddress('');
     setBio('');
     setEmailAddress('');
@@ -55,24 +53,16 @@ function TeamMemberForm({
     toggleTeamMemberForm();
     setEmployeeNumber('');
     setCurrentClient('');
+  }
+
+  const handleCancel = event => {
+    event.preventDefault();
+    resetFormStates();
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    setAddress('');
-    setBio('');
-    setEmailAddress('');
-    setEmployeeFunction('');
-    setFirstName('');
-    setLastName('');
-    setLocality('');
-    setPostalCode('');
-    setSocialProfileOne('');
-    setSocialProfileTwo('');
-    setStartingDate('');
-    setEmployeeNumber('');
-    setCurrentClient('');
+    resetFormStates();
 
     createTeamMember({
       address,
@@ -96,9 +86,7 @@ function TeamMemberForm({
   return (
     <div
       className={`${styles.teamMemberForm} ${
-        isTeamMemberFormVisible
-          ? styles.teamMemberForm
-          : styles.teamMemberFormHide
+        isTeamMemberFormVisible ? '' : styles.teamMemberFormHide
       }`}
     >
       <div>
@@ -130,12 +118,11 @@ function TeamMemberForm({
             <label className={styles.labelFirstName} htmlFor="firstName">
               First Name
               <input
-                className={`${styles.inputFirstNameValid} ${
+                className={`${styles.inputFirstName} ${
                   validity.firstName === false
                     ? styles.inputFirstNameInvalid
-                    : styles.inputFirstNameValid
+                    : ''
                 }`}
-                id="firstName"
                 maxLength="35"
                 minLength="2"
                 name="firstName"
@@ -148,12 +135,9 @@ function TeamMemberForm({
             <label className={styles.labelLastName} htmlFor="lastName">
               Last Name
               <input
-                className={`${styles.inputLastNameValid} ${
-                  validity.lastName === false
-                    ? styles.inputLastNameInvalid
-                    : styles.inputLastNameValid
+                className={`${styles.inputLastName} ${
+                  validity.lastName === false ? styles.inputLastNameInvalid : ''
                 }`}
-                id="lastName"
                 maxLength="35"
                 minLength="2"
                 name="lastName"
@@ -167,12 +151,11 @@ function TeamMemberForm({
           <label className={styles.labelEmailAddress} htmlFor="emailAddress">
             E-mail Address
             <input
-              className={`${styles.inputEmailAddressValid} ${
+              className={`${styles.inputEmailAddress} ${
                 validity.emailAddress === false
                   ? styles.inputEmailAddressInvalid
-                  : styles.inputEmailAddressNameValid
+                  : ''
               }`}
-              id="emailAddress"
               maxLength="35"
               minLength="2"
               name="emailAddress"
@@ -185,12 +168,9 @@ function TeamMemberForm({
           <label className={styles.labelBio} htmlFor="bio">
             Bio
             <input
-              className={`${styles.inputBioValid} ${
-                validity.bio === false
-                  ? styles.inputBioInvalid
-                  : styles.inputBioValid
+              className={`${styles.inputBio} ${
+                validity.bio === false ? styles.inputBioInvalid : ''
               }`}
-              id="bio"
               maxLength="35"
               minLength="2"
               name="bio"
@@ -205,12 +185,9 @@ function TeamMemberForm({
           <label className={styles.labelAddress} htmlFor="address">
             Address
             <input
-              className={`${styles.inputAddressValid} ${
-                validity.address === false
-                  ? styles.inputAddressInvalid
-                  : styles.inputAddressValid
+              className={`${styles.inputAddress} ${
+                validity.address === false ? styles.inputAddressInvalid : ''
               }`}
-              id="address"
               maxLength="35"
               minLength="2"
               name="address"
@@ -222,14 +199,13 @@ function TeamMemberForm({
           </label>
           <div className={styles.localityPostalCodeInputs}>
             <label className={styles.labelPostalCode} htmlFor="postalCode">
-              ZIP code
+              Postal code
               <input
-                className={`${styles.inputPostalCodeValid} ${
+                className={`${styles.inputPostalCode} ${
                   validity.postalCode === false
                     ? styles.inputPostalCodeInvalid
-                    : styles.inputPostalCodeValid
+                    : ''
                 }`}
-                id="postalCode"
                 maxLength="35"
                 minLength="2"
                 name="postalCode"
@@ -242,12 +218,9 @@ function TeamMemberForm({
             <label className={styles.labelLocality} htmlFor="locality">
               City
               <input
-                className={`${styles.inputLocalityValid} ${
-                  validity.locality === false
-                    ? styles.inputLocalityInvalid
-                    : styles.inputLocalityValid
+                className={`${styles.inputLocality} ${
+                  validity.locality === false ? styles.inputLocalityInvalid : ''
                 }`}
-                id="locality"
                 maxLength="35"
                 minLength="2"
                 name="locality"
@@ -264,12 +237,11 @@ function TeamMemberForm({
           >
             Social Profiles
             <input
-              className={`${styles.inputSocialProfileOneValid} ${
+              className={`${styles.inputSocialProfileOne} ${
                 validity.socialProfileOne === false
                   ? styles.inputSocialProfileOneInvalid
-                  : styles.inputSocialProfileOneValid
+                  : ''
               }`}
-              id="socialProfileOne"
               maxLength="35"
               minLength="2"
               name="socialProfileOne"
@@ -279,12 +251,11 @@ function TeamMemberForm({
               value={socialProfileOne}
             />
             <input
-              className={`${styles.inputSocialProfileTwoValid} ${
+              className={`${styles.inputSocialProfileTwo} ${
                 validity.socialProfileTwo === false
                   ? styles.inputSocialProfileTwoInvalid
-                  : styles.inputSocialProfileTwoValid
+                  : ''
               }`}
-              id="socialProfileTwo"
               maxLength="35"
               minLength="2"
               name="socialProfileTwo"

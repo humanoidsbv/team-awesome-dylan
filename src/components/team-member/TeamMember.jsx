@@ -69,9 +69,7 @@ const TeamMember = ({
       >
         <div className={styles.extraInfoHeader}>
           <span className={styles.extraInfoHeaderText}>
-            Detailed information about 
-{' '}
-{firstName}
+            {`Detailed information about ${firstName}`}
           </span>
         </div>
         <div className={styles.extraClientInfo}>
