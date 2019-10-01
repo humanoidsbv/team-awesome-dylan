@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './Client.module.css';
 
-const TeamMember = () => {
+const Client = () => {
   return <></>;
 };
 
-export default TeamMember;
+export default Client;
