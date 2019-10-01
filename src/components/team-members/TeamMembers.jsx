@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './TeamMembers.module.css';
@@ -6,6 +6,14 @@ import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
 
 function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
+  const [isTeamMemberFormVisible, setTeamMemberFormVisibility] = useState(
+    false
+  );
+
+  const toggleTeamMemberForm = () => {
+    setTeamMemberFormVisibility(!isTeamMemberFormVisible);
+  };
+
   useEffect(() => {
     fetchTeamMembers();
   }, []);
@@ -14,10 +22,21 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
     <div>
       <TeamMemberForm
         createTeamMember={newTeamMember => createTeamMember(newTeamMember)}
+        toggleTeamMemberForm={toggleTeamMemberForm}
+        isTeamMemberFormVisible={isTeamMemberFormVisible}
       />
       <div className={styles.headerTeamMembers}>
         <span className={styles.headerTeamMembersText}> All Humanoids </span>
-        <button type="button" className={styles.newHumanoidButtonDesktop}>
+        <button
+          type="button"
+          className={`${styles.newHumanoidButtonDesktop} ${
+            isTeamMemberFormVisible
+              ? styles.newHumanoidButtonDesktopGrey
+              : styles.newHumanoidButtonDesktop
+          }`}
+          onClick={toggleTeamMemberForm}
+          disabled={isTeamMemberFormVisible}
+        >
           + New Humanoid
         </button>
         <select type="button" className={styles.sortTeamMembersSelector}>
@@ -25,7 +44,16 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
         </select>
       </div>
       <div className={styles.teamMembersContainer}>
-        <button type="button" className={styles.newHumanoidButton}>
+        <button
+          type="button"
+          className={`${styles.newHumanoidButton} ${
+            isTeamMemberFormVisible
+              ? styles.newHumanoidButtonGrey
+              : styles.newHumanoidButton
+          }`}
+          onClick={toggleTeamMemberForm}
+          disabled={isTeamMemberFormVisible}
+        >
           + New Humanoid
         </button>
         {teamMembers.map(

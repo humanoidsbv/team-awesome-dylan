@@ -38,7 +38,7 @@
   font-size: 14px;
   height: 36px;
   margin-left: 10px;
-  width: 120px;
+  width: 156px;
 }
 
 .newHumanoidButtonDesktop {
@@ -54,7 +54,12 @@
   width: 156px;
 }
 
-
+.newHumanoidButtonDesktop:disabled {
+  cursor: auto;
+}
+.newHumanoidButtonDesktopGrey {
+  background-color: #acacac;
+}
 
 .newHumanoidButton {
   background-color: #35ac45;
@@ -67,8 +72,16 @@
   height: 36px;
   justify-content: center;
   margin-bottom: 15px;
-  margin-top: 70px;
+  margin-top: 10px;
   width: 100%;
+}
+
+.newHumanoidButton:disabled {
+  cursor: auto;
+}
+
+.newHumanoidButtonGrey {
+  background-color: #acacac;
 }
 
 @media (min-width: 901px) {

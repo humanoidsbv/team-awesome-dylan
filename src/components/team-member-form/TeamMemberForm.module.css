@@ -1,10 +1,24 @@
+.teamMemberForm {
+  display: block;
+}
+
+.teamMemberFormHide {
+  display: none;
+}
+
 .headerTeamMemberForm {
   align-content: center;
   display: flex;
   height: 55px;
 }
+@media (max-width: 901px) {
+  .headerTeamMemberForm {
+    flex-direction: column;
+    height: 100px;
+  }
+}
 
-.saveButtonDesktop {
+.saveButton {
   background-color: #35ac45;
   border-radius: 4px;
   border: solid 1px #249533;
@@ -19,16 +33,15 @@
   width: 156px;
 }
 
-.headerTeamMemberFormText {
-  color: #354052;
-  display: flex;
-  font-family: proximanova;
-  font-size: 24px;
-  font-weight: regular;
-  margin-right: auto;
+@media (max-width: 901px) {
+  .saveButton {
+    margin-left: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
-.cancelButtonDesktop {
+.cancelButton {
   background-color: #f5f7f9;
   border-radius: 4px;
   border: solid 1px #ced0da;
@@ -40,6 +53,29 @@
   height: 36px;
   justify-content: center;
   width: 156px;
+}
+
+@media (max-width: 901px) {
+  .cancelButton {
+    margin-left: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.headerTeamMemberFormText {
+  color: #354052;
+  display: flex;
+  font-family: proximanova;
+  font-size: 24px;
+  font-weight: regular;
+  margin-right: auto;
+}
+
+@media (max-width: 901px) {
+  .headerTeamMemberFormText {
+    display:none;
+  }
 }
 
 .personalDetailsTab {
@@ -57,7 +93,7 @@
   height: 48px;
   justify-content: center;
   width: 200px;
-  z-index: 1000;
+  z-index: 900;
   position: relative;
   top: 1px;
   border-bottom-left-radius: 0px;
@@ -75,11 +111,25 @@
   width: 100%;
 }
 
+@media (max-width: 901px) {
+  .form {
+    flex-direction: column;
+  }
+}
+
 .formColumnOne {
   border-right: solid 1px #ced0da;
   margin: 44px 0px 44px 44px;
   padding-right: 44px;
   width: 100%;
+}
+
+@media (max-width: 901px) {
+  .formColumnOne {
+    border-right: solid 1px #ffffff;
+    margin: 20px 0px 0px 20px;
+    padding-right: 0px;
+  }
 }
 
 .nameInputs {
@@ -101,6 +151,13 @@
   font-size: 12px;
   font-weight: bold;
   width: calc(50% - 4px);
+}
+
+@media (max-width: 901px) {
+  .labelFirstName {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
 }
 
 .inputFirstNameValid {
@@ -136,6 +193,7 @@
   .labelLastName {
     margin-left: 0px;
     margin-top: 19px;
+    width: calc(100% - 35px);
   }
 }
 
@@ -167,6 +225,13 @@
   margin-top: 19px;
 }
 
+@media (max-width: 901px) {
+  .labelEmailAddress {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
+}
+
 .inputEmailAddressValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
@@ -196,6 +261,13 @@
   margin-top: 27px;
 }
 
+@media (max-width: 901px) {
+  .labelBio {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
+}
+
 .inputBioValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
@@ -221,6 +293,13 @@
   width: 100%;
 }
 
+@media (max-width: 901px) {
+  .formColumnTwo {
+    margin: 20px 0px 20px 20px;
+    padding-right: 20px;
+  }
+}
+
 .labelAddress {
   color: #68768c;
   display: flex;
@@ -228,6 +307,13 @@
   font-family: proximanova;
   font-size: 12px;
   font-weight: bold;
+}
+
+@media (max-width: 901px) {
+  .labelAddress {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
 }
 
 .inputAddressValid {
@@ -271,6 +357,14 @@
   width: calc(50% - 4px);
 }
 
+@media (max-width: 901px) {
+  .labelPostalCode {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
+}
+
+
 .inputPostalCodeValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
@@ -304,6 +398,7 @@
 @media (max-width: 901px) {
   .labelLocality {
     margin-left: 0px;
+    width: calc(100% - 35px);
   }
 }
 
@@ -333,6 +428,12 @@
   font-size: 12px;
   font-weight: bold;
   margin-top: 27px;
+}
+@media (max-width: 901px) {
+  .labelSocialProfiles {
+    margin-left: 0px;
+    width: calc(100% - 35px);
+  }
 }
 
 .inputSocialProfileOneValid {

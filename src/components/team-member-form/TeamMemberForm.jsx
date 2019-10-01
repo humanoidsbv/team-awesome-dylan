@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './TeamMemberForm.module.css';
 
-function TeamMemberForm({ createTeamMember }) {
+function TeamMemberForm({
+  createTeamMember,
+  toggleTeamMemberForm,
+  isTeamMemberFormVisible
+}) {
   const today = new Date()
     .toISOString()
     .split('T')
@@ -14,6 +18,7 @@ function TeamMemberForm({ createTeamMember }) {
   const [currentEmployer, setCurrentEmployer] = useState('To be confirmed');
   const [emailAddress, setEmailAddress] = useState('');
   const [employeeNumber, setEmployeeNumber] = useState('To be confirmed');
+  const [employeeFunction, setEmployeeFunction] = useState('To be confirmed');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [locality, setLocality] = useState('');
@@ -40,11 +45,16 @@ function TeamMemberForm({ createTeamMember }) {
     setBio('');
     setEmailAddress('');
     setFirstName('');
+    setEmployeeFunction('');
     setLastName('');
     setLocality('');
     setPostalCode('');
     setSocialProfileOne('');
     setSocialProfileTwo('');
+    setStartingDate('');
+    toggleTeamMemberForm();
+    setEmployeeNumber('');
+    setCurrentEmployer('');
   };
 
   const handleSubmit = event => {
@@ -53,12 +63,16 @@ function TeamMemberForm({ createTeamMember }) {
     setAddress('');
     setBio('');
     setEmailAddress('');
+    setEmployeeFunction('');
     setFirstName('');
     setLastName('');
     setLocality('');
     setPostalCode('');
     setSocialProfileOne('');
     setSocialProfileTwo('');
+    setStartingDate('');
+    setEmployeeNumber('');
+    setCurrentEmployer('');
 
     createTeamMember({
       address,
@@ -66,6 +80,7 @@ function TeamMemberForm({ createTeamMember }) {
       currentEmployer,
       emailAddress,
       employeeNumber,
+      employeeFunction,
       firstName,
       id: Math.random(),
       lastName,
@@ -75,10 +90,17 @@ function TeamMemberForm({ createTeamMember }) {
       socialProfileTwo,
       startingDate
     });
+    toggleTeamMemberForm();
   };
 
   return (
-    <div>
+    <div
+      className={`${styles.teamMemberForm} ${
+        isTeamMemberFormVisible
+          ? styles.teamMemberForm
+          : styles.teamMemberFormHide
+      }`}
+    >
       <div>
         <div className={styles.headerTeamMemberForm}>
           <span className={styles.headerTeamMemberFormText}>
@@ -86,14 +108,14 @@ function TeamMemberForm({ createTeamMember }) {
           </span>
           <button
             type="button"
-            className={styles.cancelButtonDesktop}
+            className={styles.cancelButton}
             onClick={handleCancel}
           >
             Cancel
           </button>
           <button
             type="button"
-            className={styles.saveButtonDesktop}
+            className={styles.saveButton}
             onClick={handleSubmit}
             disabled={validity.form !== true}
           >
@@ -279,7 +301,9 @@ function TeamMemberForm({ createTeamMember }) {
 }
 
 TeamMemberForm.propTypes = {
-  createTeamMember: PropTypes.func.isRequired
+  createTeamMember: PropTypes.func.isRequired,
+  toggleTeamMemberForm: PropTypes.func.isRequired,
+  isTeamMemberFormVisible: PropTypes.bool.isRequired
 };
 
 export default TeamMemberForm;
