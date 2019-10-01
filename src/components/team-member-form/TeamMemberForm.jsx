@@ -38,7 +38,7 @@ function TeamMemberForm({
     });
   };
 
-  function resetFormStates() {
+  const resetFormStates = () => {
     setAddress('');
     setBio('');
     setEmailAddress('');
@@ -50,14 +50,14 @@ function TeamMemberForm({
     setSocialProfileOne('');
     setSocialProfileTwo('');
     setStartingDate('');
-    toggleTeamMemberForm();
     setEmployeeNumber('');
     setCurrentClient('');
-  }
+  };
 
   const handleCancel = event => {
     event.preventDefault();
     resetFormStates();
+    toggleTeamMemberForm();
   };
 
   const handleSubmit = event => {
@@ -86,7 +86,7 @@ function TeamMemberForm({
   return (
     <div
       className={`${styles.teamMemberForm} ${
-        isTeamMemberFormVisible ? '' : styles.teamMemberFormHide
+        !isTeamMemberFormVisible ? styles.teamMemberFormHide : ''
       }`}
     >
       <div>
