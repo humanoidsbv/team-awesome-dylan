@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import styles from './Navigation.module.css';
@@ -9,12 +10,16 @@ const Navigation = ({ isMenuVisible }) => (
       isMenuVisible ? styles.navigationVisible : ''
     }`}
   >
-    <a className={`${styles.item} ${styles.itemActive}`} href="/">
-      Timesheets
-    </a>
-    <a className={styles.item} href="/">
+    <Link className={styles.item} activeClassName={styles.itemActive} to="/">
+      Time entries
+    </Link>
+    <Link
+      className={styles.item}
+      activeClassName={styles.itemActive}
+      to="/team-members"
+    >
       Team members
-    </a>
+    </Link>
     <a className={styles.item} href="/">
       Projects
     </a>

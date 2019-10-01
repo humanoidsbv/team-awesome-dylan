@@ -1,0 +1,156 @@
+
+.teamMemberEntry {
+  align-items:flex-start;
+  border-radius: 4px;
+  border: solid 1px #e6eaee;
+  border-left:  4px solid #4f88ef;
+  height: 82px;
+  margin-bottom: 15px;
+  transition: .3s ease-in-out;
+}
+.teamMemberEntryActive {
+  align-items:flex-start;
+  border-radius: 4px;
+  border: solid 1px #e6eaee;
+  border-left:  4px solid #4f88ef;
+  height: 250px;
+  margin-bottom: 15px;
+  transition: .3s ease-in-out;
+}
+
+.teamMemberBasicInfo {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.teamMemberAvatar {
+  border-radius: 50%;
+  height: 50px;
+  padding: 16px 25px 16px 20px;
+  width: 50px;
+}
+
+.teamMemberTitle {
+  color: #354052;
+  font-family: proximanova;
+  margin-right: auto;
+  
+}
+
+.teamMemberName {
+  color: #354052;
+  display: flex;
+  font-family: proximanova;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+  text-align: right;
+}
+
+.teamMemberFunction {
+  color: #7f8fa4;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menuDownIcon {
+  background-color: transparent;
+  cursor: pointer;
+  fill: #ced0da;
+  margin-left: auto;
+  padding: 10px 25px 10px 10px;
+}
+@media (min-width: 901px) {
+  .menuDownIcon {
+    margin-left: 40px;
+  }
+}
+
+.extraInfoDesktop {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .extraInfoDesktop {
+    display: flex;
+  }
+}
+
+.extraInfo {
+  display: none;
+}
+
+.extraInfoActive {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 901px) {
+  .extraInfoActive {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.extraInfoHeader {
+  background-color: #f5f8fa;
+  border-bottom: solid 1px #e6eaee;
+  border-top: solid 1px #e6eaee;
+  display: flex;
+  height: 36px;
+}
+
+@media (min-width: 901px) {
+  .extraInfoHeader {
+    display: none;
+  }
+}
+
+.extraInfoHeaderText {
+  background-color: #f5f8fa;
+  color: #7f8fa4;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0px 9px 30px;
+}
+
+.extraInfoMainDesktop {
+  color: #354052;
+  display: flex;
+  font-family: proximanova;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 21px;
+}
+
+.extraInfoSubDesktop {
+  color: #7f8fa4;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 21px;
+}
+
+.extraInfoMain {
+  color: #354052;
+  display: flex;
+  font-family: proximanova;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 17px;
+  padding-top: 10px;
+}
+
+.extraInfoSub {
+  color: #7f8fa4;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 17px;
+  padding-top: 10px;
+}

@@ -2,6 +2,7 @@
   font-family: 'proximanova';
   src: url('/fonts/proxima-nova/proximanova-regular-webfont.woff')
     format('woff');
+  font-weight: regular;
 }
 
 @font-face {
