@@ -53,9 +53,8 @@ function TimeEntryForm({
 
   return (
     <form
-      className={`${styles.timeEntryForm} ${
-        !isTimeEntryFormVisible ? styles.timeEntryFormHide : ''
-      }`}
+      className={`${styles.timeEntryForm} ${!isTimeEntryFormVisible &&
+        styles.timeEntryFormHide}`}
       onSubmit={handleSubmit}
       ref={formRef}
     >

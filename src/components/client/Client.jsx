@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import styles from './Client.module.css';
-import clientAvatar from '../../../static/pictures/picture-tnt.jpg';
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
+import clientAvatar from '../../../static/pictures/picture-tnt.jpg';
+import styles from './Client.module.css';
 
-const Client = () => {
+const Client = ({ clientName }) => {
   const [isClientActive, setClientActivity] = useState(false);
 
   const toggleClientActivity = () => {
@@ -13,14 +14,12 @@ const Client = () => {
 
   return (
     <div
-      className={`${
-        isClientActive ? styles.clientEntryActive : styles.clientEntry
-      }`}
+      className={isClientActive ? styles.clientEntryActive : styles.clientEntry}
     >
       <div className={styles.clientBasicInfo}>
         <img className={styles.clientAvatar} src={clientAvatar} alt="Logo" />
         <div className={styles.clientTitle}>
-          <span className={styles.clientName}>Client</span>
+          <span className={styles.clientName}>{clientName}</span>
         </div>
         <div className={styles.extraInfoDesktop}>
           <div className={styles.clientNumber}>
@@ -48,7 +47,7 @@ const Client = () => {
       >
         <div className={styles.extraInfoHeader}>
           <span className={styles.extraInfoHeaderText}>
-            Detailed information about client
+            {`Detailed information about ${clientName}`}
           </span>
         </div>
         <div className={styles.extraClientInfo}>
@@ -62,6 +61,10 @@ const Client = () => {
       </div>
     </div>
   );
+};
+
+Client.propTypes = {
+  clientName: PropTypes.string.isRequired
 };
 
 export default Client;

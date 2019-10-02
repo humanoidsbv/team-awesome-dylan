@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Clients.module.css';
 import Client from '../client/Client';
 import ClientForm from '../client-form/ClientForm';
 
-const Clients = () => {
+const Clients = ({ clients, createClient, fetchClients }) => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
 
   const toggleClientForm = () => {
     setClientFormVisibility(!isClientFormVisible);
   };
 
+  useEffect(() => {
+    fetchClients();
+  }, []);
+
   return (
     <>
       <ClientForm
+        createClient={newClient => createClient(newClient)}
         isClientFormVisible={isClientFormVisible}
         toggleClientForm={toggleClientForm}
       />
@@ -33,9 +39,27 @@ const Clients = () => {
           <option value="">Sort by:</option>
         </select>
       </div>
-      <Client />
+      <div className={styles.clientsContainer}>
+        {clients.map(({ clientName }) => (
+          <Client clientName={clientName} />
+        ))}
+      </div>
     </>
   );
+};
+
+Clients.propTypes = {
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      clientName: PropTypes.string
+    })
+  ),
+  createClient: PropTypes.func.isRequired,
+  fetchClients: PropTypes.func.isRequired
+};
+
+Clients.defaultProps = {
+  clients: []
 };
 
 export default Clients;

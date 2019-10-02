@@ -23,11 +23,11 @@ const TeamMember = ({
 
   return (
     <div
-      className={`${
+      className={
         isTeamMemberActive
           ? styles.teamMemberEntryActive
           : styles.teamMemberEntry
-      }`}
+      }
     >
       <div className={styles.teamMemberBasicInfo}>
         <img
