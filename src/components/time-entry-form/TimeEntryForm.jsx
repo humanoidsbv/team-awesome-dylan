@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import IconClose from '../../assets/icons/icon-close.svg';
 import styles from './TimeEntryForm.module.css';
 
-function TimeEntryForm({ createTimeEntry }) {
+function TimeEntryForm({
+  createTimeEntry,
+  toggleTimeEntryForm,
+  isTimeEntryFormVisible
+}) {
   const today = new Date()
     .toISOString()
     .split('T')
@@ -27,6 +31,11 @@ function TimeEntryForm({ createTimeEntry }) {
     });
   };
 
+  const handleCancel = event => {
+    event.preventDefault();
+    toggleTimeEntryForm();
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -39,15 +48,18 @@ function TimeEntryForm({ createTimeEntry }) {
       startTimestamp: new Date(`${date}T${startTime}`).toISOString(),
       stopTimestamp: new Date(`${date}T${stopTime}`).toISOString()
     });
+    toggleTimeEntryForm();
   };
 
   return (
     <form
-      className={styles.timeEntryForm}
+      className={`${styles.timeEntryForm} ${
+        !isTimeEntryFormVisible ? styles.timeEntryFormHide : ''
+      }`}
       onSubmit={handleSubmit}
       ref={formRef}
     >
-      <IconClose className={styles.iconClose} />
+      <IconClose className={styles.iconClose} onClick={handleCancel} />
       <label className={styles.labelClient} htmlFor="client">
         CLIENT
         <input
@@ -137,7 +149,9 @@ function TimeEntryForm({ createTimeEntry }) {
 }
 
 TimeEntryForm.propTypes = {
-  createTimeEntry: PropTypes.func.isRequired
+  createTimeEntry: PropTypes.func.isRequired,
+  toggleTimeEntryForm: PropTypes.func.isRequired,
+  isTimeEntryFormVisible: PropTypes.bool.isRequired
 };
 
 export default TimeEntryForm;

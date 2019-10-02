@@ -29,3 +29,27 @@
     display: none;
   }
 }
+
+.NewTimeEntryButtonGrey {
+  background-color: #acacac;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.NewTimeEntryButtonGrey:disabled {
+  cursor: auto;
+}
+
+@media (min-width: 901px) {
+  .NewTimeEntryButtonGrey {
+    display: none;
+  }
+}

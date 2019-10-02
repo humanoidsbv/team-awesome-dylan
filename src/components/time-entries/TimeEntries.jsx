@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './TimeEntries.module.css';
@@ -12,17 +12,32 @@ function TimeEntries({
   fetchTimeEntries,
   timeEntries
 }) {
+  const [isTimeEntryFormVisible, setTimeEntryFormVisibility] = useState(false);
+
+  const toggleTimeEntryForm = () => {
+    setTimeEntryFormVisibility(!isTimeEntryFormVisible);
+  };
+
   useEffect(() => {
     fetchTimeEntries();
   }, []);
 
   return (
     <div className={styles.timeEntriesContainer}>
-      <button type="button" className={styles.NewTimeEntryButton}>
+      <button
+        type="button"
+        className={`${styles.NewTimeEntryButton} ${
+          isTimeEntryFormVisible ? styles.NewTimeEntryButtonGrey : ''
+        }`}
+        onClick={toggleTimeEntryForm}
+        disabled={isTimeEntryFormVisible}
+      >
         + New Time Entry
       </button>
       <TimeEntryForm
         createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}
+        isTimeEntryFormVisible={isTimeEntryFormVisible}
+        toggleTimeEntryForm={toggleTimeEntryForm}
       />
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {

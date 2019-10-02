@@ -1,5 +1,6 @@
 .teamMemberForm {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .teamMemberFormHide {
@@ -10,7 +11,9 @@
   align-content: center;
   display: flex;
   height: 55px;
+
 }
+
 @media (max-width: 901px) {
   .headerTeamMemberForm {
     flex-direction: column;
@@ -39,6 +42,12 @@
     margin-left: 0;
     width: 100%;
   }
+}
+
+.saveButton[disabled] {
+  background-color:#e6eaee;
+  color: #68768c;
+  border-color: #e6eaee;
 }
 
 .cancelButton {
@@ -126,8 +135,7 @@
 
 @media (max-width: 901px) {
   .formColumnOne {
-    border-right: solid 1px #ffffff;
-    margin: 20px 0 0 20px;
+    margin: 0;
     padding-right: 0;
   }
 }
@@ -155,9 +163,10 @@
 
 @media (max-width: 901px) {
   .labelFirstName {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputFirstName {
@@ -191,10 +200,10 @@
 
 @media (max-width: 901px) {
   .labelLastName {
-    margin-left: 0;
-    margin-top: 19px;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputLastName {
@@ -227,9 +236,10 @@
 
 @media (max-width: 901px) {
   .labelEmailAddress {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputEmailAddress {
@@ -263,9 +273,10 @@
 
 @media (max-width: 901px) {
   .labelBio {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputBio {
@@ -295,8 +306,9 @@
 
 @media (max-width: 901px) {
   .formColumnTwo {
-    margin: 20px 0 20px 20px;
-    padding-right: 20px;
+    margin: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -311,9 +323,10 @@
 
 @media (max-width: 901px) {
   .labelAddress {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputAddress {
@@ -359,9 +372,10 @@
 
 @media (max-width: 901px) {
   .labelPostalCode {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 
@@ -397,9 +411,10 @@
 
 @media (max-width: 901px) {
   .labelLocality {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputLocality {
@@ -431,9 +446,10 @@
 }
 @media (max-width: 901px) {
   .labelSocialProfiles {
-    margin-left: 0;
-    width: calc(100% - 35px);
-  }
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+}
 }
 
 .inputSocialProfileOne {

@@ -24,13 +24,13 @@ function ClientForm({ toggleClientForm, isClientFormVisible }) {
   };
 
   const resetFormStates = () => {
-    setClientName('');
     setAddress('');
     setBranch('');
+    setClientName('');
     setLocality('');
+    setPlaceholderOne('');
+    setPlaceholderTwo('');
     setPostalCode('');
-    setPlaceholderOne('To be confirmed');
-    setPlaceholderTwo('To be confirmed');
   };
 
   const handleCancel = event => {
@@ -62,25 +62,23 @@ function ClientForm({ toggleClientForm, isClientFormVisible }) {
         !isClientFormVisible ? styles.clientFormHide : ''
       }`}
     >
-      <div>
-        <div className={styles.headerClientForm}>
-          <span className={styles.headerClientFormText}>Add new client</span>
-          <button
-            type="button"
-            className={styles.cancelButton}
-            onClick={handleCancel}
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            className={styles.saveButton}
-            onClick={handleSubmit}
-            disabled={validity.form !== true}
-          >
-            Save
-          </button>
-        </div>
+      <div className={styles.headerClientForm}>
+        <span className={styles.headerClientFormText}>Add new client</span>
+        <button
+          className={styles.cancelButton}
+          onClick={handleCancel}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className={styles.saveButton}
+          disabled={validity.form !== true}
+          onClick={handleSubmit}
+          type="button"
+        >
+          Save
+        </button>
       </div>
       <div className={styles.personalDetailsTab}>Client details</div>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
@@ -213,8 +211,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible }) {
 }
 
 ClientForm.propTypes = {
-  toggleClientForm: PropTypes.func.isRequired,
-  isClientFormVisible: PropTypes.bool.isRequired
+  isClientFormVisible: PropTypes.bool.isRequired,
+  toggleClientForm: PropTypes.func.isRequired
 };
 
 export default ClientForm;

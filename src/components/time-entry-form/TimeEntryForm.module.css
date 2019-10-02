@@ -20,6 +20,16 @@
   }
 }
 
+.timeEntryFormHide {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .timeEntryFormHide {
+  display: flex;
+  }
+}
+
 .labelClient {
   color: #68768c;
   display: block;
