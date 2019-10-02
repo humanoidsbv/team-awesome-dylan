@@ -1,9 +1,9 @@
 .timeEntry {
   align-content: center;
   align-items: center;
-  border-left:  4px solid #4f88ef;
   border-radius: 4px;
   border: solid 1px #e6eaee;
+  border-left:  4px solid #4f88ef;
   display:flex;
   font-family: proximanova;
   justify-content: flex-start;
