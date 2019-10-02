@@ -25,12 +25,12 @@ function TimeEntries({
   return (
     <div className={styles.timeEntriesContainer}>
       <button
-        type="button"
         className={`${styles.NewTimeEntryButton} ${
           isTimeEntryFormVisible ? styles.NewTimeEntryButtonGrey : ''
         }`}
-        onClick={toggleTimeEntryForm}
         disabled={isTimeEntryFormVisible}
+        onClick={toggleTimeEntryForm}
+        type="button"
       >
         + New Time Entry
       </button>

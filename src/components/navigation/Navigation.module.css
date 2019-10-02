@@ -17,6 +17,7 @@
 
 .item {
   color: #ffffff;
+  cursor: pointer;
   font-family: proximanova;
   font-size: 14px;
   margin-left: 12px;
@@ -24,7 +25,6 @@
   padding: 4px 8px;
   text-align: start;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .itemActive {
