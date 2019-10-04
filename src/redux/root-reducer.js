@@ -5,7 +5,7 @@ import teamMembers from './team-members';
 import clients from './clients';
 
 export default combineReducers({
-  timeEntries,
+  clients,
   teamMembers,
-  clients
+  timeEntries
 });

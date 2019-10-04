@@ -200,9 +200,9 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
 }
 
 ClientForm.propTypes = {
+  createClient: PropTypes.func.isRequired,
   isClientFormVisible: PropTypes.bool.isRequired,
-  toggleClientForm: PropTypes.func.isRequired,
-  createClient: PropTypes.func.isRequired
+  toggleClientForm: PropTypes.func.isRequired
 };
 
 export default ClientForm;
