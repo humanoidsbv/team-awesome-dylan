@@ -5,9 +5,10 @@ import IconClose from '../../assets/icons/icon-close.svg';
 import styles from './TimeEntryForm.module.css';
 
 function TimeEntryForm({
+  clients,
   createTimeEntry,
-  toggleTimeEntryForm,
-  isTimeEntryFormVisible
+  isTimeEntryFormVisible,
+  toggleTimeEntryForm
 }) {
   const today = new Date()
     .toISOString()
@@ -61,22 +62,22 @@ function TimeEntryForm({
       <IconClose className={styles.iconClose} onClick={handleCancel} />
       <label className={styles.labelClient} htmlFor="client">
         CLIENT
-        <input
-          className={`${styles.inputClientValid} ${
-            validity.client === false
-              ? styles.inputClientInvalid
-              : styles.inputClientValid
-          }`}
+        <select
+          className={styles.inputClient}
           id="client"
-          maxLength="35"
-          minLength="2"
           name="client"
           onBlur={handleBlur}
           onChange={({ target }) => setClient(target.value)}
-          placeholder="--enter a client--"
           required
           value={client}
-        />
+        >
+          <option className={styles.inputClient} disabled value="">
+            --select a client--
+          </option>
+          {clients.map(({ name, id }) => (
+            <option value={id}>{name}</option>
+          ))}
+        </select>
       </label>
       <label className={styles.labelActivity} htmlFor="activity">
         ACTIVITY
@@ -148,9 +149,18 @@ function TimeEntryForm({
 }
 
 TimeEntryForm.propTypes = {
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      clientName: PropTypes.string
+    })
+  ),
   createTimeEntry: PropTypes.func.isRequired,
-  toggleTimeEntryForm: PropTypes.func.isRequired,
-  isTimeEntryFormVisible: PropTypes.bool.isRequired
+  isTimeEntryFormVisible: PropTypes.bool.isRequired,
+  toggleTimeEntryForm: PropTypes.func.isRequired
+};
+
+TimeEntryForm.defaultProps = {
+  clients: []
 };
 
 export default TimeEntryForm;

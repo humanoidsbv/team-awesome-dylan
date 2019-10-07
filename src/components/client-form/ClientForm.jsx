@@ -71,7 +71,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
         </button>
         <button
           className={styles.saveButton}
-          disabled={validity.form}
+          disabled={validity.form !== true}
           onClick={handleSubmit}
           type="button"
         >

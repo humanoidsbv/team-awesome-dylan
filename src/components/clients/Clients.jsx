@@ -40,8 +40,8 @@ const Clients = ({ clients, createClient, fetchClients }) => {
         </select>
       </div>
       <div className={styles.clientsContainer}>
-        {clients.map(({ clientName }) => (
-          <Client clientName={clientName} />
+        {clients.map(({ name }) => (
+          <Client clientName={name} />
         ))}
       </div>
     </>

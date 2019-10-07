@@ -9,11 +9,12 @@ import {
   fetchTimeEntriesRequest,
   timeEntriesItemsSelector
 } from '../../redux/time-entries';
-import { fetchClientsRequest } from '../../redux/clients';
+import { clientsItemsSelector, fetchClientsRequest } from '../../redux/clients';
 
 const TimeEntriesContainer = props => <TimeEntries {...props} />;
 
 const mapStateToProps = state => ({
+  clients: clientsItemsSelector(state),
   timeEntries: timeEntriesItemsSelector(state)
 });
 

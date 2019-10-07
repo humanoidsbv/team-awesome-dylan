@@ -34,6 +34,12 @@
   width: 156px;
 }
 
+.saveButton[disabled] {
+  background-color:#e6eaee;
+  border-color: #e6eaee;
+  color: #68768c;
+}
+
 @media (max-width: 901px) {
   .saveButton {
     margin-bottom: 10px;

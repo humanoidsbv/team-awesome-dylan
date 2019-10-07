@@ -7,6 +7,7 @@ import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
 
 function TimeEntries({
+  clients,
   createTimeEntry,
   deleteTimeEntry,
   fetchClients,
@@ -36,6 +37,7 @@ function TimeEntries({
         + New Time Entry
       </button>
       <TimeEntryForm
+        clients={clients}
         createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}
         isTimeEntryFormVisible={isTimeEntryFormVisible}
         toggleTimeEntryForm={toggleTimeEntryForm}
@@ -74,6 +76,11 @@ TimeEntries.propTypes = {
       startTimestamp: PropTypes.string
     })
   ),
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      clientName: PropTypes.string
+    })
+  ),
   createTimeEntry: PropTypes.func.isRequired,
   deleteTimeEntry: PropTypes.func.isRequired,
   fetchClients: PropTypes.func.isRequired,
@@ -81,6 +88,7 @@ TimeEntries.propTypes = {
 };
 
 TimeEntries.defaultProps = {
+  clients: [],
   timeEntries: []
 };
 

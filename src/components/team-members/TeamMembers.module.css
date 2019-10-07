@@ -43,6 +43,7 @@
 
 .newHumanoidButtonHeader {
   background-color: #35ac45;
+  border: 1px #35ac45;
   border-radius: 4px;
   color: #ffffff;
   cursor: pointer;
@@ -63,6 +64,7 @@
 
 .newHumanoidButton {
   background-color: #35ac45;
+  border: 1px #35ac45;
   border-radius: 4px;
   color: #ffffff;
   cursor: pointer;
