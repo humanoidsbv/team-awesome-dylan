@@ -7,6 +7,11 @@ import ClientForm from '../client-form/ClientForm';
 
 const Clients = ({ clients, createClient, fetchClients }) => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
+  const [clientsSort, setClientsSort] = useState(clients);
+
+  const handleSort = sort => {
+    setClientsSort(clients.filter(client => client.name === sort.value));
+  };
 
   const toggleClientForm = () => {
     setClientFormVisibility(!isClientFormVisible);
@@ -35,8 +40,13 @@ const Clients = ({ clients, createClient, fetchClients }) => {
         >
           + New Client
         </button>
-        <select type="button" className={styles.sortClientsSelector}>
+        <select type="button" className={styles.sortClientsSelector} id="sort">
           <option value="">Sort by:</option>
+          {clients.map(({ name, id }) => (
+            <option value={id} onClick={handleSort}>
+              {name}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.clientsContainer}>

@@ -21,6 +21,7 @@
   height: 36px;
   justify-content: center;
   margin-top: 70px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -51,5 +52,36 @@
 @media (min-width: 901px) {
   .NewTimeEntryButtonGrey {
     display: none;
+  }
+}
+
+.filterClientsSelector {
+  border: solid 1px #ced0da;
+  border-radius: 4px;
+  color:#7f8fa4;
+  cursor: pointer;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  padding-left: 10px;
+  width: 100%;
+}
+
+@media (min-width: 901px) {
+  .filterClientsSelector {
+    align-items: center;
+    border-radius: 4px;
+    border: solid 1px #ced0da;
+    color:#7f8fa4;
+    cursor: pointer;
+    display: flex;
+    font-family: proximanova;
+    font-size: 14px;
+    height: 36px;
+    margin-top: 10px;
+    margin-left: auto;
+    width: 156px;
   }
 }

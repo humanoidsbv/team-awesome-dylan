@@ -30,7 +30,18 @@
 }
 
 .sortClientsSelector {
-  display:none;
+  border: solid 1px #ced0da;
+  border-radius: 4px;
+  color:#7f8fa4;
+  cursor: pointer;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  width: 100%;
 }
 
 @media (min-width: 901px) {

@@ -1,5 +1,5 @@
 .teamMemberForm {
-  display:block;
+  display: block;
 }
 
 .teamMemberFormHide {
@@ -43,7 +43,7 @@
 }
 
 .saveButton[disabled] {
-  background-color:#e6eaee;
+  background-color: #e6eaee;
   border-color: #e6eaee;
   color: #68768c;
 }

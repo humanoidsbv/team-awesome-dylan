@@ -1,9 +1,8 @@
-
 .clientEntry {
-  align-items:flex-start;
+  align-items: flex-start;
   border-radius: 4px;
   border: solid 1px #e6eaee;
-  border-left:  4px solid #4f88ef;
+  border-left: 4px solid #4f88ef;
   height: 82px;
   margin-bottom: 15px;
   transition: .3s ease-in-out;

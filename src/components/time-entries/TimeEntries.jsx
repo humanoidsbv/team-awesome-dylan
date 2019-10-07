@@ -12,6 +12,7 @@ function TimeEntries({
   deleteTimeEntry,
   fetchClients,
   fetchTimeEntries,
+  filterTimeEntriesByClient,
   timeEntries
 }) {
   const [isTimeEntryFormVisible, setTimeEntryFormVisibility] = useState(false);
@@ -24,6 +25,11 @@ function TimeEntries({
     fetchClients();
     fetchTimeEntries();
   }, []);
+
+  const handleChange = event =>
+    filterTimeEntriesByClient(
+      !event.target.value ? null : Number(event.target.value)
+    );
 
   return (
     <div className={styles.timeEntriesContainer}>
@@ -42,6 +48,19 @@ function TimeEntries({
         isTimeEntryFormVisible={isTimeEntryFormVisible}
         toggleTimeEntryForm={toggleTimeEntryForm}
       />
+      <select
+        type="button"
+        className={styles.filterClientsSelector}
+        id="filterSelect"
+        onChange={handleChange}
+      >
+        <option value="">Filter by:</option>
+        {clients.map(({ name, id }) => (
+          <option key={id} value={id}>
+            {name}
+          </option>
+        ))}
+      </select>
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
           const startDate = new Date(startTimestamp).toDateString();
@@ -56,7 +75,7 @@ function TimeEntries({
                 <TimeEntryHeading startTime={startTimestamp} />
               )}
               <TimeEntry
-                client={client}
+                client={client.name}
                 deleteTimeEntry={timeEntryId => deleteTimeEntry(timeEntryId)}
                 id={id}
                 startTime={startTimestamp}
@@ -84,7 +103,8 @@ TimeEntries.propTypes = {
   createTimeEntry: PropTypes.func.isRequired,
   deleteTimeEntry: PropTypes.func.isRequired,
   fetchClients: PropTypes.func.isRequired,
-  fetchTimeEntries: PropTypes.func.isRequired
+  fetchTimeEntries: PropTypes.func.isRequired,
+  filterTimeEntriesByClient: PropTypes.func.isRequired
 };
 
 TimeEntries.defaultProps = {

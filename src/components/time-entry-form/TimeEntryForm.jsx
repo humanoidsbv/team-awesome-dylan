@@ -44,7 +44,7 @@ function TimeEntryForm({
     setActivity('');
 
     createTimeEntry({
-      client,
+      client: Number(client),
       id: Math.random(),
       startTimestamp: new Date(`${date}T${startTime}`).toISOString(),
       stopTimestamp: new Date(`${date}T${stopTime}`).toISOString()
@@ -75,7 +75,9 @@ function TimeEntryForm({
             --select a client--
           </option>
           {clients.map(({ name, id }) => (
-            <option value={id}>{name}</option>
+            <option key={id} value={id}>
+              {name}
+            </option>
           ))}
         </select>
       </label>
@@ -151,7 +153,7 @@ function TimeEntryForm({
 TimeEntryForm.propTypes = {
   clients: PropTypes.arrayOf(
     PropTypes.shape({
-      clientName: PropTypes.string
+      client: PropTypes.number
     })
   ),
   createTimeEntry: PropTypes.func.isRequired,
