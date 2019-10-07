@@ -9,6 +9,7 @@ import TimeEntry from '../time-entry/TimeEntry';
 function TimeEntries({
   createTimeEntry,
   deleteTimeEntry,
+  fetchClients,
   fetchTimeEntries,
   timeEntries
 }) {
@@ -19,6 +20,7 @@ function TimeEntries({
   };
 
   useEffect(() => {
+    fetchClients();
     fetchTimeEntries();
   }, []);
 
@@ -74,6 +76,7 @@ TimeEntries.propTypes = {
   ),
   createTimeEntry: PropTypes.func.isRequired,
   deleteTimeEntry: PropTypes.func.isRequired,
+  fetchClients: PropTypes.func.isRequired,
   fetchTimeEntries: PropTypes.func.isRequired
 };
 
