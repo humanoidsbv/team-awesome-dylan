@@ -24,7 +24,9 @@ export const teamMembersByFieldSelector = createSelector(
   teamMembersRootSelector,
   ({ items, sortByField, sortDirection }) =>
     [...items].sort((a, b) => {
-      if (sortDirection) return a[sortByField] > b[sortByField] ? 1 : -1;
+      if (sortDirection) {
+        return a[sortByField] > b[sortByField] ? 1 : -1;
+      }
       return a[sortByField] > b[sortByField] ? -1 : 1;
     })
 );
