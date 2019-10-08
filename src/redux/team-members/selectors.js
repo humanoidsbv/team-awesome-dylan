@@ -19,3 +19,9 @@ export const teamMembersErrorSelector = createSelector(
   teamMembersRootSelector,
   ({ error }) => error
 );
+
+export const teamMembersByFieldSelector = createSelector(
+  teamMembersRootSelector,
+  ({ items, sortByField }) =>
+    [...items].sort((a, b) => (a[sortByField] > b[sortByField] ? 1 : -1))
+);

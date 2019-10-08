@@ -6,20 +6,22 @@ import TeamMembers from './TeamMembers';
 import {
   createTeamMemberRequest,
   fetchTeamMembersRequest,
-  teamMembersItemsSelector
+  sortTeamMembersByField,
+  teamMembersByFieldSelector
 } from '../../redux/team-members';
 
 const TeamMembersContainer = props => <TeamMembers {...props} />;
 
 const mapStateToProps = state => ({
-  teamMembers: teamMembersItemsSelector(state)
+  teamMembers: teamMembersByFieldSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       createTeamMember: createTeamMemberRequest,
-      fetchTeamMembers: fetchTeamMembersRequest
+      fetchTeamMembers: fetchTeamMembersRequest,
+      sortTeamMembersByField
     },
     dispatch
   );

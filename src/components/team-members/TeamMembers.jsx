@@ -5,7 +5,12 @@ import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
 
-function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
+function TeamMembers({
+  createTeamMember,
+  fetchTeamMembers,
+  teamMembers,
+  sortTeamMembersByField
+}) {
   const [isTeamMemberFormVisible, setTeamMemberFormVisibility] = useState(
     false
   );
@@ -13,6 +18,8 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
   const toggleTeamMemberForm = () => {
     setTeamMemberFormVisibility(!isTeamMemberFormVisible);
   };
+
+  const handleChange = event => sortTeamMembersByField(event.target.value);
 
   useEffect(() => {
     fetchTeamMembers();
@@ -37,21 +44,21 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
         >
           + New Humanoid
         </button>
-        <select type="button" className={styles.sortTeamMembersSelector}>
-          <option value="">Sort by:</option>
+        <select
+          className={styles.sortTeamMembersSelector}
+          id="sortSelect"
+          onChange={handleChange}
+          type="button"
+        >
+          <option value="firstName">Sort by: First name</option>
+          <option value="lastName">Sort by: Last name</option>
+          <option value="employeeFunction">Sort by: Employee function</option>
+          <option value="employeeNumber">Sort by: Employee number</option>
+          <option value="currentClient">Sort by: Current client</option>
+          <option value="startingDate">Sort by: Starting date</option>
         </select>
       </div>
       <div className={styles.teamMembersContainer}>
-        <button
-          className={`${styles.newHumanoidButton} ${
-            isTeamMemberFormVisible ? styles.newHumanoidButtonGrey : ''
-          }`}
-          disabled={isTeamMemberFormVisible}
-          onClick={toggleTeamMemberForm}
-          type="button"
-        >
-          + New Humanoid
-        </button>
         {teamMembers.map(
           ({
             currentClient,
@@ -83,7 +90,8 @@ TeamMembers.propTypes = {
     })
   ),
   createTeamMember: PropTypes.func.isRequired,
-  fetchTeamMembers: PropTypes.func.isRequired
+  fetchTeamMembers: PropTypes.func.isRequired,
+  sortTeamMembersByField: PropTypes.func.isRequired
 };
 
 TeamMembers.defaultProps = {

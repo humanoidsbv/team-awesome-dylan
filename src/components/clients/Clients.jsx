@@ -9,10 +9,6 @@ const Clients = ({ clients, createClient, fetchClients }) => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
   const [clientsSort, setClientsSort] = useState(clients);
 
-  const handleSort = sort => {
-    setClientsSort(clients.filter(client => client.name === sort.value));
-  };
-
   const toggleClientForm = () => {
     setClientFormVisibility(!isClientFormVisible);
   };
@@ -40,12 +36,10 @@ const Clients = ({ clients, createClient, fetchClients }) => {
         >
           + New Client
         </button>
-        <select type="button" className={styles.sortClientsSelector} id="sort">
+        <select type="button" className={styles.sortClientsSelector}>
           <option value="">Sort by:</option>
-          {clients.map(({ name, id }) => (
-            <option value={id} onClick={handleSort}>
-              {name}
-            </option>
+          {clients.map(({ name }) => (
+            <option>{name}</option>
           ))}
         </select>
       </div>

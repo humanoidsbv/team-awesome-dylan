@@ -358,7 +358,7 @@
 } 
 
 
-.labelPlaceholderOne {
+.labelContactPerson {
   color: #68768c;
   display: flex;
   flex-direction: column;
@@ -369,14 +369,14 @@
 }
 
 @media (max-width: 901px) {
-  .labelPlaceholderOne {
+  .labelContactPerson {
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
   }
 }
 
-.inputPlaceholderOne {
+.inputContactPerson {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
   border: solid 1px #ced0da;
@@ -391,11 +391,11 @@
   padding-left: 10px;
 }
 
-.inputPlaceholderOneInvalid {
+.inputContactPersonInvalid {
   border: solid 1px #fb6375;
 } 
 
-.labelPlaceholderTwo {
+.labelContactPhoneNumber {
   color: #68768c;
   display: flex;
   flex-direction: column;
@@ -406,14 +406,14 @@
 }
 
 @media (max-width: 901px) {
-  .labelPlaceholderTwo {
+  .labelContactPhoneNumber {
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
   }
 }
 
-.inputPlaceholderTwo {
+.inputContactPhoneNumber {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
   border: solid 1px #ced0da;
@@ -428,7 +428,7 @@
   padding-left: 10px;
 }
 
-.inputPlaceholderTwoInvalid {
+.inputContactPhoneNumberInvalid {
   border: solid 1px #fb6375;
 } 
 

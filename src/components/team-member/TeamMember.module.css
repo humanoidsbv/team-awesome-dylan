@@ -18,6 +18,12 @@
   transition: .3s ease-in-out;
 }
 
+@media (min-width: 901px) {
+  .teamMemberEntryActive {
+    height: 150px;
+  }
+}
+
 .teamMemberBasicInfo {
   align-items: center;
   display: flex;

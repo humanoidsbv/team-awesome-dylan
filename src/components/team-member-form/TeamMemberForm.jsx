@@ -15,10 +15,10 @@ function TeamMemberForm({
 
   const [address, setAddress] = useState('');
   const [bio, setBio] = useState('');
-  const [currentClient, setCurrentClient] = useState('');
+  const [currentClient, setCurrentClient] = useState('To be confirmed');
   const [emailAddress, setEmailAddress] = useState('');
-  const [employeeFunction, setEmployeeFunction] = useState('');
-  const [employeeNumber, setEmployeeNumber] = useState('');
+  const [employeeFunction, setEmployeeFunction] = useState('To be confirmed');
+  const [employeeNumber, setEmployeeNumber] = useState('To be confirmed');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [locality, setLocality] = useState('');

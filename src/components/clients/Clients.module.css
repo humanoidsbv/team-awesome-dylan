@@ -71,8 +71,8 @@
   font-size: 14px;
   height: 36px;
   justify-content: center;
+  margin-bottom: 10px;
   width: 100%;
-  margin-bottom: 20px;
 }
 
 @media (min-width: 901px) {

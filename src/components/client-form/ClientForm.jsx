@@ -9,8 +9,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
   const [branch, setBranch] = useState('');
   const [locality, setLocality] = useState('');
   const [postalCode, setPostalCode] = useState('');
-  const [placeholderOne, setPlaceholderOne] = useState('');
-  const [placeholderTwo, setPlaceholderTwo] = useState('');
+  const [contactPerson, setContactPerson] = useState('');
+  const [contactPhoneNumber, setContactPhoneNumber] = useState('');
   const [validity, setValidity] = useState({});
 
   const formRef = useRef(null);
@@ -28,8 +28,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
     setBranch('');
     setClientName('');
     setLocality('');
-    setPlaceholderOne('');
-    setPlaceholderTwo('');
+    setContactPhoneNumber('');
+    setContactPerson('');
     setPostalCode('');
   };
 
@@ -50,8 +50,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
       id: Math.random(),
       locality,
       postalCode,
-      placeholderOne,
-      placeholderTwo
+      contactPerson,
+      contactPhoneNumber
     });
   };
 
@@ -155,42 +155,39 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               />
             </label>
           </div>
-          <label
-            className={styles.labelPlaceholderOne}
-            htmlFor="placeholderOne"
-          >
-            Placeholder 1
+          <label className={styles.labelContactPerson} htmlFor="contactPerson">
+            Contact person
             <input
               className={`${
-                styles.inputPlaceholderOne
-              } ${validity.placeholderOne === false &&
-                styles.inputPlaceholderOneInvalid}`}
+                styles.inputContactPerson
+              } ${validity.contactPerson === false &&
+                styles.inputContactPersonInvalid}`}
               maxLength="35"
               minLength="2"
-              name="placeholderOne"
+              name="contactPerson"
               onBlur={handleBlur}
-              onChange={({ target }) => setPlaceholderOne(target.value)}
+              onChange={({ target }) => setContactPerson(target.value)}
               required
-              value={placeholderOne}
+              value={contactPerson}
             />
           </label>
           <label
-            className={styles.labelPlaceholderTwo}
-            htmlFor="placeholderTwo"
+            className={styles.labelContactPhoneNumber}
+            htmlFor="contactPhoneNumber"
           >
-            Placeholder 2
+            Contact phone number
             <input
               className={`${
-                styles.inputPlaceholderTwo
-              } ${validity.placeholderTwo === false &&
-                styles.inputPlaceholderTwoInvalid}`}
+                styles.inputContactPhoneNumber
+              } ${validity.contactPhoneNumber === false &&
+                styles.inputContactPhoneNumberInvalid}`}
               maxLength="35"
               minLength="2"
-              name="placeholderTwo"
+              name="contactPhoneNumber"
               onBlur={handleBlur}
-              onChange={({ target }) => setPlaceholderTwo(target.value)}
+              onChange={({ target }) => setContactPhoneNumber(target.value)}
               required
-              value={placeholderTwo}
+              value={contactPhoneNumber}
             />
           </label>
         </div>

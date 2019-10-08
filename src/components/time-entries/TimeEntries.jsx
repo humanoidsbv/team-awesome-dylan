@@ -48,19 +48,22 @@ function TimeEntries({
         isTimeEntryFormVisible={isTimeEntryFormVisible}
         toggleTimeEntryForm={toggleTimeEntryForm}
       />
-      <select
-        type="button"
-        className={styles.filterClientsSelector}
-        id="filterSelect"
-        onChange={handleChange}
-      >
-        <option value="">Filter by:</option>
-        {clients.map(({ name, id }) => (
-          <option key={id} value={id}>
-            {name}
-          </option>
-        ))}
-      </select>
+      <div className={styles.headerTimeEntries}>
+        <span className={styles.headerTimeEntriesText}> Time Entries </span>
+        <select
+          className={styles.filterClientsSelector}
+          id="filterSelect"
+          onChange={handleChange}
+          type="button"
+        >
+          <option value="">Filter by:</option>
+          {clients.map(({ name, id }) => (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
       {timeEntries.map(
         ({ client, id, startTimestamp, stopTimestamp }, index) => {
           const startDate = new Date(startTimestamp).toDateString();

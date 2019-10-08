@@ -2,7 +2,8 @@ import {
   CREATE_TEAM_MEMBER_REQUEST,
   CREATE_TEAM_MEMBER_SUCCESS,
   FETCH_TEAM_MEMBERS_REQUEST,
-  FETCH_TEAM_MEMBERS_SUCCESS
+  FETCH_TEAM_MEMBERS_SUCCESS,
+  SORT_TEAM_MEMBERS_BY_FIELD
 } from './actions';
 
 const initialState = {
@@ -38,6 +39,12 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         items: [payload, ...state.items],
         isLoading: false
+      };
+
+    case SORT_TEAM_MEMBERS_BY_FIELD:
+      return {
+        ...state,
+        sortByField: payload
       };
 
     default:
