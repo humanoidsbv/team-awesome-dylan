@@ -4,8 +4,16 @@ import PropTypes from 'prop-types';
 import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
+import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 
-function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
+function TeamMembers({
+  createTeamMember,
+  fetchTeamMembers,
+  sortDirection,
+  sortTeamMembersByField,
+  sortTeamMembersDirection,
+  teamMembers
+}) {
   const [isTeamMemberFormVisible, setTeamMemberFormVisibility] = useState(
     false
   );
@@ -13,6 +21,8 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
   const toggleTeamMemberForm = () => {
     setTeamMemberFormVisibility(!isTeamMemberFormVisible);
   };
+
+  const handleChange = event => sortTeamMembersByField(event.target.value);
 
   useEffect(() => {
     fetchTeamMembers();
@@ -37,21 +47,36 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
         >
           + New Humanoid
         </button>
-        <select type="button" className={styles.sortTeamMembersSelector}>
-          <option value="">Sort by:</option>
-        </select>
+        <div className={styles.sortingWrapper}>
+          <select
+            className={styles.sortTeamMembersSelector}
+            id="sortSelect"
+            onChange={handleChange}
+            type="button"
+          >
+            <option value="firstName">Sort by: First name</option>
+            <option value="lastName">Sort by: Last name</option>
+            <option value="employeeFunction">Sort by: Employee function</option>
+            <option value="employeeNumber">Sort by: Employee number</option>
+            <option value="currentClient">Sort by: Current client</option>
+            <option value="startingDate">Sort by: Starting date</option>
+          </select>
+          <button
+            className={styles.sortDirectionToggle}
+            type="button"
+            onClick={sortTeamMembersDirection}
+          >
+            <MenuDownIcon
+              className={`${
+                sortDirection === true
+                  ? styles.sortDirectionAscending
+                  : styles.sortDirectionDescending
+              }`}
+            />
+          </button>
+        </div>
       </div>
       <div className={styles.teamMembersContainer}>
-        <button
-          className={`${styles.newHumanoidButton} ${
-            isTeamMemberFormVisible ? styles.newHumanoidButtonGrey : ''
-          }`}
-          disabled={isTeamMemberFormVisible}
-          onClick={toggleTeamMemberForm}
-          type="button"
-        >
-          + New Humanoid
-        </button>
         {teamMembers.map(
           ({
             currentClient,
@@ -59,7 +84,8 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
             employeeNumber,
             firstName,
             lastName,
-            startingDate
+            startingDate,
+            id
           }) => (
             <TeamMember
               currentClient={currentClient}
@@ -68,6 +94,7 @@ function TeamMembers({ createTeamMember, fetchTeamMembers, teamMembers }) {
               firstName={firstName}
               lastName={lastName}
               startingDate={startingDate}
+              key={id}
             />
           )
         )}
@@ -83,7 +110,10 @@ TeamMembers.propTypes = {
     })
   ),
   createTeamMember: PropTypes.func.isRequired,
-  fetchTeamMembers: PropTypes.func.isRequired
+  fetchTeamMembers: PropTypes.func.isRequired,
+  sortTeamMembersByField: PropTypes.func.isRequired,
+  sortTeamMembersDirection: PropTypes.func.isRequired,
+  sortDirection: PropTypes.bool.isRequired
 };
 
 TeamMembers.defaultProps = {

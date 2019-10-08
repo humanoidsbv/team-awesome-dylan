@@ -17,8 +17,8 @@ function TeamMemberForm({
   const [bio, setBio] = useState('');
   const [currentClient, setCurrentClient] = useState('To be confirmed');
   const [emailAddress, setEmailAddress] = useState('');
-  const [employeeNumber, setEmployeeNumber] = useState('To be confirmed');
   const [employeeFunction, setEmployeeFunction] = useState('To be confirmed');
+  const [employeeNumber, setEmployeeNumber] = useState('To be confirmed');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [locality, setLocality] = useState('');

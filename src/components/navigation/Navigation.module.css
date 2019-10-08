@@ -17,6 +17,7 @@
 
 .item {
   color: #ffffff;
+  cursor: pointer;
   font-family: proximanova;
   font-size: 14px;
   margin-left: 12px;

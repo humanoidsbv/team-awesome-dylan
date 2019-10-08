@@ -1,14 +1,13 @@
-
-.teamMemberEntry {
-  align-items:flex-start;
+.clientEntry {
+  align-items: flex-start;
   border-radius: 4px;
   border: solid 1px #e6eaee;
-  border-left:  4px solid #4f88ef;
+  border-left: 4px solid #4f88ef;
   height: 82px;
   margin-bottom: 15px;
   transition: .3s ease-in-out;
 }
-.teamMemberEntryActive {
+.clientEntryActive {
   align-items:flex-start;
   border-radius: 4px;
   border: solid 1px #e6eaee;
@@ -18,33 +17,27 @@
   transition: .3s ease-in-out;
 }
 
-@media (min-width: 901px) {
-  .teamMemberEntryActive {
-    height: 150px;
-  }
-}
-
-.teamMemberBasicInfo {
+.clientBasicInfo {
   align-items: center;
   display: flex;
   width: 100%;
 }
 
-.teamMemberAvatar {
+.clientAvatar {
   border-radius: 50%;
   height: 50px;
   padding: 16px 25px 16px 20px;
   width: 50px;
 }
 
-.teamMemberTitle {
+.clientTitle {
   color: #354052;
   font-family: proximanova;
   margin-right: auto;
   
 }
 
-.teamMemberName {
+.clientName {
   color: #354052;
   display: flex;
   font-family: proximanova;
@@ -52,12 +45,6 @@
   font-weight: bold;
   margin-left: auto;
   text-align: right;
-}
-
-.teamMemberFunction {
-  color: #7f8fa4;
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .menuDownIcon {

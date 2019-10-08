@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import IconClose from '../../assets/icons/icon-close.svg';
 import styles from './TimeEntryForm.module.css';
 
-function TimeEntryForm({ createTimeEntry }) {
+function TimeEntryForm({
+  clients,
+  createTimeEntry,
+  isTimeEntryFormVisible,
+  toggleTimeEntryForm
+}) {
   const today = new Date()
     .toISOString()
     .split('T')
@@ -27,6 +32,11 @@ function TimeEntryForm({ createTimeEntry }) {
     });
   };
 
+  const handleCancel = event => {
+    event.preventDefault();
+    toggleTimeEntryForm();
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -34,38 +44,42 @@ function TimeEntryForm({ createTimeEntry }) {
     setActivity('');
 
     createTimeEntry({
-      client,
+      client: Number(client),
       id: Math.random(),
       startTimestamp: new Date(`${date}T${startTime}`).toISOString(),
       stopTimestamp: new Date(`${date}T${stopTime}`).toISOString()
     });
+    toggleTimeEntryForm();
   };
 
   return (
     <form
-      className={styles.timeEntryForm}
+      className={`${styles.timeEntryForm} ${!isTimeEntryFormVisible &&
+        styles.timeEntryFormHide}`}
       onSubmit={handleSubmit}
       ref={formRef}
     >
-      <IconClose className={styles.iconClose} />
+      <IconClose className={styles.iconClose} onClick={handleCancel} />
       <label className={styles.labelClient} htmlFor="client">
         CLIENT
-        <input
-          className={`${styles.inputClientValid} ${
-            validity.client === false
-              ? styles.inputClientInvalid
-              : styles.inputClientValid
-          }`}
+        <select
+          className={styles.inputClient}
           id="client"
-          maxLength="35"
-          minLength="2"
           name="client"
           onBlur={handleBlur}
           onChange={({ target }) => setClient(target.value)}
-          placeholder="--enter a client--"
           required
           value={client}
-        />
+        >
+          <option className={styles.inputClient} disabled value="">
+            --select a client--
+          </option>
+          {clients.map(({ name, id }) => (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
       </label>
       <label className={styles.labelActivity} htmlFor="activity">
         ACTIVITY
@@ -137,7 +151,18 @@ function TimeEntryForm({ createTimeEntry }) {
 }
 
 TimeEntryForm.propTypes = {
-  createTimeEntry: PropTypes.func.isRequired
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      client: PropTypes.number
+    })
+  ),
+  createTimeEntry: PropTypes.func.isRequired,
+  isTimeEntryFormVisible: PropTypes.bool.isRequired,
+  toggleTimeEntryForm: PropTypes.func.isRequired
+};
+
+TimeEntryForm.defaultProps = {
+  clients: []
 };
 
 export default TimeEntryForm;

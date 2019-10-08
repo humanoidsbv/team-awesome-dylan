@@ -1,29 +1,25 @@
 
 @media (min-width: 901px) {
-  .teamMembersContainer {
+  .clientsContainer {
     max-width: 1170px;
     width: 100%;
   }
 }
 
-.headerTeamMembers {
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
 @media (min-width: 901px) {
-  .headerTeamMembers {
-    flex-direction: row;
+  .headerClients {
+    align-content: center;
+    display: flex;
     height: 55px;
-  }}
+  }
+}
 
-.headerTeamMembersText {
-  display: none;
+.headerClientsText {
+  display:none;
 }
 
 @media (min-width: 901px) {
-  .headerTeamMembersText {
+  .headerClientsText {
     color: #354052;
     display: flex;
     font-family: proximanova;
@@ -33,12 +29,7 @@
   }
 }
 
-.sortingWrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.sortTeamMembersSelector {
+.sortClientsSelector {
   border: solid 1px #ced0da;
   border-radius: 4px;
   color:#7f8fa4;
@@ -48,14 +39,13 @@
   font-size: 14px;
   height: 36px;
   justify-content: center;
-  margin-bottom: 10px;
-  margin-right: 10px;
+  margin-bottom: 20px;
   padding-left: 10px;
-  width: 80%;
+  width: 100%;
 }
 
 @media (min-width: 901px) {
-  .sortTeamMembersSelector {
+  .sortClientsSelector {
     align-items: center;
     border-radius: 4px;
     border: solid 1px #ced0da;
@@ -70,29 +60,7 @@
   }
 }
 
-.sortDirectionToggle {
-  border: solid 1px #ced0da;
-  border-radius: 4px;
-  color:#7f8fa4;
-  cursor: pointer;
-  display: flex;
-  font-family: proximanova;
-  font-size: 14px;
-  height: 36px;
-  justify-content: center;
-  margin-bottom: 10px;
-  width: 20%;
-}
-
-.sortDirectionDescending {
-  display: block;
-}
-
-.sortDirectionAscending {
-  transform: rotate(180deg);
-}
-
-.newHumanoidButtonHeader {
+.newClientButton {
   background-color: #35ac45;
   border: solid 1px #249533;
   border-radius: 4px;
@@ -108,8 +76,7 @@
 }
 
 @media (min-width: 901px) {
-  .newHumanoidButtonHeader {
-    background-color: #35ac45;
+  .newClientButton {
     background-color: #35ac45;
     border: solid 1px #249533;
     border-radius: 4px;
@@ -124,39 +91,11 @@
   }
 }
 
-.newHumanoidButtonHeader:disabled {
+.newClientButton:disabled {
   cursor: auto;
 }
-.newHumanoidButtonHeaderGrey {
+.newClientButtonGrey {
   background-color: #acacac;
+  border: solid 1px #acacac;
 }
 
-.newHumanoidButton {
-  background-color: #35ac45;
-  border: 1px #35ac45;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  font-family: proximanova;
-  font-size: 14px;
-  height: 36px;
-  justify-content: center;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.newHumanoidButton:disabled {
-  cursor: auto;
-}
-
-.newHumanoidButtonGrey {
-  background-color: #acacac;
-}
-
-@media (min-width: 901px) {
-  .newHumanoidButton {
-    display: none;
-  }
-}

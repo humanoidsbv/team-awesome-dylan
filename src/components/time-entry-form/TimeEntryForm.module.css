@@ -20,6 +20,16 @@
   }
 }
 
+.timeEntryFormHide {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .timeEntryFormHide {
+    display: flex;
+  }
+}
+
 .labelClient {
   color: #68768c;
   display: block;
@@ -68,7 +78,7 @@
   }
 }
 
-.inputClientValid {
+.inputClient {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
   border-radius: 4px;
   border: solid 1px #ced0da;
@@ -82,10 +92,6 @@
   padding-left: 10px;
   width: 100%;
 }
-
-.inputClientInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .inputActivityValid {
   background-image: linear-gradient(to top, #f2f4f7, #ffffff);
