@@ -15,6 +15,7 @@
 @media (min-width: 901px) {
   .headerTeamMembers {
     flex-direction: row;
+    height: 55px;
   }}
 
 .headerTeamMembersText {
@@ -109,7 +110,8 @@
 @media (min-width: 901px) {
   .newHumanoidButtonHeader {
     background-color: #35ac45;
-    border: 1px #35ac45;
+    background-color: #35ac45;
+    border: solid 1px #249533;
     border-radius: 4px;
     color: #ffffff;
     cursor: pointer;
