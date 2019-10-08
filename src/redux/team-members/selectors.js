@@ -22,6 +22,17 @@ export const teamMembersErrorSelector = createSelector(
 
 export const teamMembersByFieldSelector = createSelector(
   teamMembersRootSelector,
-  ({ items, sortByField }) =>
-    [...items].sort((a, b) => (a[sortByField] > b[sortByField] ? 1 : -1))
+  ({ items, sortByField, sortDirection }) =>
+    [...items].sort((a, b) => {
+      if (sortDirection === true) {
+        return a[sortByField] > b[sortByField] ? 1 : -1;
+      }
+
+      return a[sortByField] < b[sortByField] ? -1 : 1;
+    })
+);
+
+export const teamMembersSortDirectionSelector = createSelector(
+  teamMembersRootSelector,
+  ({ sortDirection }) => sortDirection
 );

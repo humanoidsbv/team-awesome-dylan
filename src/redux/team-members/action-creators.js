@@ -5,7 +5,8 @@ import {
   FETCH_TEAM_MEMBERS_FAILURE,
   FETCH_TEAM_MEMBERS_REQUEST,
   FETCH_TEAM_MEMBERS_SUCCESS,
-  SORT_TEAM_MEMBERS_BY_FIELD
+  SORT_TEAM_MEMBERS_BY_FIELD,
+  SORT_TEAM_MEMBERS_DIRECTION
 } from '.';
 
 export const fetchTeamMembersFailure = error => ({
@@ -40,4 +41,8 @@ export const createTeamMemberSuccess = newTeamMember => ({
 export const sortTeamMembersByField = teamMemberSorter => ({
   type: SORT_TEAM_MEMBERS_BY_FIELD,
   payload: teamMemberSorter
+});
+
+export const sortTeamMembersDirection = () => ({
+  type: SORT_TEAM_MEMBERS_DIRECTION
 });

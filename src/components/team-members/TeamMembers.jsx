@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
+import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 
 function TeamMembers({
   createTeamMember,
   fetchTeamMembers,
-  teamMembers,
-  sortTeamMembersByField
+  sortDirection,
+  sortTeamMembersByField,
+  sortTeamMembersDirection,
+  teamMembers
 }) {
   const [isTeamMemberFormVisible, setTeamMemberFormVisibility] = useState(
     false
@@ -44,19 +47,34 @@ function TeamMembers({
         >
           + New Humanoid
         </button>
-        <select
-          className={styles.sortTeamMembersSelector}
-          id="sortSelect"
-          onChange={handleChange}
-          type="button"
-        >
-          <option value="firstName">Sort by: First name</option>
-          <option value="lastName">Sort by: Last name</option>
-          <option value="employeeFunction">Sort by: Employee function</option>
-          <option value="employeeNumber">Sort by: Employee number</option>
-          <option value="currentClient">Sort by: Current client</option>
-          <option value="startingDate">Sort by: Starting date</option>
-        </select>
+        <div className={styles.sortingWrapper}>
+          <select
+            className={styles.sortTeamMembersSelector}
+            id="sortSelect"
+            onChange={handleChange}
+            type="button"
+          >
+            <option value="firstName">Sort by: First name</option>
+            <option value="lastName">Sort by: Last name</option>
+            <option value="employeeFunction">Sort by: Employee function</option>
+            <option value="employeeNumber">Sort by: Employee number</option>
+            <option value="currentClient">Sort by: Current client</option>
+            <option value="startingDate">Sort by: Starting date</option>
+          </select>
+          <button
+            className={styles.sortDirectionToggle}
+            type="button"
+            onClick={sortTeamMembersDirection}
+          >
+            <MenuDownIcon
+              className={`${
+                sortDirection === true
+                  ? styles.sortDirectionAscending
+                  : styles.sortDirectionDescending
+              }`}
+            />
+          </button>
+        </div>
       </div>
       <div className={styles.teamMembersContainer}>
         {teamMembers.map(
@@ -91,7 +109,9 @@ TeamMembers.propTypes = {
   ),
   createTeamMember: PropTypes.func.isRequired,
   fetchTeamMembers: PropTypes.func.isRequired,
-  sortTeamMembersByField: PropTypes.func.isRequired
+  sortTeamMembersByField: PropTypes.func.isRequired,
+  sortTeamMembersDirection: PropTypes.func.isRequired,
+  sortDirection: PropTypes.bool.isRequired
 };
 
 TeamMembers.defaultProps = {

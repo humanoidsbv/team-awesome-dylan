@@ -7,12 +7,15 @@ import {
   createTeamMemberRequest,
   fetchTeamMembersRequest,
   sortTeamMembersByField,
-  teamMembersByFieldSelector
+  sortTeamMembersDirection,
+  teamMembersByFieldSelector,
+  teamMembersSortDirectionSelector
 } from '../../redux/team-members';
 
 const TeamMembersContainer = props => <TeamMembers {...props} />;
 
 const mapStateToProps = state => ({
+  sortDirection: teamMembersSortDirectionSelector(state),
   teamMembers: teamMembersByFieldSelector(state)
 });
 
@@ -21,7 +24,8 @@ const mapDispatchToProps = dispatch =>
     {
       createTeamMember: createTeamMemberRequest,
       fetchTeamMembers: fetchTeamMembersRequest,
-      sortTeamMembersByField
+      sortTeamMembersByField,
+      sortTeamMembersDirection
     },
     dispatch
   );

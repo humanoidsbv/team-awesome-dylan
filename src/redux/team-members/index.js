@@ -9,7 +9,8 @@ export {
   FETCH_TEAM_MEMBERS_FAILURE,
   FETCH_TEAM_MEMBERS_REQUEST,
   FETCH_TEAM_MEMBERS_SUCCESS,
-  SORT_TEAM_MEMBERS_BY_FIELD
+  SORT_TEAM_MEMBERS_BY_FIELD,
+  SORT_TEAM_MEMBERS_DIRECTION
 } from './actions';
 
 export {
@@ -19,7 +20,8 @@ export {
   fetchTeamMembersFailure,
   fetchTeamMembersRequest,
   fetchTeamMembersSuccess,
-  sortTeamMembersByField
+  sortTeamMembersByField,
+  sortTeamMembersDirection
 } from './action-creators';
 
 export {
@@ -27,7 +29,8 @@ export {
   teamMembersIsLoadingSelector,
   teamMembersItemsSelector,
   teamMembersRootSelector,
-  teamMembersByFieldSelector
+  teamMembersByFieldSelector,
+  teamMembersSortDirectionSelector
 } from './selectors';
 
 export default teamMembersReducer;
