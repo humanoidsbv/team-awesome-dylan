@@ -38,14 +38,14 @@ const Clients = ({ clients, createClient, fetchClients }) => {
         </button>
         <select type="button" className={styles.sortClientsSelector}>
           <option value="">Sort by:</option>
-          {clients.map(({ name }) => (
-            <option>{name}</option>
+          {clients.map(({ id, name }) => (
+            <option key={id}>{name}</option>
           ))}
         </select>
       </div>
       <div className={styles.clientsContainer}>
-        {clients.map(({ name }) => (
-          <Client clientName={name} />
+        {clients.map(({ id, name }) => (
+          <Client clientName={name} key={id} />
         ))}
       </div>
     </>

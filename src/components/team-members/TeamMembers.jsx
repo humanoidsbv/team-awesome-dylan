@@ -84,7 +84,8 @@ function TeamMembers({
             employeeNumber,
             firstName,
             lastName,
-            startingDate
+            startingDate,
+            id
           }) => (
             <TeamMember
               currentClient={currentClient}
@@ -93,6 +94,7 @@ function TeamMembers({
               firstName={firstName}
               lastName={lastName}
               startingDate={startingDate}
+              key={id}
             />
           )
         )}
