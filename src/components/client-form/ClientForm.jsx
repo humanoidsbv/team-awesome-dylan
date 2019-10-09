@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ClientForm.module.css';
+import InputField from '../../shared/components/input-field/InputField';
 
 function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
   const [address, setAddress] = useState('');
@@ -83,43 +84,31 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
         <div className={styles.formColumnOne}>
           <label className={styles.labelName} htmlFor="clientName">
             Client
-            <input
-              className={`${styles.inputName} ${validity.clientName === false &&
-                styles.inputNameInvalid}`}
-              maxLength="35"
-              minLength="2"
+            <InputField
               name="clientName"
               onBlur={handleBlur}
-              onChange={({ target }) => setClientName(target.value)}
-              required
+              setInputValue={setClientName}
+              isValid={validity.clientName}
               value={clientName}
             />
           </label>
           <label className={styles.labelBranch} htmlFor="branch">
             Branch
-            <input
-              className={`${styles.inputBranch} ${validity.branch === false &&
-                styles.inputBranchInvalid}`}
-              maxLength="35"
-              minLength="2"
+            <InputField
               name="branch"
               onBlur={handleBlur}
-              onChange={({ target }) => setBranch(target.value)}
-              required
+              setInputValue={setBranch}
+              isValid={validity.branch}
               value={branch}
             />
           </label>
           <label className={styles.labelAddress} htmlFor="address">
             Address
-            <input
-              className={`${styles.inputAddress} ${validity.address === false &&
-                styles.inputAddressInvalid}`}
-              maxLength="35"
-              minLength="2"
+            <InputField
               name="address"
               onBlur={handleBlur}
-              onChange={({ target }) => setAddress(target.value)}
-              required
+              setInputValue={setAddress}
+              isValid={validity.address}
               value={address}
             />
           </label>
@@ -128,46 +117,32 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
           <div className={styles.localityPostalCodeInputs}>
             <label className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
-              <input
-                className={`${styles.inputPostalCode} ${validity.postalCode ===
-                  false && styles.inputPostalCodeInvalid}`}
-                maxLength="35"
-                minLength="2"
+              <InputField
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={({ target }) => setPostalCode(target.value)}
-                required
+                setInputValue={setPostalCode}
+                isValid={validity.postalCode}
                 value={postalCode}
               />
             </label>
             <label className={styles.labelLocality} htmlFor="locality">
-              City
-              <input
-                className={`${styles.inputLocality} ${validity.locality ===
-                  false && styles.inputLocalityInvalid}`}
-                maxLength="35"
-                minLength="2"
+              Locality
+              <InputField
                 name="locality"
                 onBlur={handleBlur}
-                onChange={({ target }) => setLocality(target.value)}
-                required
+                setInputValue={setLocality}
+                isValid={validity.locality}
                 value={locality}
               />
             </label>
           </div>
           <label className={styles.labelContactPerson} htmlFor="contactPerson">
             Contact person
-            <input
-              className={`${
-                styles.inputContactPerson
-              } ${validity.contactPerson === false &&
-                styles.inputContactPersonInvalid}`}
-              maxLength="35"
-              minLength="2"
+            <InputField
               name="contactPerson"
               onBlur={handleBlur}
-              onChange={({ target }) => setContactPerson(target.value)}
-              required
+              setInputValue={setContactPerson}
+              isValid={validity.contactPerson}
               value={contactPerson}
             />
           </label>
@@ -176,17 +151,11 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
             htmlFor="contactPhoneNumber"
           >
             Contact phone number
-            <input
-              className={`${
-                styles.inputContactPhoneNumber
-              } ${validity.contactPhoneNumber === false &&
-                styles.inputContactPhoneNumberInvalid}`}
-              maxLength="35"
-              minLength="2"
+            <InputField
               name="contactPhoneNumber"
               onBlur={handleBlur}
-              onChange={({ target }) => setContactPhoneNumber(target.value)}
-              required
+              setInputValue={setContactPhoneNumber}
+              isValid={validity.contactPhoneNumber}
               value={contactPhoneNumber}
             />
           </label>
