@@ -7,7 +7,6 @@ import ClientForm from '../client-form/ClientForm';
 
 const Clients = ({ clients, createClient, fetchClients }) => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
-  const [clientsSort, setClientsSort] = useState(clients);
 
   const toggleClientForm = () => {
     setClientFormVisibility(!isClientFormVisible);

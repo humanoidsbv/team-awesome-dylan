@@ -1,0 +1,26 @@
+.buttonDefaultColor {
+  background-color: #35ac45;
+  border-radius: 4px;
+  border: solid 1px #249533;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-left: 12px;
+  width: 156px;
+}
+
+.buttonColorRed {
+  background-color: red;
+}
+
+.buttonColorBlue {
+  background-color: blue;
+}
+
+.buttonColorYellow {
+  background-color: yellow;
+}
