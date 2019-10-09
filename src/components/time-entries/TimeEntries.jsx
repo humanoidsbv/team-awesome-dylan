@@ -57,9 +57,9 @@ function TimeEntries({
           type="button"
         >
           <option value="">Filter by:</option>
-          {clients.map(({ name, id }) => (
+          {clients.map(({ clientName, id }) => (
             <option key={id} value={id}>
-              {name}
+              {clientName}
             </option>
           ))}
         </select>
@@ -78,7 +78,7 @@ function TimeEntries({
                 <TimeEntryHeading startTime={startTimestamp} />
               )}
               <TimeEntry
-                client={client.name}
+                client={client.clientName}
                 deleteTimeEntry={timeEntryId => deleteTimeEntry(timeEntryId)}
                 id={id}
                 startTime={startTimestamp}

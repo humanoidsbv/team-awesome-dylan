@@ -10,22 +10,24 @@ export const timeEntriesRootSelector = createSelector(
 export const timeEntriesItemsSelector = createSelector(
   timeEntriesRootSelector,
   clientsItemsSelector,
-  (timeEntries, clients) =>
-    timeEntries.items
+  (timeEntries, clients) => {
+    return timeEntries.items
       .map(timeEntry => ({
         ...timeEntry,
         client: clients.find(client => client.id === timeEntry.client)
       }))
-      .sort((a, b) => (b.stopTimestamp < a.startTimestamp ? 1 : -1))
+      .sort((a, b) => (b.stopTimestamp < a.startTimestamp ? 1 : -1));
+  }
 );
 
 export const timeEntriesByClientSelector = createSelector(
   timeEntriesItemsSelector,
   timeEntriesRootSelector,
-  (items, { filterByClient }) =>
-    items.filter(
+  (items, { filterByClient }) => {
+    return items.filter(
       item => filterByClient === null || item.client.id === filterByClient
-    )
+    );
+  }
 );
 
 export const timeEntriesIsLoadingSelector = createSelector(
