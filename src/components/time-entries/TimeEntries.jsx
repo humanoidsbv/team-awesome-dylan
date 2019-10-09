@@ -5,6 +5,7 @@ import styles from './TimeEntries.module.css';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntry from '../time-entry/TimeEntry';
+import Button from '../../shared/components/button/Button';
 
 function TimeEntries({
   clients,
@@ -33,15 +34,11 @@ function TimeEntries({
 
   return (
     <div className={styles.timeEntriesContainer}>
-      <button
-        className={`${styles.NewTimeEntryButton} ${isTimeEntryFormVisible &&
-          styles.NewTimeEntryButtonGrey}`}
+      <Button
         disabled={isTimeEntryFormVisible}
         onClick={toggleTimeEntryForm}
-        type="button"
-      >
-        + New Time Entry
-      </button>
+        text="+ New Time Entry"
+      />
       <TimeEntryForm
         clients={clients}
         createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}

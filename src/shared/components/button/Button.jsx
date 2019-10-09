@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Button.module.css';
 
-const Button = ({ text, color }) => {
+const Button = ({ color, disabled, onClick, text }) => {
   return (
     <button
       type="button"
@@ -12,6 +12,8 @@ const Button = ({ text, color }) => {
         styles.buttonColorBlue} || ${color === 'yellow' &&
         styles.buttonColorYellow}`}
       color={color}
+      disabled={disabled}
+      onClick={onClick}
     >
       {text}
     </button>
@@ -19,13 +21,16 @@ const Button = ({ text, color }) => {
 };
 
 Button.propTypes = {
-  text: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string
 };
 
 Button.defaultProps = {
-  text: 'insert text',
-  color: ''
+  color: '',
+  disabled: false,
+  text: 'insert text'
 };
 
 export default Button;
