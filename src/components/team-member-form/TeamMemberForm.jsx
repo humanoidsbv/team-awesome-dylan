@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import Input from '../../shared/components/input/Input';
 import styles from './TeamMemberForm.module.css';
 
 function TeamMemberForm({
@@ -115,156 +116,126 @@ function TeamMemberForm({
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.formColumnOne}>
           <div className={styles.nameInputs}>
-            <label className={styles.labelFirstName} htmlFor="firstName">
+            <span className={styles.labelFirstName} htmlFor="firstName">
               First Name
-              <input
-                className={`${styles.inputFirstName} ${
-                  validity.firstName === false
-                    ? styles.inputFirstNameInvalid
-                    : ''
-                }`}
+              <Input
+                isValid={validity.firstName !== false}
                 maxLength="35"
                 minLength="2"
                 name="firstName"
                 onBlur={handleBlur}
-                onChange={({ target }) => setFirstName(target.value)}
+                onChange={event => setFirstName(event.target.value)}
                 required
                 value={firstName}
               />
-            </label>
-            <label className={styles.labelLastName} htmlFor="lastName">
+            </span>
+            <span className={styles.labelLastName} htmlFor="lastName">
               Last Name
-              <input
-                className={`${styles.inputLastName} ${
-                  validity.lastName === false ? styles.inputLastNameInvalid : ''
-                }`}
+              <Input
+                isValid={validity.lastName !== false}
                 maxLength="35"
                 minLength="2"
                 name="lastName"
                 onBlur={handleBlur}
-                onChange={({ target }) => setLastName(target.value)}
+                onChange={event => setLastName(event.target.value)}
                 required
                 value={lastName}
               />
-            </label>
+            </span>
           </div>
-          <label className={styles.labelEmailAddress} htmlFor="emailAddress">
+          <span className={styles.labelEmailAddress} htmlFor="emailAddress">
             E-mail Address
-            <input
-              className={`${styles.inputEmailAddress} ${
-                validity.emailAddress === false
-                  ? styles.inputEmailAddressInvalid
-                  : ''
-              }`}
+            <Input
+              isValid={validity.emailAddress !== false}
               maxLength="35"
               minLength="2"
               name="emailAddress"
               onBlur={handleBlur}
-              onChange={({ target }) => setEmailAddress(target.value)}
+              onChange={event => setEmailAddress(event.target.value)}
               required
               value={emailAddress}
             />
-          </label>
-          <label className={styles.labelBio} htmlFor="bio">
+          </span>
+          <span className={styles.labelBio} htmlFor="bio">
             Bio
-            <input
-              className={`${styles.inputBio} ${
-                validity.bio === false ? styles.inputBioInvalid : ''
-              }`}
+            <Input
+              isHigher
+              isValid={validity.bio !== false}
               maxLength="35"
               minLength="2"
               name="bio"
               onBlur={handleBlur}
-              onChange={({ target }) => setBio(target.value)}
+              onChange={event => setBio(event.target.value)}
               required
               value={bio}
             />
-          </label>
+          </span>
         </div>
         <div className={styles.formColumnTwo}>
-          <label className={styles.labelAddress} htmlFor="address">
+          <span className={styles.labelAddress} htmlFor="address">
             Address
-            <input
-              className={`${styles.inputAddress} ${
-                validity.address === false ? styles.inputAddressInvalid : ''
-              }`}
+            <Input
+              isValid={validity.address !== false}
               maxLength="35"
               minLength="2"
               name="address"
               onBlur={handleBlur}
-              onChange={({ target }) => setAddress(target.value)}
+              onChange={event => setAddress(event.target.value)}
               required
               value={address}
             />
-          </label>
+          </span>
           <div className={styles.localityPostalCodeInputs}>
-            <label className={styles.labelPostalCode} htmlFor="postalCode">
+            <span className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
-              <input
-                className={`${styles.inputPostalCode} ${
-                  validity.postalCode === false
-                    ? styles.inputPostalCodeInvalid
-                    : ''
-                }`}
+              <Input
+                isValid={validity.postalCode !== false}
                 maxLength="35"
                 minLength="2"
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={({ target }) => setPostalCode(target.value)}
+                onChange={event => setPostalCode(event.target.value)}
                 required
                 value={postalCode}
               />
-            </label>
-            <label className={styles.labelLocality} htmlFor="locality">
-              City
-              <input
-                className={`${styles.inputLocality} ${
-                  validity.locality === false ? styles.inputLocalityInvalid : ''
-                }`}
+            </span>
+            <span className={styles.labelLocality} htmlFor="locality">
+              Locality
+              <Input
+                isValid={validity.locality !== false}
                 maxLength="35"
                 minLength="2"
                 name="locality"
                 onBlur={handleBlur}
-                onChange={({ target }) => setLocality(target.value)}
+                onChange={event => setLocality(event.target.value)}
                 required
                 value={locality}
               />
-            </label>
+            </span>
           </div>
-          <label
-            className={styles.labelSocialProfiles}
-            htmlFor="socialProfiles"
-          >
+          <span className={styles.labelSocialProfiles} htmlFor="socialProfiles">
             Social Profiles
-            <input
-              className={`${styles.inputSocialProfileOne} ${
-                validity.socialProfileOne === false
-                  ? styles.inputSocialProfileOneInvalid
-                  : ''
-              }`}
+            <Input
+              isValid={validity.socialProfileOne !== false}
               maxLength="35"
               minLength="2"
               name="socialProfileOne"
               onBlur={handleBlur}
-              onChange={({ target }) => setSocialProfileOne(target.value)}
+              onChange={event => setSocialProfileOne(event.target.value)}
               required
               value={socialProfileOne}
             />
-            <input
-              className={`${styles.inputSocialProfileTwo} ${
-                validity.socialProfileTwo === false
-                  ? styles.inputSocialProfileTwoInvalid
-                  : ''
-              }`}
+            <Input
+              isValid={validity.socialProfileTwo !== false}
               maxLength="35"
               minLength="2"
               name="socialProfileTwo"
               onBlur={handleBlur}
-              onChange={({ target }) => setSocialProfileTwo(target.value)}
+              onChange={event => setSocialProfileTwo(event.target.value)}
               required
               value={socialProfileTwo}
             />
-          </label>
+          </span>
         </div>
       </form>
     </div>

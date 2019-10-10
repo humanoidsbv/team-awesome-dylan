@@ -1,11 +1,11 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
-import InputField from '../src/shared/components/input-field';
+import Input from '../src/shared/components/input';
 
 export default {
-  component: InputField,
+  component: Input,
   title: 'Input'
 };
 
-export const inputField = () => <InputField onClick={action('clicked')} />;
+export const input = () => <Input onClick={action('clicked')} />;

@@ -11,13 +11,18 @@ const Input = styled.input`
   font-family: proximanova;
   font-size: 14px;
   font-weight: bold;
-  height: 36px;
+  height: ${prop => (prop.isHigher === true ? '80px' : '36px')};
   margin-top: 7px;
   padding-left: 10px;
 `;
 
 Input.propTypes = {
-  isValid: PropTypes.bool
+  isValid: PropTypes.bool,
+  isHigher: PropTypes.bool
+};
+
+Input.defaultProps = {
+  isHigher: false
 };
 
 export default Input;
