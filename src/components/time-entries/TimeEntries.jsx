@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './TimeEntries.module.css';
-import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
-import TimeEntryForm from '../time-entry-form/TimeEntryForm';
-import TimeEntry from '../time-entry/TimeEntry';
 import Button from '../../shared/components/button/Button';
+import TimeEntry from '../time-entry/TimeEntry';
+import TimeEntryForm from '../time-entry-form/TimeEntryForm';
+import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
+import styles from './TimeEntries.module.css';
 
 function TimeEntries({
   clients,

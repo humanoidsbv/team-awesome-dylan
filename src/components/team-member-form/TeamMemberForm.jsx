@@ -116,7 +116,7 @@ function TeamMemberForm({
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.formColumnOne}>
           <div className={styles.nameInputs}>
-            <span className={styles.labelFirstName} htmlFor="firstName">
+            <label className={styles.labelFirstName} htmlFor="firstName">
               First Name
               <Input
                 isValid={validity.firstName !== false}
@@ -128,8 +128,8 @@ function TeamMemberForm({
                 required
                 value={firstName}
               />
-            </span>
-            <span className={styles.labelLastName} htmlFor="lastName">
+            </label>
+            <label className={styles.labelLastName} htmlFor="lastName">
               Last Name
               <Input
                 isValid={validity.lastName !== false}
@@ -141,9 +141,9 @@ function TeamMemberForm({
                 required
                 value={lastName}
               />
-            </span>
+            </label>
           </div>
-          <span className={styles.labelEmailAddress} htmlFor="emailAddress">
+          <label className={styles.labelEmailAddress} htmlFor="emailAddress">
             E-mail Address
             <Input
               isValid={validity.emailAddress !== false}
@@ -155,11 +155,11 @@ function TeamMemberForm({
               required
               value={emailAddress}
             />
-          </span>
-          <span className={styles.labelBio} htmlFor="bio">
+          </label>
+          <label className={styles.labelBio} htmlFor="bio">
             Bio
             <Input
-              isHigher
+              isMultiLine
               isValid={validity.bio !== false}
               maxLength="35"
               minLength="2"
@@ -169,10 +169,10 @@ function TeamMemberForm({
               required
               value={bio}
             />
-          </span>
+          </label>
         </div>
         <div className={styles.formColumnTwo}>
-          <span className={styles.labelAddress} htmlFor="address">
+          <label className={styles.labelAddress} htmlFor="address">
             Address
             <Input
               isValid={validity.address !== false}
@@ -184,9 +184,9 @@ function TeamMemberForm({
               required
               value={address}
             />
-          </span>
+          </label>
           <div className={styles.localityPostalCodeInputs}>
-            <span className={styles.labelPostalCode} htmlFor="postalCode">
+            <label className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
               <Input
                 isValid={validity.postalCode !== false}
@@ -198,8 +198,8 @@ function TeamMemberForm({
                 required
                 value={postalCode}
               />
-            </span>
-            <span className={styles.labelLocality} htmlFor="locality">
+            </label>
+            <label className={styles.labelLocality} htmlFor="locality">
               Locality
               <Input
                 isValid={validity.locality !== false}
@@ -211,9 +211,12 @@ function TeamMemberForm({
                 required
                 value={locality}
               />
-            </span>
+            </label>
           </div>
-          <span className={styles.labelSocialProfiles} htmlFor="socialProfiles">
+          <label
+            className={styles.labelSocialProfiles}
+            htmlFor="socialProfileOne"
+          >
             Social Profiles
             <Input
               isValid={validity.socialProfileOne !== false}
@@ -235,7 +238,7 @@ function TeamMemberForm({
               required
               value={socialProfileTwo}
             />
-          </span>
+          </label>
         </div>
       </form>
     </div>

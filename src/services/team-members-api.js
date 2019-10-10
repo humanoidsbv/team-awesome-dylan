@@ -2,7 +2,7 @@ const apiUrl = `${
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
     : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
-}/team-members?_sort=firstName&_order=asc'`;
+}/team-members?_sort=firstName&_order=asc`;
 
 export async function fetchTeamMembers() {
   const response = await fetch(apiUrl);

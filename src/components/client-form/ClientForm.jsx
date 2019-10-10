@@ -82,20 +82,21 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
       <div className={styles.personalDetailsTab}>Client details</div>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.formColumnOne}>
-          <span className={styles.labelName} htmlFor="clientName">
+          <label className={styles.labelName} htmlFor="clientName">
             Client
             <Input
               isValid={validity.clientName !== false}
               maxLength="35"
               minLength="2"
               name="clientName"
+              id="clientName"
               onBlur={handleBlur}
               onChange={event => setClientName(event.target.value)}
               required
               value={clientName}
             />
-          </span>
-          <span className={styles.labelBranch} htmlFor="branch">
+          </label>
+          <label className={styles.labelBranch} htmlFor="branch">
             Branch
             <Input
               isValid={validity.branch !== false}
@@ -107,8 +108,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               required
               value={branch}
             />
-          </span>
-          <span className={styles.labelAddress} htmlFor="address">
+          </label>
+          <label className={styles.labelAddress} htmlFor="address">
             Address
             <Input
               isValid={validity.address !== false}
@@ -120,11 +121,11 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               required
               value={address}
             />
-          </span>
+          </label>
         </div>
         <div className={styles.formColumnTwo}>
           <div className={styles.localityPostalCodeInputs}>
-            <span className={styles.labelPostalCode} htmlFor="postalCode">
+            <label className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
               <Input
                 isValid={validity.postalCode !== false}
@@ -136,8 +137,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
                 required
                 value={postalCode}
               />
-            </span>
-            <span className={styles.labelLocality} htmlFor="locality">
+            </label>
+            <label className={styles.labelLocality} htmlFor="locality">
               Locality
               <Input
                 isValid={validity.locality !== false}
@@ -149,9 +150,9 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
                 required
                 value={locality}
               />
-            </span>
+            </label>
           </div>
-          <span className={styles.labelContactPerson} htmlFor="contactPerson">
+          <label className={styles.labelContactPerson} htmlFor="contactPerson">
             Contact person
             <Input
               isValid={validity.contactPerson !== false}
@@ -163,8 +164,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               required
               value={contactPerson}
             />
-          </span>
-          <span
+          </label>
+          <label
             className={styles.labelContactPhoneNumber}
             htmlFor="contactPhoneNumber"
           >
@@ -179,7 +180,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               required
               value={contactPhoneNumber}
             />
-          </span>
+          </label>
         </div>
       </form>
     </div>
