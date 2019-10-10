@@ -164,26 +164,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputFirstName {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputFirstNameInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelLastName {
   color: #68768c;
@@ -201,26 +183,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputLastName {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputLastNameInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelEmailAddress {
   color: #68768c;
@@ -237,27 +201,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputEmailAddress {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputEmailAddressInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelBio {
   color: #68768c;
@@ -274,27 +219,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputBio {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 84px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputBioInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .formColumnTwo {
   margin: 44px 0 44px 44px;
@@ -324,27 +250,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputAddress {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputAddressInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .localityPostalCodeInputs {
   display: flex;
@@ -373,27 +280,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-
-.inputPostalCode {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputPostalCodeInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelLocality {
   color: #68768c;
@@ -412,26 +300,8 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputLocality {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputLocalityInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelSocialProfiles {
   color: #68768c;
@@ -442,48 +312,11 @@
   font-weight: bold;
   margin-top: 27px;
 }
+
 @media (max-width: 901px) {
   .labelSocialProfiles {
     margin-top: 10px;
     margin-left: 20px;
     width: 90%;
+  }
 }
-}
-
-.inputSocialProfileOne {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 10px;
-  padding-left: 10px;
-}
-
-.inputSocialProfileOneInvalid {
-  border: solid 1px #fb6375;
-} 
-
-.inputSocialProfileTwo {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 10px;
-  padding-left: 10px;
-}
-
-.inputSocialProfileTwoInvalid {
-  border: solid 1px #fb6375;
-} 

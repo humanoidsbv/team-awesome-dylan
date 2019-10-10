@@ -12,6 +12,7 @@
   display: flex;
   height: 55px;
 }
+
 @media (max-width: 901px) {
   .headerClientForm {
     flex-direction: column;
@@ -161,25 +162,6 @@
   }
 }
 
-.inputName {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputNameInvalid {
-  border: solid 1px #fb6375;
-} 
-
 .labelBranch {
   color: #68768c;
   display: flex;
@@ -197,25 +179,6 @@
     width: 90%;
   }
 }
-
-.inputBranch {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputBranchInvalid {
-  border: solid 1px #fb6375;
-} 
 
 .labelAddress {
   color: #68768c;
@@ -235,28 +198,6 @@
   }
 }
 
-.inputAddress {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputAddressInvalid {
-  border: solid 1px #fb6375;
-} 
-
-
-
-
 .formColumnTwo {
   margin: 44px 0 44px 44px;
   padding-right: 44px;
@@ -268,18 +209,6 @@
     margin: 0;
     margin-bottom: 20px;
     padding-right: 0;
-  }
-}
-
-
-.localityPostalCodeInputs {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 901px) {
-  .localityPostalCodeInputs  {
-    flex-direction: column;
   }
 }
 
@@ -301,25 +230,6 @@
   }
 }
 
-
-.inputPostalCode {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputPostalCodeInvalid {
-  border: solid 1px #fb6375;
-} 
-
 .labelLocality {
   color: #68768c;
   display: flex;
@@ -339,25 +249,6 @@
   }
 }
 
-.inputLocality {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputLocalityInvalid {
-  border: solid 1px #fb6375;
-} 
-
-
 .labelContactPerson {
   color: #68768c;
   display: flex;
@@ -376,25 +267,6 @@
   }
 }
 
-.inputContactPerson {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputContactPersonInvalid {
-  border: solid 1px #fb6375;
-} 
-
 .labelContactPhoneNumber {
   color: #68768c;
   display: flex;
@@ -412,24 +284,3 @@
     width: 90%;
   }
 }
-
-.inputContactPhoneNumber {
-  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
-  border-radius: 4px;
-  border: solid 1px #ced0da;
-  box-sizing: border-box;
-  color: #354052;
-  display: block;
-  font-family: proximanova;
-  font-size: 14px;
-  font-weight: bold;
-  height: 36px;
-  margin-top: 7px;
-  padding-left: 10px;
-}
-
-.inputContactPhoneNumberInvalid {
-  border: solid 1px #fb6375;
-} 
-
-
