@@ -15,6 +15,9 @@
     "import/no-useless-path-segments": [0, {
       "noUselessIndex": false
     }],
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "controlComponents": ["Input"],
+      "depth": 3
+    }]
   }
 }
