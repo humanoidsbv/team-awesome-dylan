@@ -34,11 +34,9 @@ function TimeEntries({
 
   return (
     <div className={styles.timeEntriesContainer}>
-      <Button
-        disabled={isTimeEntryFormVisible}
-        onClick={toggleTimeEntryForm}
-        text="+ New Time Entry"
-      />
+      <Button disabled={isTimeEntryFormVisible} onClick={toggleTimeEntryForm}>
+        + New Time Entry
+      </Button>
       <TimeEntryForm
         clients={clients}
         createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}

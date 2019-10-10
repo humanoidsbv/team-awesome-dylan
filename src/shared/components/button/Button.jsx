@@ -1,9 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
 
-const StyledButton = styled.section`
+const Button = styled.button`
   background-color: #35ac45;
   border-radius: 4px;
   color: #ffffff;
@@ -27,31 +24,5 @@ const StyledButton = styled.section`
     display: none;
   }
 `;
-
-const Button = ({ color, disabled, onClick, text }) => {
-  return (
-    <StyledButton
-      type="button"
-      color={color}
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {text}
-    </StyledButton>
-  );
-};
-
-Button.propTypes = {
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  text: PropTypes.string
-};
-
-Button.defaultProps = {
-  color: '',
-  disabled: false,
-  text: 'insert text'
-};
 
 export default Button;

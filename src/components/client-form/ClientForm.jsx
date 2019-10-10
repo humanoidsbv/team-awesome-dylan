@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import Input from '../../shared/components/input/Input';
 import styles from './ClientForm.module.css';
-import InputField from '../../shared/components/input-field/InputField';
 
 function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
   const [address, setAddress] = useState('');
@@ -84,31 +84,40 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
         <div className={styles.formColumnOne}>
           <span className={styles.labelName} htmlFor="clientName">
             Client
-            <InputField
+            <Input
+              isValid={validity.clientName !== false}
+              maxLength="35"
+              minLength="2"
               name="clientName"
               onBlur={handleBlur}
               onChange={event => setClientName(event.target.value)}
-              isValid={validity.clientName !== false}
+              required
               value={clientName}
             />
           </span>
           <span className={styles.labelBranch} htmlFor="branch">
             Branch
-            <InputField
+            <Input
+              isValid={validity.branch !== false}
+              maxLength="35"
+              minLength="2"
               name="branch"
               onBlur={handleBlur}
               onChange={event => setBranch(event.target.value)}
-              isValid={validity.branch !== false}
+              required
               value={branch}
             />
           </span>
           <span className={styles.labelAddress} htmlFor="address">
             Address
-            <InputField
+            <Input
+              isValid={validity.address !== false}
+              maxLength="35"
+              minLength="2"
               name="address"
               onBlur={handleBlur}
               onChange={event => setAddress(event.target.value)}
-              isValid={validity.address !== false}
+              required
               value={address}
             />
           </span>
@@ -117,32 +126,41 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
           <div className={styles.localityPostalCodeInputs}>
             <span className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
-              <InputField
+              <Input
+                isValid={validity.postalCode !== false}
+                maxLength="35"
+                minLength="2"
                 name="postalCode"
                 onBlur={handleBlur}
                 onChange={event => setPostalCode(event.target.value)}
-                isValid={validity.postalCode !== false}
+                required
                 value={postalCode}
               />
             </span>
             <span className={styles.labelLocality} htmlFor="locality">
               Locality
-              <InputField
+              <Input
+                isValid={validity.locality !== false}
+                maxLength="35"
+                minLength="2"
                 name="locality"
                 onBlur={handleBlur}
                 onChange={event => setLocality(event.target.value)}
-                isValid={validity.locality !== false}
+                required
                 value={locality}
               />
             </span>
           </div>
           <span className={styles.labelContactPerson} htmlFor="contactPerson">
             Contact person
-            <InputField
+            <Input
+              isValid={validity.contactPerson !== false}
+              maxLength="35"
+              minLength="2"
               name="contactPerson"
               onBlur={handleBlur}
               onChange={event => setContactPerson(event.target.value)}
-              isValid={validity.contactPerson !== false}
+              required
               value={contactPerson}
             />
           </span>
@@ -151,11 +169,14 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
             htmlFor="contactPhoneNumber"
           >
             Contact phone number
-            <InputField
+            <Input
+              isValid={validity.contactPhoneNumber !== false}
+              maxLength="35"
+              minLength="2"
               name="contactPhoneNumber"
               onBlur={handleBlur}
               onChange={event => setContactPhoneNumber(event.target.value)}
-              isValid={validity.contactPhoneNumber !== false}
+              required
               value={contactPhoneNumber}
             />
           </span>
