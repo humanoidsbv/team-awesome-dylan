@@ -1,22 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Button.module.css';
+import styled from 'styled-components';
+
+const ButtonStyle = styled.section`
+  background-color: #35ac45;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: proximanova;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  width: 100%;
+
+  &[disabled] {
+    background-color: #acacac;
+    cursor: auto;
+  }
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+`;
 
 const Button = ({ color, disabled, onClick, text }) => {
   return (
-    <button
+    <ButtonStyle
       type="button"
-      className={`${styles.buttonDefaultColor} ${color === 'red' &&
-        styles.buttonColorRed} || ${color === 'blue' &&
-        styles.buttonColorBlue} || ${color === 'yellow' &&
-        styles.buttonColorYellow}`}
       color={color}
       disabled={disabled}
       onClick={onClick}
     >
       {text}
-    </button>
+    </ButtonStyle>
   );
 };
 
