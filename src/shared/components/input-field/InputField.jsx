@@ -1,36 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import styles from './InputField.module.css';
+const Input = styled.input`
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border-radius: 4px;
+  border: solid 1px ${prop => (prop.isValid ? '#ced0da' : '#fb6375')};
+  box-sizing: border-box;
+  color: #354052;
+  display: block;
+  font-family: proximanova;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  margin-top: 7px;
+  padding-left: 10px;
+`;
 
-const InputField = ({ name, value, isValid, onBlur, setInputValue }) => {
-  return (
-    <input
-      className={`${styles.inputField} ${isValid === false &&
-        styles.inputFieldInvalid}`}
-      name={name}
-      onBlur={onBlur}
-      required
-      maxLength="35"
-      minLength="2"
-      value={value}
-      onChange={({ target }) => setInputValue(target.value)}
-    />
-  );
+Input.propTypes = {
+  isValid: PropTypes.bool
 };
 
-InputField.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  onBlur: PropTypes.func.isRequired,
-  isValid: PropTypes.bool,
-  setInputValue: PropTypes.func
-};
-
-InputField.defaultProps = {
-  isValid: true,
-  name: 'name',
-  setInputValue: null
-};
-
-export default InputField;
+export default Input;

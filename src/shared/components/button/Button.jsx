@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-const ButtonStyle = styled.section`
+const StyledButton = styled.section`
   background-color: #35ac45;
   border-radius: 4px;
   color: #ffffff;
@@ -30,14 +30,14 @@ const ButtonStyle = styled.section`
 
 const Button = ({ color, disabled, onClick, text }) => {
   return (
-    <ButtonStyle
+    <StyledButton
       type="button"
       color={color}
       disabled={disabled}
       onClick={onClick}
     >
       {text}
-    </ButtonStyle>
+    </StyledButton>
   );
 };
 

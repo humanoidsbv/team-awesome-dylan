@@ -82,71 +82,71 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
       <div className={styles.personalDetailsTab}>Client details</div>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.formColumnOne}>
-          <label className={styles.labelName} htmlFor="clientName">
+          <span className={styles.labelName} htmlFor="clientName">
             Client
             <InputField
               name="clientName"
               onBlur={handleBlur}
-              setInputValue={setClientName}
-              isValid={validity.clientName}
+              onChange={event => setClientName(event.target.value)}
+              isValid={validity.clientName !== false}
               value={clientName}
             />
-          </label>
-          <label className={styles.labelBranch} htmlFor="branch">
+          </span>
+          <span className={styles.labelBranch} htmlFor="branch">
             Branch
             <InputField
               name="branch"
               onBlur={handleBlur}
-              setInputValue={setBranch}
-              isValid={validity.branch}
+              onChange={event => setBranch(event.target.value)}
+              isValid={validity.branch !== false}
               value={branch}
             />
-          </label>
-          <label className={styles.labelAddress} htmlFor="address">
+          </span>
+          <span className={styles.labelAddress} htmlFor="address">
             Address
             <InputField
               name="address"
               onBlur={handleBlur}
-              setInputValue={setAddress}
-              isValid={validity.address}
+              onChange={event => setAddress(event.target.value)}
+              isValid={validity.address !== false}
               value={address}
             />
-          </label>
+          </span>
         </div>
         <div className={styles.formColumnTwo}>
           <div className={styles.localityPostalCodeInputs}>
-            <label className={styles.labelPostalCode} htmlFor="postalCode">
+            <span className={styles.labelPostalCode} htmlFor="postalCode">
               Postal code
               <InputField
                 name="postalCode"
                 onBlur={handleBlur}
-                setInputValue={setPostalCode}
-                isValid={validity.postalCode}
+                onChange={event => setPostalCode(event.target.value)}
+                isValid={validity.postalCode !== false}
                 value={postalCode}
               />
-            </label>
-            <label className={styles.labelLocality} htmlFor="locality">
+            </span>
+            <span className={styles.labelLocality} htmlFor="locality">
               Locality
               <InputField
                 name="locality"
                 onBlur={handleBlur}
-                setInputValue={setLocality}
-                isValid={validity.locality}
+                onChange={event => setLocality(event.target.value)}
+                isValid={validity.locality !== false}
                 value={locality}
               />
-            </label>
+            </span>
           </div>
-          <label className={styles.labelContactPerson} htmlFor="contactPerson">
+          <span className={styles.labelContactPerson} htmlFor="contactPerson">
             Contact person
             <InputField
               name="contactPerson"
               onBlur={handleBlur}
-              setInputValue={setContactPerson}
-              isValid={validity.contactPerson}
+              onChange={event => setContactPerson(event.target.value)}
+              isValid={validity.contactPerson !== false}
               value={contactPerson}
             />
-          </label>
-          <label
+          </span>
+          <span
             className={styles.labelContactPhoneNumber}
             htmlFor="contactPhoneNumber"
           >
@@ -154,11 +154,11 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
             <InputField
               name="contactPhoneNumber"
               onBlur={handleBlur}
-              setInputValue={setContactPhoneNumber}
-              isValid={validity.contactPhoneNumber}
+              onChange={event => setContactPhoneNumber(event.target.value)}
+              isValid={validity.contactPhoneNumber !== false}
               value={contactPhoneNumber}
             />
-          </label>
+          </span>
         </div>
       </form>
     </div>
