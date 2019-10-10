@@ -1,3 +1,5 @@
+import { TimeEntryStateInterface } from './types';
+
 import {
   CREATE_TIME_ENTRY_REQUEST,
   CREATE_TIME_ENTRY_SUCCESS,
@@ -8,14 +10,15 @@ import {
   FILTER_TIME_ENTRIES_BY_CLIENT
 } from './actions';
 
-const initialState = {
+const initialState: TimeEntryStateInterface = {
   filterByClient: null,
   hasError: '',
   isLoading: false,
   items: []
 };
 
-export default (state = initialState, { type, payload }) => {
+export default (state: TimeEntryStateInterface = initialState,
+  { type, payload }): TimeEntryStateInterface => {
   switch (type) {
     case CREATE_TIME_ENTRY_REQUEST:
       return {
@@ -39,7 +42,7 @@ export default (state = initialState, { type, payload }) => {
     case DELETE_TIME_ENTRY_SUCCESS:
       return {
         ...state,
-        items: state.items.filter(item => item.id !== payload),
+        items: state.items.filter((item) => item.id !== payload),
         isLoading: false
       };
 

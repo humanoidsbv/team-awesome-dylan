@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconDelete from '../../assets/icons/icon-delete.svg';
+import { TimeEntryInterface } from '../../redux/time-entries/types';
 
 import styles from './TimeEntry.module.css';
 
-const TimeEntry = ({ client, deleteTimeEntry, id, startTime, stopTime }) => {
-  const clientDurationParse =
-    (Date.parse(stopTime) - Date.parse(startTime)) / 60 / 60 / 1000;
+const TimeEntry = ({
+  client, deleteTimeEntry, id, startTime, stopTime
+}) => {
+  const clientDurationParse = (Date.parse(stopTime) - Date.parse(startTime)) / 60 / 60 / 1000;
 
   const durationHours = Math.trunc(clientDurationParse);
   const durationMinutes = Math.round((clientDurationParse % 1) * 60);
