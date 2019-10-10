@@ -74,9 +74,9 @@ function TimeEntryForm({
           <option className={styles.inputClient} disabled value="">
             --select a client--
           </option>
-          {clients.map(({ name, id }) => (
+          {clients.map(({ clientName, id }) => (
             <option key={id} value={id}>
-              {name}
+              {clientName}
             </option>
           ))}
         </select>

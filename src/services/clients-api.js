@@ -1,12 +1,16 @@
+const apiUrl = `${
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
+}/clients?_sort=clientName&_order=asc`;
+
 export async function fetchClients() {
-  const response = await fetch(
-    'http://localhost:3000/clients?_sort=clientName&_order=asc'
-  );
+  const response = await fetch(apiUrl);
   return response.json();
 }
 
 export const postClient = async newClient => {
-  const response = await fetch('http://localhost:3000/clients', {
+  const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -10,7 +10,9 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "storybook": "start-storybook -p 6006 -s ./static",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
@@ -27,10 +29,17 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^1.1.1",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/react": "^5.2.3",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.2.0",

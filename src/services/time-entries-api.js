@@ -1,25 +1,26 @@
+const apiUrl = `${
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
+}/time-entries?_sort=startTimestamp&_order=desc`;
+
 export async function fetchTimeEntries() {
-  const response = await fetch(
-    'http://localhost:3000/time-entries?_sort=startTimestamp&_order=desc'
-  );
+  const response = await fetch(apiUrl);
   return response.json();
 }
 
 export const deleteTimeEntry = async timeEntryId => {
-  const response = await fetch(
-    `http://localhost:3000/time-entries/${timeEntryId}`,
-    {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+  const response = await fetch(`${apiUrl}/${timeEntryId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
     }
-  );
+  });
   return response.json();
 };
 
 export const postTimeEntry = async newTimeEntry => {
-  const response = await fetch('http://localhost:3000/time-entries', {
+  const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

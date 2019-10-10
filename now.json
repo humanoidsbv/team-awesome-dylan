@@ -1,3 +1,6 @@
 {
-  "name": "team-awesome-dylan"
+  "name": "team-awesome-dylan",
+  "env": {
+    "NODE_ENV": "production"
+  }
 }

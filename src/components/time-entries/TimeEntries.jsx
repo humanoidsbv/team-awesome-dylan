@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './TimeEntries.module.css';
-import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
-import TimeEntryForm from '../time-entry-form/TimeEntryForm';
+import Button from '../../shared/components/button/Button';
 import TimeEntry from '../time-entry/TimeEntry';
+import TimeEntryForm from '../time-entry-form/TimeEntryForm';
+import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
+import styles from './TimeEntries.module.css';
 
 function TimeEntries({
   clients,
@@ -33,15 +34,9 @@ function TimeEntries({
 
   return (
     <div className={styles.timeEntriesContainer}>
-      <button
-        className={`${styles.NewTimeEntryButton} ${isTimeEntryFormVisible &&
-          styles.NewTimeEntryButtonGrey}`}
-        disabled={isTimeEntryFormVisible}
-        onClick={toggleTimeEntryForm}
-        type="button"
-      >
+      <Button disabled={isTimeEntryFormVisible} onClick={toggleTimeEntryForm}>
         + New Time Entry
-      </button>
+      </Button>
       <TimeEntryForm
         clients={clients}
         createTimeEntry={newTimeEntry => createTimeEntry(newTimeEntry)}
@@ -57,9 +52,9 @@ function TimeEntries({
           type="button"
         >
           <option value="">Filter by:</option>
-          {clients.map(({ name, id }) => (
+          {clients.map(({ clientName, id }) => (
             <option key={id} value={id}>
-              {name}
+              {clientName}
             </option>
           ))}
         </select>
@@ -78,7 +73,7 @@ function TimeEntries({
                 <TimeEntryHeading startTime={startTimestamp} />
               )}
               <TimeEntry
-                client={client.name}
+                client={client.clientName}
                 deleteTimeEntry={timeEntryId => deleteTimeEntry(timeEntryId)}
                 id={id}
                 startTime={startTimestamp}
