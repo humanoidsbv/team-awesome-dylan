@@ -1,4 +1,6 @@
-import { all, fork, call, put, takeLatest } from 'redux-saga/effects';
+import {
+  all, fork, call, put, takeLatest
+} from 'redux-saga/effects';
 import {
   deleteTimeEntry,
   fetchTimeEntries,
@@ -17,7 +19,7 @@ import {
   fetchTimeEntriesSuccess
 } from '.';
 
-function* createTimeEntryRequest({ payload }) {
+function* createTimeEntryRequest({ payload }): {} {
   try {
     yield call(postTimeEntry, payload);
     yield put(createTimeEntrySuccess(payload));
@@ -26,11 +28,11 @@ function* createTimeEntryRequest({ payload }) {
   }
 }
 
-export function* watchCreateTimeEntry() {
+export function* watchCreateTimeEntry(): {} {
   yield takeLatest(CREATE_TIME_ENTRY_REQUEST, createTimeEntryRequest);
 }
 
-function* deleteTimeEntryRequest({ payload }) {
+function* deleteTimeEntryRequest({ payload }): {} {
   try {
     yield call(deleteTimeEntry, payload);
     yield put(deleteTimeEntrySuccess(payload));
@@ -39,11 +41,11 @@ function* deleteTimeEntryRequest({ payload }) {
   }
 }
 
-export function* watchDeleteTimeEntry() {
+export function* watchDeleteTimeEntry(): {} {
   yield takeLatest(DELETE_TIME_ENTRY_REQUEST, deleteTimeEntryRequest);
 }
 
-function* fetchTimeEntriesRequest() {
+function* fetchTimeEntriesRequest(): {} {
   try {
     const response = yield call(fetchTimeEntries);
     yield put(fetchTimeEntriesSuccess(response));
@@ -52,11 +54,11 @@ function* fetchTimeEntriesRequest() {
   }
 }
 
-export function* watchFetchTimeEntriesRequest() {
+export function* watchFetchTimeEntriesRequest(): {} {
   yield takeLatest(FETCH_TIME_ENTRIES_REQUEST, fetchTimeEntriesRequest);
 }
 
-export function* timeEntriesSagas() {
+export function* timeEntriesSagas(): {} {
   yield all([
     fork(watchFetchTimeEntriesRequest),
     fork(watchDeleteTimeEntry),
