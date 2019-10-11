@@ -1,14 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import IconDelete from '../../assets/icons/icon-delete.svg';
 import { TimeEntryInterface } from '../../redux/time-entries/types';
-
 import styles from './TimeEntry.module.css';
 
-const TimeEntry = ({
-  client, deleteTimeEntry, id, startTime, stopTime
-}) => {
-  const clientDurationParse = (Date.parse(stopTime) - Date.parse(startTime)) / 60 / 60 / 1000;
+interface TimeEntryInterfaceWithDelete extends TimeEntryInterface {
+  client: string;
+  deleteTimeEntry(number): any;
+}
+
+const TimeEntry: TimeEntryInterfaceWithDelete = ({
+  client, deleteTimeEntry, id, startTimestamp, stopTimestamp
+}): TimeEntryInterfaceWithDelete => {
+  const clientDurationParse = (Date.parse(stopTimestamp) - Date.parse(startTimestamp)) / 60 / 60 / 1000;
 
   const durationHours = Math.trunc(clientDurationParse);
   const durationMinutes = Math.round((clientDurationParse % 1) * 60);
@@ -18,12 +22,12 @@ const TimeEntry = ({
 
   const timeNotation = { hour: '2-digit', minute: '2-digit' };
 
-  const startTimeString = new Date(startTime).toLocaleTimeString(
+  const startTimeString = new Date(startTimestamp).toLocaleTimeString(
     'nl-NL',
     timeNotation
   );
 
-  const stopTimeString = new Date(stopTime).toLocaleTimeString(
+  const stopTimeString = new Date(stopTimestamp).toLocaleTimeString(
     'nl-NL',
     timeNotation
   );
@@ -50,12 +54,12 @@ const TimeEntry = ({
   );
 };
 
-TimeEntry.propTypes = {
-  id: PropTypes.number.isRequired,
-  client: PropTypes.string.isRequired,
-  deleteTimeEntry: PropTypes.func.isRequired,
-  startTime: PropTypes.string.isRequired,
-  stopTime: PropTypes.string.isRequired
-};
+// TimeEntry.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   client: PropTypes.string.isRequired,
+//   deleteTimeEntry: PropTypes.func.isRequired,
+//   startTime: PropTypes.string.isRequired,
+//   stopTime: PropTypes.string.isRequired
+// };
 
 export default TimeEntry;
