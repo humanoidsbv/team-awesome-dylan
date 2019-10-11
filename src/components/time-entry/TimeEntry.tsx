@@ -5,7 +5,6 @@ import styles from './TimeEntry.module.css';
 import { TimeEntryInterface } from '../../redux/time-entries/types';
 
 interface TimeEntryProps extends TimeEntryInterface {
-  client: string;
   deleteTimeEntry: (number) => {};
 }
 
@@ -35,7 +34,7 @@ const TimeEntry = ({
 
   return (
     <div className={styles.timeEntry}>
-      <span className={styles.client}>{client}</span>
+      <span className={styles.client}>{client.clientName}</span>
       <button
         className={styles.deleteButton}
         onClick={(): {} => deleteTimeEntry(id)}

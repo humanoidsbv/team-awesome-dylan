@@ -6,12 +6,14 @@ export interface TimeEntryInterface {
   startTimestamp: string;
   stopTimestamp: string;
 }
+
 export interface TimeEntryStateInterface {
   items: TimeEntryInterface[];
   hasError: string;
   filterByClient: string | null;
   isLoading: boolean;
 }
+
 export interface ActionInterface {
   type: string;
   payload?: any;
@@ -26,7 +28,7 @@ export interface TimeEntriesDispatchPropsInterface {
   deleteTimeEntry: (timeEntryID) => ActionInterface;
   fetchClients: () => ActionInterface;
   fetchTimeEntries: () => ActionInterface;
-  filterTimeEntriesByClient: (client) => ActionInterface;
+  filterTimeEntriesByClient: (timeEntryFilter) => ActionInterface;
 }
 
 export type TimeEntriesProps = TimeEntriesStatePropsInterface & TimeEntriesDispatchPropsInterface
