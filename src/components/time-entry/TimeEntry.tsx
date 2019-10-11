@@ -1,17 +1,17 @@
 import React from 'react';
 
 import IconDelete from '../../assets/icons/icon-delete.svg';
-import { TimeEntryInterface } from '../../redux/time-entries/types';
 import styles from './TimeEntry.module.css';
+import { TimeEntryInterface } from '../../redux/time-entries/types';
 
-interface TimeEntryInterfaceWithDelete extends TimeEntryInterface {
+interface TimeEntryProps extends TimeEntryInterface {
   client: string;
-  deleteTimeEntry(number): any;
+  deleteTimeEntry: (number) => {};
 }
 
-const TimeEntry: TimeEntryInterfaceWithDelete = ({
+const TimeEntry = ({
   client, deleteTimeEntry, id, startTimestamp, stopTimestamp
-}): TimeEntryInterfaceWithDelete => {
+}: TimeEntryProps): React.ReactElement => {
   const clientDurationParse = (Date.parse(stopTimestamp) - Date.parse(startTimestamp)) / 60 / 60 / 1000;
 
   const durationHours = Math.trunc(clientDurationParse);
@@ -37,7 +37,7 @@ const TimeEntry: TimeEntryInterfaceWithDelete = ({
       <span className={styles.client}>{client}</span>
       <button
         className={styles.deleteButton}
-        onClick={() => deleteTimeEntry(id)}
+        onClick={(): {} => deleteTimeEntry(id)}
         type="button"
       >
         <IconDelete className={styles.iconClose} />

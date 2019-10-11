@@ -76,8 +76,8 @@ function TimeEntries({
                 client={client.clientName}
                 deleteTimeEntry={timeEntryId => deleteTimeEntry(timeEntryId)}
                 id={id}
-                startTime={startTimestamp}
-                stopTime={stopTimestamp}
+                startTimestamp={startTimestamp}
+                stopTimestamp={stopTimestamp}
               />
             </React.Fragment>
           );

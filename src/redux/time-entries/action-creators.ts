@@ -11,51 +11,53 @@ import {
   FILTER_TIME_ENTRIES_BY_CLIENT
 } from '.';
 
-export const createTimeEntryFailure = error => ({
+import { ActionInterface } from './types';
+
+export const createTimeEntryFailure = (error): ActionInterface => ({
   type: CREATE_TIME_ENTRY_FAILURE,
   payload: error
 });
 
-export const createTimeEntryRequest = newTimeEntry => ({
+export const createTimeEntryRequest = (newTimeEntry): ActionInterface => ({
   type: CREATE_TIME_ENTRY_REQUEST,
   payload: newTimeEntry
 });
 
-export const createTimeEntrySuccess = newTimeEntry => ({
+export const createTimeEntrySuccess = (newTimeEntry): ActionInterface => ({
   type: CREATE_TIME_ENTRY_SUCCESS,
   payload: newTimeEntry
 });
 
-export const fetchTimeEntriesFailure = error => ({
+export const fetchTimeEntriesFailure = (error): ActionInterface => ({
   type: FETCH_TIME_ENTRIES_FAILURE,
   payload: error
 });
 
-export const fetchTimeEntriesRequest = () => ({
+export const fetchTimeEntriesRequest = (): ActionInterface => ({
   type: FETCH_TIME_ENTRIES_REQUEST
 });
 
-export const fetchTimeEntriesSuccess = items => ({
+export const fetchTimeEntriesSuccess = (items): ActionInterface => ({
   type: FETCH_TIME_ENTRIES_SUCCESS,
   payload: items
 });
 
-export const filterTimeEntriesByClient = timeEntryFilter => ({
+export const filterTimeEntriesByClient = (timeEntryFilter): ActionInterface => ({
   type: FILTER_TIME_ENTRIES_BY_CLIENT,
   payload: timeEntryFilter
 });
 
-export const deleteTimeEntryFailure = error => ({
+export const deleteTimeEntryFailure = (error): ActionInterface => ({
   type: DELETE_TIME_ENTRY_FAILURE,
   payload: error
 });
 
-export const deleteTimeEntryRequest = timeEntryID => ({
+export const deleteTimeEntryRequest = (timeEntryID): ActionInterface => ({
   type: DELETE_TIME_ENTRY_REQUEST,
   payload: timeEntryID
 });
 
-export const deleteTimeEntrySuccess = timeEntryID => ({
+export const deleteTimeEntrySuccess = (timeEntryID): ActionInterface => ({
   type: DELETE_TIME_ENTRY_SUCCESS,
   payload: timeEntryID
 });
