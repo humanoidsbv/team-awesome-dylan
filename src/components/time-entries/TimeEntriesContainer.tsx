@@ -11,18 +11,16 @@ import {
   timeEntriesByClientSelector
 } from '../../redux/time-entries';
 import { clientsItemsSelector, fetchClientsRequest } from '../../redux/clients';
-import {
-  ActionInterface, TimeEntryStateInterface, TimeEntriesPropsInterface, TimeEntriesStateInterface
-} from '../../redux/time-entries/types';
+import { TimeEntriesStatePropsInterface, TimeEntriesDispatchPropsInterface } from '../../redux/time-entries/types';
 
-const TimeEntriesContainer = (props: TimeEntriesPropsInterface): React.ReactElement => <TimeEntries {...props} />;
+const TimeEntriesContainer = (props): React.ReactElement => <TimeEntries {...props} />;
 
-const mapStateToProps = (state: TimeEntriesStateInterface): React.ReactElement => ({
+const mapStateToProps = (state): TimeEntriesStatePropsInterface => ({
   clients: clientsItemsSelector(state),
   timeEntries: timeEntriesByClientSelector(state)
 });
 
-const mapDispatchToProps = (dispatch: ActionInterface): React.ReactElement => bindActionCreators(
+const mapDispatchToProps = (dispatch): TimeEntriesDispatchPropsInterface => bindActionCreators(
   {
     createTimeEntry: createTimeEntryRequest,
     deleteTimeEntry: deleteTimeEntryRequest,

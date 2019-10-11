@@ -1,7 +1,7 @@
 import { ClientInterface } from '../clients/types';
 
 export interface TimeEntryInterface {
-  client: string | number;
+  client: ClientInterface;
   id: number;
   startTimestamp: string;
   stopTimestamp: string;
@@ -16,17 +16,17 @@ export interface ActionInterface {
   type: string;
   payload?: any;
 }
+export interface TimeEntriesStatePropsInterface {
+  clients: ClientInterface[];
+  timeEntries: TimeEntryInterface[];
+}
 
-export interface TimeEntriesStateInterface {
-  clients: ClientInterface[];
-  timeEntries: TimeEntryInterface[];
+export interface TimeEntriesDispatchPropsInterface {
+  createTimeEntry: (newTimeEntry) => ActionInterface;
+  deleteTimeEntry: (timeEntryID) => ActionInterface;
+  fetchClients: () => ActionInterface;
+  fetchTimeEntries: () => ActionInterface;
+  filterTimeEntriesByClient: (client) => ActionInterface;
 }
-export interface TimeEntriesPropsInterface {
-  clients: ClientInterface[];
-  timeEntries: TimeEntryInterface[];
-  createTimeEntry: () => {};
-  deleteTimeEntry: () => {};
-  fetchClients: () => [];
-  fetchTimeEntries: () => TimeEntryInterface[] ;
-  filterTimeEntriesByClient: (number) => TimeEntryInterface[];
-}
+
+export type TimeEntriesProps = TimeEntriesStatePropsInterface & TimeEntriesDispatchPropsInterface

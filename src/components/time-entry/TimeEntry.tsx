@@ -12,7 +12,8 @@ interface TimeEntryProps extends TimeEntryInterface {
 const TimeEntry = ({
   client, deleteTimeEntry, id, startTimestamp, stopTimestamp
 }: TimeEntryProps): React.ReactElement => {
-  const clientDurationParse = (Date.parse(stopTimestamp) - Date.parse(startTimestamp)) / 60 / 60 / 1000;
+  const clientDurationParse = (
+    Date.parse(stopTimestamp) - Date.parse(startTimestamp)) / 60 / 60 / 1000;
 
   const durationHours = Math.trunc(clientDurationParse);
   const durationMinutes = Math.round((clientDurationParse % 1) * 60);
