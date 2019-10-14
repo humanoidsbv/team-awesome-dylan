@@ -72,7 +72,7 @@ function TimeEntries({
                 <TimeEntryHeading startTime={startTimestamp} />
               )}
               <TimeEntry
-                client={client.clientName}
+                client={client}
                 deleteTimeEntry={(timeEntryId): {} => deleteTimeEntry(timeEntryId)}
                 id={id}
                 startTimestamp={startTimestamp}

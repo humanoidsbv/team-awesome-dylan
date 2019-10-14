@@ -54,12 +54,5 @@ const TimeEntry = ({
   );
 };
 
-// TimeEntry.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   client: PropTypes.string.isRequired,
-//   deleteTimeEntry: PropTypes.func.isRequired,
-//   startTime: PropTypes.string.isRequired,
-//   stopTime: PropTypes.string.isRequired
-// };
 
 export default TimeEntry;
