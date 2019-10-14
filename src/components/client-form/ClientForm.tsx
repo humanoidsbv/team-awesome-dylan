@@ -95,8 +95,8 @@ function ClientForm(
             Client
             <Input
               isValid={validity.clientName !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="clientName"
               id="clientName"
               onBlur={handleBlur}
@@ -109,8 +109,8 @@ function ClientForm(
             Branch
             <Input
               isValid={validity.branch !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="branch"
               onBlur={handleBlur}
               onChange={(event): void => setBranch(event.target.value)}
@@ -122,8 +122,8 @@ function ClientForm(
             Address
             <Input
               isValid={validity.address !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="address"
               onBlur={handleBlur}
               onChange={(event): void => setAddress(event.target.value)}
@@ -138,8 +138,8 @@ function ClientForm(
               Postal code
               <Input
                 isValid={validity.postalCode !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="postalCode"
                 onBlur={handleBlur}
                 onChange={(event): void => setPostalCode(event.target.value)}
@@ -151,8 +151,8 @@ function ClientForm(
               Locality
               <Input
                 isValid={validity.locality !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="locality"
                 onBlur={handleBlur}
                 onChange={(event): void => setLocality(event.target.value)}
@@ -165,8 +165,8 @@ function ClientForm(
             Contact person
             <Input
               isValid={validity.contactPerson !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="contactPerson"
               onBlur={handleBlur}
               onChange={(event): void => setContactPerson(event.target.value)}
@@ -181,8 +181,8 @@ function ClientForm(
             Contact phone number
             <Input
               isValid={validity.contactPhoneNumber !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="contactPhoneNumber"
               onBlur={handleBlur}
               onChange={(event): void => setContactPhoneNumber(event.target.value)}
