@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 export const clientsRootSelector = createSelector(
-  state => state,
+  (state) => state,
   ({ clients }) => clients
 );
 

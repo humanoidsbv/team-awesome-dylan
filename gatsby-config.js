@@ -24,6 +24,14 @@ module.exports = {
           include: /assets/
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        jsxPragma: 'jsx',
+        allExtensions: true
+      }
     }
   ]
 };

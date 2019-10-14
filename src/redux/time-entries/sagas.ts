@@ -19,7 +19,7 @@ import {
   fetchTimeEntriesSuccess
 } from '.';
 
-function* createTimeEntryRequest({ payload }): {} {
+function* createTimeEntryRequest({ payload }: any): {} {
   try {
     yield call(postTimeEntry, payload);
     yield put(createTimeEntrySuccess(payload));
@@ -32,7 +32,7 @@ export function* watchCreateTimeEntry(): {} {
   yield takeLatest(CREATE_TIME_ENTRY_REQUEST, createTimeEntryRequest);
 }
 
-function* deleteTimeEntryRequest({ payload }): {} {
+function* deleteTimeEntryRequest({ payload }: any): {} {
   try {
     yield call(deleteTimeEntry, payload);
     yield put(deleteTimeEntrySuccess(payload));

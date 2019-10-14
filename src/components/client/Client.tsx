@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 import clientAvatar from '../../../static/pictures/picture-tnt.jpg';
 import styles from './Client.module.css';
+import { ClientInterface } from '../../redux/clients/types';
 
-const Client = ({ clientName }) => {
+const Client = ({ clientName }: ClientInterface): React.ReactElement => {
   const [isClientActive, setClientActivity] = useState(false);
 
-  const toggleClientActivity = () => {
+  const toggleClientActivity = (): void => {
     setClientActivity(!isClientActive);
   };
 
@@ -61,10 +61,6 @@ const Client = ({ clientName }) => {
       </div>
     </div>
   );
-};
-
-Client.propTypes = {
-  clientName: PropTypes.string.isRequired
 };
 
 export default Client;

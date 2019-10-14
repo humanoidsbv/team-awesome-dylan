@@ -1,4 +1,6 @@
-import { all, fork, call, put, takeLatest } from 'redux-saga/effects';
+import {
+  all, fork, call, put, takeLatest
+} from 'redux-saga/effects';
 import { fetchClients, postClient } from '../../services/clients-api';
 
 import {
@@ -10,7 +12,7 @@ import {
   fetchClientsSuccess
 } from '.';
 
-function* createClientRequest({ payload }) {
+function* createClientRequest({ payload }: any): {} {
   try {
     yield call(postClient, payload);
     yield put(createClientSuccess(payload));
@@ -19,11 +21,11 @@ function* createClientRequest({ payload }) {
   }
 }
 
-export function* watchCreateClient() {
+export function* watchCreateClient(): {} {
   yield takeLatest(CREATE_CLIENT_REQUEST, createClientRequest);
 }
 
-function* fetchClientsRequest() {
+function* fetchClientsRequest(): {} {
   try {
     const response = yield call(fetchClients);
     yield put(fetchClientsSuccess(response));
@@ -32,10 +34,10 @@ function* fetchClientsRequest() {
   }
 }
 
-export function* watchFetchClientsRequest() {
+export function* watchFetchClientsRequest(): {} {
   yield takeLatest(FETCH_CLIENTS_REQUEST, fetchClientsRequest);
 }
 
-export function* clientsSagas() {
+export function* clientsSagas(): {} {
   yield all([fork(watchFetchClientsRequest), fork(watchCreateClient)]);
 }

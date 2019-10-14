@@ -7,31 +7,33 @@ import {
   FETCH_CLIENTS_SUCCESS
 } from '.';
 
-export const fetchClientsFailure = error => ({
+import { ActionInterface } from './types';
+
+export const fetchClientsFailure = (error): ActionInterface => ({
   type: FETCH_CLIENTS_FAILURE,
   payload: error
 });
 
-export const fetchClientsRequest = () => ({
+export const fetchClientsRequest = (): ActionInterface => ({
   type: FETCH_CLIENTS_REQUEST
 });
 
-export const fetchClientsSuccess = items => ({
+export const fetchClientsSuccess = (items): ActionInterface => ({
   type: FETCH_CLIENTS_SUCCESS,
   payload: items
 });
 
-export const createClientFailure = error => ({
+export const createClientFailure = (error): ActionInterface => ({
   type: CREATE_CLIENT_FAILURE,
   payload: error
 });
 
-export const createClientRequest = newClient => ({
+export const createClientRequest = (newClient): ActionInterface => ({
   type: CREATE_CLIENT_REQUEST,
   payload: newClient
 });
 
-export const createClientSuccess = newClient => ({
+export const createClientSuccess = (newClient): ActionInterface => ({
   type: CREATE_CLIENT_SUCCESS,
   payload: newClient
 });

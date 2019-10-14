@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './Clients.module.css';
 import Client from '../client/Client';
 import ClientForm from '../client-form/ClientForm';
+import { ClientsProps, ClientInterface } from '../../redux/clients/types';
 
-const Clients = ({ clients, createClient, fetchClients }) => {
+const Clients = ({ clients, createClient, fetchClients }: ClientsProps): React.ReactElement => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
 
-  const toggleClientForm = () => {
+  const toggleClientForm = (): void => {
     setClientFormVisibility(!isClientFormVisible);
   };
 
@@ -19,7 +19,7 @@ const Clients = ({ clients, createClient, fetchClients }) => {
   return (
     <>
       <ClientForm
-        createClient={newClient => createClient(newClient)}
+        createClient={(newClient): {} => createClient(newClient)}
         isClientFormVisible={isClientFormVisible}
         toggleClientForm={toggleClientForm}
       />
@@ -35,34 +35,20 @@ const Clients = ({ clients, createClient, fetchClients }) => {
         >
           + New Client
         </button>
-        <select type="button" className={styles.sortClientsSelector}>
+        <select className={styles.sortClientsSelector}>
           <option value="">Sort by:</option>
-          {clients.map(({ id, name }) => (
-            <option key={id}>{name}</option>
+          {clients.map(({ id, clientName }: ClientInterface) => (
+            <option key={id}>{clientName}</option>
           ))}
         </select>
       </div>
       <div className={styles.clientsContainer}>
-        {clients.map(({ id, clientName }) => (
+        {clients.map(({ id, clientName }: ClientInterface) => (
           <Client clientName={clientName} key={id} />
         ))}
       </div>
     </>
   );
-};
-
-Clients.propTypes = {
-  clients: PropTypes.arrayOf(
-    PropTypes.shape({
-      clientName: PropTypes.string
-    })
-  ),
-  createClient: PropTypes.func.isRequired,
-  fetchClients: PropTypes.func.isRequired
-};
-
-Clients.defaultProps = {
-  clients: []
 };
 
 export default Clients;

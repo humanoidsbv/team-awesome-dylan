@@ -7,3 +7,24 @@ export interface ClientInterface {
   locality: string;
   postalCode: string;
 }
+
+export interface ClientsStateInterface {
+  items: ClientInterface[];
+  hasError: string;
+  isLoading: boolean;
+}
+
+export interface ActionInterface {
+  type: string;
+  payload?: any;
+}
+export interface ClientsStatePropsInterface {
+  clients: ClientInterface[];
+}
+
+export interface ClientsDispatchPropsInterface {
+  createClient: (newClient) => ActionInterface;
+  fetchClients: () => ActionInterface;
+}
+
+export type ClientsProps = ClientsStatePropsInterface & ClientsDispatchPropsInterface

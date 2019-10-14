@@ -1,3 +1,5 @@
+import { ClientsStateInterface } from './types';
+
 import {
   CREATE_CLIENT_REQUEST,
   CREATE_CLIENT_SUCCESS,
@@ -5,13 +7,14 @@ import {
   FETCH_CLIENTS_SUCCESS
 } from './actions';
 
-const initialState = {
+const initialState: ClientsStateInterface = {
   items: [],
   isLoading: false,
   hasError: ''
 };
 
-export default (state = initialState, { type, payload }) => {
+export default (state: ClientsStateInterface = initialState,
+  { type, payload }): ClientsStateInterface => {
   switch (type) {
     case FETCH_CLIENTS_REQUEST:
       return {
