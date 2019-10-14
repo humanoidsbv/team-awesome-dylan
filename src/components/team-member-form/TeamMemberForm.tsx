@@ -126,8 +126,8 @@ function TeamMemberForm({
               First Name
               <Input
                 isValid={validity.firstName !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="firstName"
                 onBlur={handleBlur}
                 onChange={(event): void => setFirstName(event.target.value)}
@@ -139,8 +139,8 @@ function TeamMemberForm({
               Last Name
               <Input
                 isValid={validity.lastName !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="lastName"
                 onBlur={handleBlur}
                 onChange={(event): void => setLastName(event.target.value)}
@@ -153,8 +153,8 @@ function TeamMemberForm({
             E-mail Address
             <Input
               isValid={validity.emailAddress !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="emailAddress"
               onBlur={handleBlur}
               onChange={(event): void => setEmailAddress(event.target.value)}
@@ -167,8 +167,8 @@ function TeamMemberForm({
             <Input
               isMultiLine
               isValid={validity.bio !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="bio"
               onBlur={handleBlur}
               onChange={(event): void => setBio(event.target.value)}
@@ -182,8 +182,8 @@ function TeamMemberForm({
             Address
             <Input
               isValid={validity.address !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="address"
               onBlur={handleBlur}
               onChange={(event): void => setAddress(event.target.value)}
@@ -196,8 +196,8 @@ function TeamMemberForm({
               Postal code
               <Input
                 isValid={validity.postalCode !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="postalCode"
                 onBlur={handleBlur}
                 onChange={(event): void => setPostalCode(event.target.value)}
@@ -209,8 +209,8 @@ function TeamMemberForm({
               Locality
               <Input
                 isValid={validity.locality !== false}
-                maxLength="35"
-                minLength="2"
+                maxLength={35}
+                minLength={2}
                 name="locality"
                 onBlur={handleBlur}
                 onChange={(event): void => setLocality(event.target.value)}
@@ -226,8 +226,8 @@ function TeamMemberForm({
             Social Profiles
             <Input
               isValid={validity.socialProfileOne !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="socialProfileOne"
               onBlur={handleBlur}
               onChange={(event): void => setSocialProfileOne(event.target.value)}
@@ -236,8 +236,8 @@ function TeamMemberForm({
             />
             <Input
               isValid={validity.socialProfileTwo !== false}
-              maxLength="35"
-              minLength="2"
+              maxLength={35}
+              minLength={2}
               name="socialProfileTwo"
               onBlur={handleBlur}
               onChange={(event): void => setSocialProfileTwo(event.target.value)}

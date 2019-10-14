@@ -1,10 +1,18 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import Input from '../../shared/components/input/Input';
 import styles from './ClientForm.module.css';
+import { ClientsProps } from '../../redux/clients/types';
+import { ValidityState } from '../../shared/types';
 
-function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
+interface ClientFormProps extends ClientsProps {
+  isClientFormVisible: boolean;
+  toggleClientForm: () => void;
+}
+
+function ClientForm(
+  { toggleClientForm, isClientFormVisible, createClient }: ClientFormProps
+): React.ReactElement {
   const [address, setAddress] = useState('');
   const [clientName, setClientName] = useState('');
   const [branch, setBranch] = useState('');
@@ -12,11 +20,11 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
   const [postalCode, setPostalCode] = useState('');
   const [contactPerson, setContactPerson] = useState('');
   const [contactPhoneNumber, setContactPhoneNumber] = useState('');
-  const [validity, setValidity] = useState({});
+  const [validity, setValidity] = useState<ValidityState>({});
 
   const formRef = useRef(null);
 
-  const handleBlur = event => {
+  const handleBlur = (event): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),
@@ -24,7 +32,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
     });
   };
 
-  const resetFormStates = () => {
+  const resetFormStates = (): void => {
     setAddress('');
     setBranch('');
     setClientName('');
@@ -34,13 +42,13 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
     setPostalCode('');
   };
 
-  const handleCancel = event => {
+  const handleCancel = (event): void => {
     event.preventDefault();
     resetFormStates();
     toggleClientForm();
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event): void => {
     event.preventDefault();
     resetFormStates();
 
@@ -58,8 +66,8 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
 
   return (
     <div
-      className={`${styles.clientForm} ${!isClientFormVisible &&
-        styles.clientFormHide}`}
+      className={`${styles.clientForm} ${!isClientFormVisible
+        && styles.clientFormHide}`}
     >
       <div className={styles.headerClientForm}>
         <span className={styles.headerClientFormText}>Add new client</span>
@@ -91,7 +99,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               name="clientName"
               id="clientName"
               onBlur={handleBlur}
-              onChange={event => setClientName(event.target.value)}
+              onChange={(event): void => setClientName(event.target.value)}
               required
               value={clientName}
             />
@@ -104,7 +112,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               minLength="2"
               name="branch"
               onBlur={handleBlur}
-              onChange={event => setBranch(event.target.value)}
+              onChange={(event): void => setBranch(event.target.value)}
               required
               value={branch}
             />
@@ -117,7 +125,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               minLength="2"
               name="address"
               onBlur={handleBlur}
-              onChange={event => setAddress(event.target.value)}
+              onChange={(event): void => setAddress(event.target.value)}
               required
               value={address}
             />
@@ -133,7 +141,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
                 minLength="2"
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={event => setPostalCode(event.target.value)}
+                onChange={(event): void => setPostalCode(event.target.value)}
                 required
                 value={postalCode}
               />
@@ -146,7 +154,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
                 minLength="2"
                 name="locality"
                 onBlur={handleBlur}
-                onChange={event => setLocality(event.target.value)}
+                onChange={(event): void => setLocality(event.target.value)}
                 required
                 value={locality}
               />
@@ -160,7 +168,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               minLength="2"
               name="contactPerson"
               onBlur={handleBlur}
-              onChange={event => setContactPerson(event.target.value)}
+              onChange={(event): void => setContactPerson(event.target.value)}
               required
               value={contactPerson}
             />
@@ -176,7 +184,7 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
               minLength="2"
               name="contactPhoneNumber"
               onBlur={handleBlur}
-              onChange={event => setContactPhoneNumber(event.target.value)}
+              onChange={(event): void => setContactPhoneNumber(event.target.value)}
               required
               value={contactPhoneNumber}
             />
@@ -186,11 +194,5 @@ function ClientForm({ toggleClientForm, isClientFormVisible, createClient }) {
     </div>
   );
 }
-
-ClientForm.propTypes = {
-  createClient: PropTypes.func.isRequired,
-  isClientFormVisible: PropTypes.bool.isRequired,
-  toggleClientForm: PropTypes.func.isRequired
-};
 
 export default ClientForm;
