@@ -2,10 +2,11 @@ import React, { useState, useRef } from 'react';
 
 import Input from '../../shared/components/input/Input';
 import styles from './TeamMemberForm.module.css';
-import { TeamMembersProps } from '../../redux/team-members/types';
+import { ActionInterface } from '../../redux/team-members/types';
 import { ValidityState } from '../../shared/types';
 
-interface TeamMemberFormProps extends TeamMembersProps {
+interface TeamMemberFormProps {
+  createTeamMember: (newTeamMember) => ActionInterface;
   isTeamMemberFormVisible: boolean;
   toggleTeamMemberForm: () => void;
 }

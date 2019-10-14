@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Clients.module.css';
 import Client from '../client/Client';
 import ClientForm from '../client-form/ClientForm';
-import { ClientsProps, ClientInterface } from '../../redux/clients/types';
+import { ClientsProps, ClientInterface, ActionInterface } from '../../redux/clients/types';
 
 const Clients = ({ clients, createClient, fetchClients }: ClientsProps): React.ReactElement => {
   const [isClientFormVisible, setClientFormVisibility] = useState(false);
@@ -19,7 +19,7 @@ const Clients = ({ clients, createClient, fetchClients }: ClientsProps): React.R
   return (
     <>
       <ClientForm
-        createClient={(newClient): {} => createClient(newClient)}
+        createClient={(newClient: {}): ActionInterface => createClient(newClient)}
         isClientFormVisible={isClientFormVisible}
         toggleClientForm={toggleClientForm}
       />

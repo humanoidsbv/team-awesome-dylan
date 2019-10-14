@@ -124,7 +124,7 @@ function TimeEntryForm({
         <input
           className={styles.inputsTime}
           id="startTime"
-          name="fromTime"
+          name="startTime"
           onBlur={handleBlur}
           onChange={({ target }): void => setStartTime(target.value)}
           required
@@ -136,8 +136,8 @@ function TimeEntryForm({
         TO
         <input
           className={styles.inputsTime}
-          id="endTime"
-          name="toTime"
+          id="stopTime"
+          name="stopTime"
           onBlur={handleBlur}
           onChange={({ target }): void => setStopTime(target.value)}
           required

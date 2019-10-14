@@ -4,7 +4,7 @@ import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
-import { TeamMembersProps, TeamMemberInterface } from '../../redux/team-members/types';
+import { ActionInterface, TeamMembersProps, TeamMemberInterface } from '../../redux/team-members/types';
 
 function TeamMembers({
   createTeamMember,
@@ -31,7 +31,7 @@ function TeamMembers({
   return (
     <div>
       <TeamMemberForm
-        createTeamMember={(newTeamMember): {} => createTeamMember(newTeamMember)}
+        createTeamMember={(newTeamMember: {}): ActionInterface => createTeamMember(newTeamMember)}
         isTeamMemberFormVisible={isTeamMemberFormVisible}
         toggleTeamMemberForm={toggleTeamMemberForm}
       />
