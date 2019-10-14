@@ -1,14 +1,20 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import Input from '../../shared/components/input/Input';
 import styles from './TeamMemberForm.module.css';
+import { TeamMembersProps } from '../../redux/team-members/types';
+import { ValidityState } from '../../shared/types';
+
+interface TeamMemberFormProps extends TeamMembersProps {
+  isTeamMemberFormVisible: boolean;
+  toggleTeamMemberForm: () => void;
+}
 
 function TeamMemberForm({
   createTeamMember,
   toggleTeamMemberForm,
   isTeamMemberFormVisible
-}) {
+}: TeamMemberFormProps): React.ReactElement {
   const today = new Date()
     .toISOString()
     .split('T')
@@ -27,11 +33,11 @@ function TeamMemberForm({
   const [socialProfileOne, setSocialProfileOne] = useState('');
   const [socialProfileTwo, setSocialProfileTwo] = useState('');
   const [startingDate, setStartingDate] = useState(today);
-  const [validity, setValidity] = useState({});
+  const [validity, setValidity] = useState<ValidityState>({});
 
   const formRef = useRef(null);
 
-  const handleBlur = event => {
+  const handleBlur = (event): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),
@@ -39,7 +45,7 @@ function TeamMemberForm({
     });
   };
 
-  const resetFormStates = () => {
+  const resetFormStates = (): void => {
     setAddress('');
     setBio('');
     setEmailAddress('');
@@ -55,13 +61,13 @@ function TeamMemberForm({
     setCurrentClient('');
   };
 
-  const handleCancel = event => {
+  const handleCancel = (event): void => {
     event.preventDefault();
     resetFormStates();
     toggleTeamMemberForm();
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event): void => {
     event.preventDefault();
     resetFormStates();
 
@@ -124,7 +130,7 @@ function TeamMemberForm({
                 minLength="2"
                 name="firstName"
                 onBlur={handleBlur}
-                onChange={event => setFirstName(event.target.value)}
+                onChange={(event): void => setFirstName(event.target.value)}
                 required
                 value={firstName}
               />
@@ -137,7 +143,7 @@ function TeamMemberForm({
                 minLength="2"
                 name="lastName"
                 onBlur={handleBlur}
-                onChange={event => setLastName(event.target.value)}
+                onChange={(event): void => setLastName(event.target.value)}
                 required
                 value={lastName}
               />
@@ -151,7 +157,7 @@ function TeamMemberForm({
               minLength="2"
               name="emailAddress"
               onBlur={handleBlur}
-              onChange={event => setEmailAddress(event.target.value)}
+              onChange={(event): void => setEmailAddress(event.target.value)}
               required
               value={emailAddress}
             />
@@ -165,7 +171,7 @@ function TeamMemberForm({
               minLength="2"
               name="bio"
               onBlur={handleBlur}
-              onChange={event => setBio(event.target.value)}
+              onChange={(event): void => setBio(event.target.value)}
               required
               value={bio}
             />
@@ -180,7 +186,7 @@ function TeamMemberForm({
               minLength="2"
               name="address"
               onBlur={handleBlur}
-              onChange={event => setAddress(event.target.value)}
+              onChange={(event): void => setAddress(event.target.value)}
               required
               value={address}
             />
@@ -194,7 +200,7 @@ function TeamMemberForm({
                 minLength="2"
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={event => setPostalCode(event.target.value)}
+                onChange={(event): void => setPostalCode(event.target.value)}
                 required
                 value={postalCode}
               />
@@ -207,7 +213,7 @@ function TeamMemberForm({
                 minLength="2"
                 name="locality"
                 onBlur={handleBlur}
-                onChange={event => setLocality(event.target.value)}
+                onChange={(event): void => setLocality(event.target.value)}
                 required
                 value={locality}
               />
@@ -224,7 +230,7 @@ function TeamMemberForm({
               minLength="2"
               name="socialProfileOne"
               onBlur={handleBlur}
-              onChange={event => setSocialProfileOne(event.target.value)}
+              onChange={(event): void => setSocialProfileOne(event.target.value)}
               required
               value={socialProfileOne}
             />
@@ -234,7 +240,7 @@ function TeamMemberForm({
               minLength="2"
               name="socialProfileTwo"
               onBlur={handleBlur}
-              onChange={event => setSocialProfileTwo(event.target.value)}
+              onChange={(event): void => setSocialProfileTwo(event.target.value)}
               required
               value={socialProfileTwo}
             />
@@ -244,11 +250,5 @@ function TeamMemberForm({
     </div>
   );
 }
-
-TeamMemberForm.propTypes = {
-  createTeamMember: PropTypes.func.isRequired,
-  toggleTeamMemberForm: PropTypes.func.isRequired,
-  isTeamMemberFormVisible: PropTypes.bool.isRequired
-};
 
 export default TeamMemberForm;
