@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './TimeEntryHeading.module.css';
+import { TimeEntryInterface } from '../../redux/time-entries/types';
 
-const TimeEntryHeading = ({ startTime }) => {
-  const headerString = new Date(startTime).toLocaleDateString('nl-NL', {
+const TimeEntryHeading = ({ startTimestamp }: TimeEntryInterface): React.ReactElement => {
+  const headerString = new Date(startTimestamp).toLocaleDateString('nl-NL', {
     day: 'numeric',
     month: 'long',
     weekday: 'long'
@@ -16,10 +16,6 @@ const TimeEntryHeading = ({ startTime }) => {
       <span className={styles.duration}>08:00:00 </span>
     </div>
   );
-};
-
-TimeEntryHeading.propTypes = {
-  startTime: PropTypes.string.isRequired
 };
 
 export default TimeEntryHeading;

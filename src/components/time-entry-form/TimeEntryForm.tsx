@@ -1,15 +1,21 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import IconClose from '../../assets/icons/icon-close.svg';
 import styles from './TimeEntryForm.module.css';
+import { TimeEntriesProps } from '../../redux/time-entries/types';
+import { ValidityState } from '../../shared/types';
+
+interface TimeEntryFormProps extends TimeEntriesProps {
+  isTimeEntryFormVisible: boolean;
+  toggleTimeEntryForm: () => void;
+}
 
 function TimeEntryForm({
   clients,
   createTimeEntry,
   isTimeEntryFormVisible,
   toggleTimeEntryForm
-}) {
+}: TimeEntryFormProps): React.ReactElement {
   const today = new Date()
     .toISOString()
     .split('T')
@@ -20,11 +26,11 @@ function TimeEntryForm({
   const [date, setDate] = useState(today);
   const [startTime, setStartTime] = useState('09:00');
   const [stopTime, setStopTime] = useState('17:00');
-  const [validity, setValidity] = useState({});
+  const [validity, setValidity] = useState<ValidityState>({});
 
   const formRef = useRef(null);
 
-  const handleBlur = event => {
+  const handleBlur = (event): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),
@@ -32,12 +38,12 @@ function TimeEntryForm({
     });
   };
 
-  const handleCancel = event => {
+  const handleCancel = (event): void => {
     event.preventDefault();
     toggleTimeEntryForm();
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event): void => {
     event.preventDefault();
 
     setClient('');
@@ -54,8 +60,8 @@ function TimeEntryForm({
 
   return (
     <form
-      className={`${styles.timeEntryForm} ${!isTimeEntryFormVisible &&
-        styles.timeEntryFormHide}`}
+      className={`${styles.timeEntryForm} ${!isTimeEntryFormVisible
+        && styles.timeEntryFormHide}`}
       onSubmit={handleSubmit}
       ref={formRef}
     >
@@ -67,7 +73,7 @@ function TimeEntryForm({
           id="client"
           name="client"
           onBlur={handleBlur}
-          onChange={({ target }) => setClient(target.value)}
+          onChange={({ target }): void => setClient(target.value)}
           required
           value={client}
         >
@@ -90,11 +96,11 @@ function TimeEntryForm({
               : styles.inputActivityValid
           }`}
           id="activity"
-          maxLength="35"
-          minLength="2"
+          maxLength={35}
+          minLength={2}
           name="activity"
           onBlur={handleBlur}
-          onChange={({ target }) => setActivity(target.value)}
+          onChange={({ target }): void => setActivity(target.value)}
           placeholder="--enter an activity--"
           required
           value={activity}
@@ -107,7 +113,7 @@ function TimeEntryForm({
           id="date"
           name="date"
           onBlur={handleBlur}
-          onChange={({ target }) => setDate(target.value)}
+          onChange={({ target }): void => setDate(target.value)}
           required
           type="date"
           value={date}
@@ -120,7 +126,7 @@ function TimeEntryForm({
           id="startTime"
           name="fromTime"
           onBlur={handleBlur}
-          onChange={({ target }) => setStartTime(target.value)}
+          onChange={({ target }): void => setStartTime(target.value)}
           required
           type="time"
           value={startTime}
@@ -133,7 +139,7 @@ function TimeEntryForm({
           id="endTime"
           name="toTime"
           onBlur={handleBlur}
-          onChange={({ target }) => setStopTime(target.value)}
+          onChange={({ target }): void => setStopTime(target.value)}
           required
           type="type"
           value={stopTime}
@@ -149,20 +155,5 @@ function TimeEntryForm({
     </form>
   );
 }
-
-TimeEntryForm.propTypes = {
-  clients: PropTypes.arrayOf(
-    PropTypes.shape({
-      client: PropTypes.number
-    })
-  ),
-  createTimeEntry: PropTypes.func.isRequired,
-  isTimeEntryFormVisible: PropTypes.bool.isRequired,
-  toggleTimeEntryForm: PropTypes.func.isRequired
-};
-
-TimeEntryForm.defaultProps = {
-  clients: []
-};
 
 export default TimeEntryForm;

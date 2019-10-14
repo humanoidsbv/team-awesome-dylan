@@ -1,10 +1,10 @@
 import { ClientInterface } from '../clients/types';
 
 export interface TimeEntryInterface {
-  client: ClientInterface;
-  id: number;
-  startTimestamp: string;
-  stopTimestamp: string;
+  client?: ClientInterface;
+  id?: number;
+  startTimestamp?: string;
+  stopTimestamp?: string;
 }
 
 export interface TimeEntryStateInterface {

@@ -69,7 +69,7 @@ function TimeEntries({
             <React.Fragment key={id}>
               {previousDate !== startDate && (
                 // eslint-disable-next-line react/jsx-indent
-                <TimeEntryHeading startTime={startTimestamp} />
+                <TimeEntryHeading startTimestamp={startTimestamp} />
               )}
               <TimeEntry
                 client={client}
