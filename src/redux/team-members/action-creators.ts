@@ -9,40 +9,42 @@ import {
   SORT_TEAM_MEMBERS_DIRECTION
 } from '.';
 
-export const fetchTeamMembersFailure = error => ({
+import { ActionInterface } from './types';
+
+export const fetchTeamMembersFailure = (error): ActionInterface => ({
   type: FETCH_TEAM_MEMBERS_FAILURE,
   payload: error
 });
 
-export const fetchTeamMembersRequest = () => ({
+export const fetchTeamMembersRequest = (): ActionInterface => ({
   type: FETCH_TEAM_MEMBERS_REQUEST
 });
 
-export const fetchTeamMembersSuccess = items => ({
+export const fetchTeamMembersSuccess = (items): ActionInterface => ({
   type: FETCH_TEAM_MEMBERS_SUCCESS,
   payload: items
 });
 
-export const createTeamMemberFailure = error => ({
+export const createTeamMemberFailure = (error): ActionInterface => ({
   type: CREATE_TEAM_MEMBER_FAILURE,
   payload: error
 });
 
-export const createTeamMemberRequest = newTeamMember => ({
+export const createTeamMemberRequest = (newTeamMember): ActionInterface => ({
   type: CREATE_TEAM_MEMBER_REQUEST,
   payload: newTeamMember
 });
 
-export const createTeamMemberSuccess = newTeamMember => ({
+export const createTeamMemberSuccess = (newTeamMember): ActionInterface => ({
   type: CREATE_TEAM_MEMBER_SUCCESS,
   payload: newTeamMember
 });
 
-export const sortTeamMembersByField = teamMemberSorter => ({
+export const sortTeamMembersByField = (teamMemberSorter): ActionInterface => ({
   type: SORT_TEAM_MEMBERS_BY_FIELD,
   payload: teamMemberSorter
 });
 
-export const sortTeamMembersDirection = () => ({
+export const sortTeamMembersDirection = (): ActionInterface => ({
   type: SORT_TEAM_MEMBERS_DIRECTION
 });

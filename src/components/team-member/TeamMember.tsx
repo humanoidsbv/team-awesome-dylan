@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 import styles from './TeamMember.module.css';
 import teamMemberAvatar from '../../../static/pictures/picture-tnt.jpg';
+import { TeamMemberInterface } from '../../redux/team-members/types';
 
 const TeamMember = ({
   currentClient,
@@ -12,10 +12,10 @@ const TeamMember = ({
   firstName,
   lastName,
   startingDate
-}) => {
+}: TeamMemberInterface): React.ReactElement => {
   const [isTeamMemberActive, setTeamMemberActivity] = useState(false);
 
-  const toggleTeamMemberActivity = () => {
+  const toggleTeamMemberActivity = (): void => {
     setTeamMemberActivity(!isTeamMemberActive);
   };
 
@@ -83,15 +83,6 @@ const TeamMember = ({
       </div>
     </div>
   );
-};
-
-TeamMember.propTypes = {
-  currentClient: PropTypes.string.isRequired,
-  employeeFunction: PropTypes.string.isRequired,
-  employeeNumber: PropTypes.string.isRequired,
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  startingDate: PropTypes.string.isRequired
 };
 
 export default TeamMember;

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './TeamMembers.module.css';
 import TeamMember from '../team-member/TeamMember';
 import TeamMemberForm from '../team-member-form/TeamMemberForm';
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 import Button from '../../shared/components/button/Button';
+import { TeamMembersProps, TeamMemberInterface } from '../../redux/team-members/types';
 
 function TeamMembers({
   createTeamMember,
@@ -14,16 +14,16 @@ function TeamMembers({
   sortTeamMembersByField,
   sortTeamMembersDirection,
   teamMembers
-}) {
+}: TeamMembersProps): React.ReactElement {
   const [isTeamMemberFormVisible, setTeamMemberFormVisibility] = useState(
     false
   );
 
-  const toggleTeamMemberForm = () => {
+  const toggleTeamMemberForm = (): void => {
     setTeamMemberFormVisibility(!isTeamMemberFormVisible);
   };
 
-  const handleChange = event => sortTeamMembersByField(event.target.value);
+  const handleChange = (event): {} => sortTeamMembersByField(event.target.value);
 
   useEffect(() => {
     fetchTeamMembers();
@@ -32,7 +32,7 @@ function TeamMembers({
   return (
     <div>
       <TeamMemberForm
-        createTeamMember={newTeamMember => createTeamMember(newTeamMember)}
+        createTeamMember={(newTeamMember): {} => createTeamMember(newTeamMember)}
         isTeamMemberFormVisible={isTeamMemberFormVisible}
         toggleTeamMemberForm={toggleTeamMemberForm}
       />
@@ -53,7 +53,6 @@ function TeamMembers({
             className={styles.sortTeamMembersSelector}
             id="sortSelect"
             onChange={handleChange}
-            type="button"
           >
             <option value="firstName">Sort by: First name</option>
             <option value="lastName">Sort by: Last name</option>
@@ -87,7 +86,7 @@ function TeamMembers({
             lastName,
             startingDate,
             id
-          }) => (
+          }: TeamMemberInterface) => (
             <TeamMember
               currentClient={currentClient}
               employeeFunction={employeeFunction}
@@ -103,22 +102,5 @@ function TeamMembers({
     </div>
   );
 }
-
-TeamMembers.propTypes = {
-  teamMembers: PropTypes.arrayOf(
-    PropTypes.shape({
-      firstName: PropTypes.string
-    })
-  ),
-  createTeamMember: PropTypes.func.isRequired,
-  fetchTeamMembers: PropTypes.func.isRequired,
-  sortTeamMembersByField: PropTypes.func.isRequired,
-  sortTeamMembersDirection: PropTypes.func.isRequired,
-  sortDirection: PropTypes.bool.isRequired
-};
-
-TeamMembers.defaultProps = {
-  teamMembers: []
-};
 
 export default TeamMembers;

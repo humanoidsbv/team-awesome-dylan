@@ -1,3 +1,5 @@
+import { TeamMembersStateInterface } from './types';
+
 import {
   CREATE_TEAM_MEMBER_REQUEST,
   CREATE_TEAM_MEMBER_SUCCESS,
@@ -7,14 +9,14 @@ import {
   SORT_TEAM_MEMBERS_DIRECTION
 } from './actions';
 
-const initialState = {
+const initialState: TeamMembersStateInterface = {
   items: [],
   isLoading: false,
   hasError: '',
   sortDirection: true
 };
 
-export default (state = initialState, { type, payload }) => {
+export default (state: TeamMembersStateInterface = initialState, { type, payload }): TeamMembersStateInterface => {
   switch (type) {
     case FETCH_TEAM_MEMBERS_REQUEST:
       return {

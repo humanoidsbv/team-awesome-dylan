@@ -11,24 +11,24 @@ import {
   teamMembersByFieldSelector,
   teamMembersSortDirectionSelector
 } from '../../redux/team-members';
+import { TeamMembersStatePropsInterface, TeamMembersDispatchPropsInterface } from '../../redux/team-members/types';
 
-const TeamMembersContainer = props => <TeamMembers {...props} />;
+const TeamMembersContainer = (props): React.ReactElement => <TeamMembers {...props} />;
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state): TeamMembersStatePropsInterface => ({
   sortDirection: teamMembersSortDirectionSelector(state),
   teamMembers: teamMembersByFieldSelector(state)
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      createTeamMember: createTeamMemberRequest,
-      fetchTeamMembers: fetchTeamMembersRequest,
-      sortTeamMembersByField,
-      sortTeamMembersDirection
-    },
-    dispatch
-  );
+const mapDispatchToProps = (dispatch): TeamMembersDispatchPropsInterface => bindActionCreators(
+  {
+    createTeamMember: createTeamMemberRequest,
+    fetchTeamMembers: fetchTeamMembersRequest,
+    sortTeamMembersByField,
+    sortTeamMembersDirection
+  },
+  dispatch
+);
 
 export default connect(
   mapStateToProps,
