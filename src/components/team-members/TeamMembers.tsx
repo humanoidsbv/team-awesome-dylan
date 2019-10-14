@@ -86,7 +86,7 @@ function TeamMembers({
             lastName,
             startingDate,
             id
-          }: TeamMemberInterface) => (
+          }: TeamMemberInterface): React.ReactElement => (
             <TeamMember
               currentClient={currentClient}
               employeeFunction={employeeFunction}

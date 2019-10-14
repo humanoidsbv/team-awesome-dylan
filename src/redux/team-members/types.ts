@@ -1,32 +1,33 @@
 export interface TeamMemberInterface {
-  firstName: string;
-  lastName: string;
-  id: number;
+  address?: string;
+  currentClient: string;
+  emailAddress?: string;
   employeeFunction: string;
   employeeNumber: string;
-  currentClient: string;
+  firstName: string;
+  id?: number;
+  key?: number;
+  lastName: string;
+  locality?: string;
+  postalCode?: string;
   startingDate: string;
-  emailAddress: string;
-  address: string;
-  postalCode: string;
-  locality: string;
 }
 
 export interface TeamMembersStateInterface {
-  items: TeamMemberInterface[];
   hasError: string;
   isLoading: boolean;
-  sortDirection?: boolean;
+  items: TeamMemberInterface[];
   sortByField?: string;
+  sortDirection?: boolean;
 }
 
 export interface ActionInterface {
-  type: string;
   payload?: any;
+  type: string;
 }
 export interface TeamMembersStatePropsInterface {
-  teamMembers: TeamMemberInterface[];
   sortDirection?: boolean;
+  teamMembers: TeamMemberInterface[];
 }
 
 export interface TeamMembersDispatchPropsInterface {

@@ -43,7 +43,7 @@ const Clients = ({ clients, createClient, fetchClients }: ClientsProps): React.R
         </select>
       </div>
       <div className={styles.clientsContainer}>
-        {clients.map(({ id, clientName }: ClientInterface) => (
+        {clients.map(({ id, clientName }: ClientInterface): React.ReactElement => (
           <Client clientName={clientName} key={id} />
         ))}
       </div>

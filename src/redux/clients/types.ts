@@ -1,22 +1,23 @@
 export interface ClientInterface {
-  branch: string;
+  branch?: string;
   clientName: string;
-  contactPerson: string;
-  contactPhoneNumber: string;
-  id: number;
-  locality: string;
-  postalCode: string;
+  contactPerson?: string;
+  contactPhoneNumber?: string;
+  id?: number;
+  key?: number;
+  locality?: string;
+  postalCode?: string;
 }
 
 export interface ClientsStateInterface {
-  items: ClientInterface[];
   hasError: string;
   isLoading: boolean;
+  items: ClientInterface[];
 }
 
 export interface ActionInterface {
-  type: string;
   payload?: any;
+  type: string;
 }
 export interface ClientsStatePropsInterface {
   clients: ClientInterface[];
