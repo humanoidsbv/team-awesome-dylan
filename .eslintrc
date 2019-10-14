@@ -21,6 +21,9 @@
       { "devDependencies": ["**/test.tsx", "**/test.ts"] }
     ],
     "@typescript-eslint/indent": [2, 2],
-    "comma-dangle": ["error", "never"]
+    "arrow-parens": [0, "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "import/no-cycle": [0, { "maxDepth": 5 }],
+    "react/jsx-props-no-spreading": [0]
   }
 }
