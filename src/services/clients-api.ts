@@ -4,12 +4,12 @@ const apiUrl = `${
     : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
 }/clients?_sort=clientName&_order=asc`;
 
-export async function fetchClients() {
+export async function fetchClients(): Promise<{}> {
   const response = await fetch(apiUrl);
   return response.json();
 }
 
-export const postClient = async newClient => {
+export const postClient = async (newClient: {}): Promise<{}> => {
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {

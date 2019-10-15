@@ -4,12 +4,12 @@ const apiUrl = `${
     : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
 }/time-entries?_sort=startTimestamp&_order=desc`;
 
-export async function fetchTimeEntries() {
+export async function fetchTimeEntries(): Promise<{}> {
   const response = await fetch(apiUrl);
   return response.json();
 }
 
-export const deleteTimeEntry = async timeEntryId => {
+export const deleteTimeEntry = async (timeEntryId: number): Promise<{}> => {
   const response = await fetch(`${apiUrl}/${timeEntryId}`, {
     method: 'DELETE',
     headers: {
@@ -19,7 +19,7 @@ export const deleteTimeEntry = async timeEntryId => {
   return response.json();
 };
 
-export const postTimeEntry = async newTimeEntry => {
+export const postTimeEntry = async (newTimeEntry: {}): Promise<{}> => {
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
