@@ -5,7 +5,7 @@ import HumanoidsIcon from '../../assets/icons/logo-humanoids.svg';
 import MenuDownIcon from '../../assets/icons/icon-arrow-down.svg';
 import styles from './ProfileButton.module.css';
 
-const ProfileButton = () => (
+const ProfileButton = (): React.ReactElement => (
   <div className={styles.containerMenuDownEmployeeAvatar}>
     <button type="button" className={styles.profilebutton}>
       <HumanoidsIcon className={styles.humanoidsIcon} />

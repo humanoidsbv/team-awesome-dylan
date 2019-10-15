@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import styles from './Navigation.module.css';
 
-const Navigation = ({ isMenuVisible }) => (
+interface NavigationInterface {
+  isMenuVisible: boolean;
+}
+
+const Navigation = ({ isMenuVisible }: NavigationInterface): React.ReactElement => (
   <nav
     className={`${styles.navigation} ${
       isMenuVisible ? styles.navigationVisible : ''
@@ -35,13 +38,5 @@ const Navigation = ({ isMenuVisible }) => (
     </a>
   </nav>
 );
-
-Navigation.defaultProps = {
-  isMenuVisible: false
-};
-
-Navigation.propTypes = {
-  isMenuVisible: PropTypes.bool
-};
 
 export default Navigation;

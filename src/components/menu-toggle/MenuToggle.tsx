@@ -1,12 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import IconClose from '../../assets/icons/icon-close.svg';
 import IconMenu from '../../assets/icons/icon-menu.svg';
 
 import styles from './MenuToggle.module.css';
 
-const MenuToggle = ({ toggleMenu, isMenuVisible }) => (
+interface MenuToggleInterface {
+  toggleMenu: () => void;
+  isMenuVisible: boolean;
+}
+
+const MenuToggle = ({ toggleMenu, isMenuVisible }: MenuToggleInterface): React.ReactElement => (
   <button type="button" onClick={toggleMenu} className={styles.toggle}>
     <IconMenu
       className={`${styles.icon} ${isMenuVisible ? styles.hideIcon : ''}`}
@@ -16,10 +20,5 @@ const MenuToggle = ({ toggleMenu, isMenuVisible }) => (
     />
   </button>
 );
-
-MenuToggle.propTypes = {
-  toggleMenu: PropTypes.func.isRequired,
-  isMenuVisible: PropTypes.bool.isRequired
-};
 
 export default MenuToggle;
