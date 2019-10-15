@@ -30,7 +30,7 @@ function TimeEntryForm({
 
   const formRef = useRef(null);
 
-  const handleBlur = (event): void => {
+  const handleBlur = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),

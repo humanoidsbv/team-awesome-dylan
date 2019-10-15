@@ -1,5 +1,8 @@
 /* eslint-disable global-require */
 module.exports = {
+  siteMetadata: {
+    title: `Gatsby Redux`,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-postcss',

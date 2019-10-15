@@ -22,7 +22,7 @@ function TeamMembers({
     setTeamMemberFormVisibility(!isTeamMemberFormVisible);
   };
 
-  const handleChange = (event): {} => sortTeamMembersByField(event.target.value);
+  const handleChange = (event): ActionInterface => sortTeamMembersByField(event.target.value);
 
   useEffect(() => {
     fetchTeamMembers();

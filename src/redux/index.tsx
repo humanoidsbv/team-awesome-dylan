@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
 
-const ReduxWrapper = ({ element }): React.ReactElement => {
+const ReduxWrapper = ({ element }: any ): React.ReactElement => {
   const middleware = createSagaMiddleware();
   const enhancer = composeWithDevTools(applyMiddleware(middleware));
   const store = createStore(rootReducer, enhancer);

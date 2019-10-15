@@ -5,7 +5,7 @@ import styles from './TimeEntry.module.css';
 import { TimeEntryInterface } from '../../redux/time-entries/types';
 
 interface TimeEntryProps extends TimeEntryInterface {
-  deleteTimeEntry: (number) => {};
+  deleteTimeEntry: (number) => ({});
 }
 
 const TimeEntry = ({

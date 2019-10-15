@@ -100,7 +100,7 @@ function ClientForm(
               name="clientName"
               id="clientName"
               onBlur={handleBlur}
-              onChange={(event): void => setClientName(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setClientName(target.value)}
               required
               value={clientName}
             />
@@ -113,7 +113,7 @@ function ClientForm(
               minLength={2}
               name="branch"
               onBlur={handleBlur}
-              onChange={(event): void => setBranch(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setBranch(target.value)}
               required
               value={branch}
             />
@@ -126,7 +126,7 @@ function ClientForm(
               minLength={2}
               name="address"
               onBlur={handleBlur}
-              onChange={(event): void => setAddress(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setAddress(target.value)}
               required
               value={address}
             />
@@ -142,7 +142,7 @@ function ClientForm(
                 minLength={2}
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={(event): void => setPostalCode(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setPostalCode(target.value)}
                 required
                 value={postalCode}
               />
@@ -155,7 +155,7 @@ function ClientForm(
                 minLength={2}
                 name="locality"
                 onBlur={handleBlur}
-                onChange={(event): void => setLocality(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setLocality(target.value)}
                 required
                 value={locality}
               />
@@ -169,7 +169,7 @@ function ClientForm(
               minLength={2}
               name="contactPerson"
               onBlur={handleBlur}
-              onChange={(event): void => setContactPerson(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setContactPerson(target.value)}
               required
               value={contactPerson}
             />
@@ -185,7 +185,7 @@ function ClientForm(
               minLength={2}
               name="contactPhoneNumber"
               onBlur={handleBlur}
-              onChange={(event): void => setContactPhoneNumber(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setContactPhoneNumber(target.value)}
               required
               value={contactPhoneNumber}
             />

@@ -1,11 +1,12 @@
 import {
   all, fork, call, put, takeLatest
 } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
+
 import {
   fetchTeamMembers,
   postTeamMember
 } from '../../services/team-members-api';
-
 import {
   CREATE_TEAM_MEMBER_REQUEST,
   FETCH_TEAM_MEMBERS_REQUEST,
@@ -15,7 +16,7 @@ import {
   fetchTeamMembersSuccess
 } from '.';
 
-function* createTeamMemberRequest({ payload }: any): {} {
+function* createTeamMemberRequest({ payload }: any): SagaIterator {
   try {
     yield call(postTeamMember, payload);
     yield put(createTeamMemberSuccess(payload));
@@ -24,11 +25,11 @@ function* createTeamMemberRequest({ payload }: any): {} {
   }
 }
 
-export function* watchCreateTimeEntry(): {} {
+export function* watchCreateTimeEntry(): SagaIterator {
   yield takeLatest(CREATE_TEAM_MEMBER_REQUEST, createTeamMemberRequest);
 }
 
-function* fetchTeamMembersRequest(): {} {
+function* fetchTeamMembersRequest(): SagaIterator {
   try {
     const response = yield call(fetchTeamMembers);
     yield put(fetchTeamMembersSuccess(response));
@@ -37,10 +38,10 @@ function* fetchTeamMembersRequest(): {} {
   }
 }
 
-export function* watchFetchTeamMembersRequest(): {} {
+export function* watchFetchTeamMembersRequest(): SagaIterator {
   yield takeLatest(FETCH_TEAM_MEMBERS_REQUEST, fetchTeamMembersRequest);
 }
 
-export function* teamMembersSagas(): {} {
+export function* teamMembersSagas(): SagaIterator {
   yield all([fork(watchFetchTeamMembersRequest), fork(watchCreateTimeEntry)]);
 }
