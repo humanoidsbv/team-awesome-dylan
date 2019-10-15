@@ -24,11 +24,11 @@ export interface TimeEntriesStatePropsInterface {
 }
 
 export interface TimeEntriesDispatchPropsInterface {
-  createTimeEntry: (newTimeEntry) => ActionInterface;
-  deleteTimeEntry: (timeEntryID) => ActionInterface;
+  createTimeEntry: (newTimeEntry: {}) => ActionInterface;
+  deleteTimeEntry: (timeEntryID: number) => ActionInterface;
   fetchClients: () => ActionInterface;
   fetchTimeEntries: () => ActionInterface;
-  filterTimeEntriesByClient: (timeEntryFilter) => ActionInterface;
+  filterTimeEntriesByClient: (timeEntryFilter: number) => ActionInterface;
 }
 
 export type TimeEntriesProps = TimeEntriesStatePropsInterface & TimeEntriesDispatchPropsInterface

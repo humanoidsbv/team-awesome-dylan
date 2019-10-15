@@ -24,7 +24,7 @@ export interface ClientsStatePropsInterface {
 }
 
 export interface ClientsDispatchPropsInterface {
-  createClient: (newClient) => ActionInterface;
+  createClient: (newClient: {}) => ActionInterface;
   fetchClients: () => ActionInterface;
 }
 

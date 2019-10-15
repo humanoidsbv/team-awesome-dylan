@@ -31,7 +31,7 @@ export interface TeamMembersStatePropsInterface {
 }
 
 export interface TeamMembersDispatchPropsInterface {
-  createTeamMember: (newTeamMember) => ActionInterface;
+  createTeamMember: (newTeamMember: {}) => ActionInterface;
   fetchTeamMembers: () => ActionInterface;
   sortTeamMembersByField: (string) => ActionInterface;
   sortTeamMembersDirection: (string) => ActionInterface;
