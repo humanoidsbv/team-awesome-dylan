@@ -5,7 +5,7 @@ import TimeEntry from '../time-entry/TimeEntry';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
 import styles from './TimeEntries.module.css';
-import { TimeEntriesProps, TimeEntryInterface, ActionInterface } from '../../redux/time-entries/types';
+import { TimeEntriesProps, TimeEntryInterface } from '../../redux/time-entries/types';
 
 function TimeEntries({
   clients,

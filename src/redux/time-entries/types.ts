@@ -20,15 +20,15 @@ export interface ActionInterface {
 }
 export interface TimeEntriesStatePropsInterface {
   clients: ClientInterface[];
-  timeEntries: TimeEntryInterface[];
+  timeEntries?: TimeEntryInterface[];
 }
 
 export interface TimeEntriesDispatchPropsInterface {
   createTimeEntry: (newTimeEntry: {}) => ActionInterface;
-  deleteTimeEntry: (timeEntryID: number) => ActionInterface;
-  fetchClients: () => ActionInterface;
-  fetchTimeEntries: () => ActionInterface;
-  filterTimeEntriesByClient: (timeEntryFilter: number) => ActionInterface;
+  deleteTimeEntry?: (timeEntryID: number) => ActionInterface;
+  fetchClients?: () => ActionInterface;
+  fetchTimeEntries?: () => ActionInterface;
+  filterTimeEntriesByClient?: (timeEntryFilter: number) => ActionInterface;
 }
 
 export type TimeEntriesProps = TimeEntriesStatePropsInterface & TimeEntriesDispatchPropsInterface

@@ -6,7 +6,7 @@ import { ActionInterface } from '../../redux/clients/types';
 import { ValidityState } from '../../shared/types';
 
 interface ClientFormProps {
-  createClient: (newClient) => ActionInterface;
+  createClient: (newClient: {}) => ActionInterface;
   isClientFormVisible: boolean;
   toggleClientForm: () => void;
 }
@@ -25,7 +25,7 @@ function ClientForm(
 
   const formRef = useRef(null);
 
-  const handleBlur = (event): void => {
+  const handleBlur = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),
@@ -43,13 +43,12 @@ function ClientForm(
     setPostalCode('');
   };
 
-  const handleCancel = (event): void => {
-    event.preventDefault();
+  const handleCancel = (): void => {
     resetFormStates();
     toggleClientForm();
   };
 
-  const handleSubmit = (event): void => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement | HTMLButtonElement>): void => {
     event.preventDefault();
     resetFormStates();
 
