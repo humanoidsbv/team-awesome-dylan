@@ -212,6 +212,17 @@
   }
 }
 
+.localityPostalCodeInputs {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 901px) {
+  .localityPostalCodeInputs  {
+    flex-direction: column;
+  }
+}
+
 .labelPostalCode {
   color: #68768c;
   display: flex;

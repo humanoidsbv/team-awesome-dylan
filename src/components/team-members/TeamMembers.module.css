@@ -110,7 +110,6 @@
 @media (min-width: 901px) {
   .newHumanoidButtonHeader {
     background-color: #35ac45;
-    background-color: #35ac45;
     border: solid 1px #249533;
     border-radius: 4px;
     color: #ffffff;
@@ -126,8 +125,10 @@
 
 .newHumanoidButtonHeader:disabled {
   cursor: auto;
+
 }
 .newHumanoidButtonHeaderGrey {
   background-color: #acacac;
+  border: solid 0 #acacac;
 }
 
