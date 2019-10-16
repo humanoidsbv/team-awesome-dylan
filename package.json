@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "api": "json-server db.json",
-    "build": "gatsby build",
+    "build": "node_modules/.bin/babel-node --presets @babel/preset-typescript --extensions '.ts,.tsx' node_modules/.bin/gatsby develop",
     "build-storybook": "build-storybook",
     "develop": "node_modules/.bin/babel-node --presets @babel/preset-typescript --extensions '.ts,.tsx' node_modules/.bin/gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

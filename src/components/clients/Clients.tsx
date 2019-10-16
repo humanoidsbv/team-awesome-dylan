@@ -19,7 +19,7 @@ const Clients = ({ clients, createClient, fetchClients }: ClientsProps): React.R
   return (
     <>
       <ClientForm
-        createClient={(newClient: {}): ActionInterface => createClient(newClient)}
+        createClient={(newClient: {}) => createClient(newClient)}
         isClientFormVisible={isClientFormVisible}
         toggleClientForm={toggleClientForm}
       />

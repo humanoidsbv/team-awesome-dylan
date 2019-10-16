@@ -62,13 +62,13 @@ function TeamMemberForm({
     setCurrentClient('');
   };
 
-  const handleCancel = (event): void => {
+  const handleCancel = (): void => {
     event.preventDefault();
     resetFormStates();
     toggleTeamMemberForm();
   };
 
-  const handleSubmit = (event): void => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement | HTMLButtonElement>): void => {
     event.preventDefault();
     resetFormStates();
 
@@ -131,7 +131,7 @@ function TeamMemberForm({
                 minLength={2}
                 name="firstName"
                 onBlur={handleBlur}
-                onChange={(event): void => setFirstName(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setFirstName(target.value)}
                 required
                 value={firstName}
               />
@@ -144,7 +144,7 @@ function TeamMemberForm({
                 minLength={2}
                 name="lastName"
                 onBlur={handleBlur}
-                onChange={(event): void => setLastName(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setLastName(target.value)}
                 required
                 value={lastName}
               />
@@ -158,7 +158,7 @@ function TeamMemberForm({
               minLength={2}
               name="emailAddress"
               onBlur={handleBlur}
-              onChange={(event): void => setEmailAddress(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setEmailAddress(target.value)}
               required
               value={emailAddress}
             />
@@ -172,7 +172,7 @@ function TeamMemberForm({
               minLength={2}
               name="bio"
               onBlur={handleBlur}
-              onChange={(event): void => setBio(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setBio(target.value)}
               required
               value={bio}
             />
@@ -187,7 +187,7 @@ function TeamMemberForm({
               minLength={2}
               name="address"
               onBlur={handleBlur}
-              onChange={(event): void => setAddress(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setAddress(target.value)}
               required
               value={address}
             />
@@ -201,7 +201,7 @@ function TeamMemberForm({
                 minLength={2}
                 name="postalCode"
                 onBlur={handleBlur}
-                onChange={(event): void => setPostalCode(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setPostalCode(target.value)}
                 required
                 value={postalCode}
               />
@@ -214,7 +214,7 @@ function TeamMemberForm({
                 minLength={2}
                 name="locality"
                 onBlur={handleBlur}
-                onChange={(event): void => setLocality(event.target.value)}
+                onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setLocality(target.value)}
                 required
                 value={locality}
               />
@@ -231,7 +231,7 @@ function TeamMemberForm({
               minLength={2}
               name="socialProfileOne"
               onBlur={handleBlur}
-              onChange={(event): void => setSocialProfileOne(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setSocialProfileOne(target.value)}
               required
               value={socialProfileOne}
             />
@@ -241,7 +241,7 @@ function TeamMemberForm({
               minLength={2}
               name="socialProfileTwo"
               onBlur={handleBlur}
-              onChange={(event): void => setSocialProfileTwo(event.target.value)}
+              onChange={({target}: React.ChangeEvent<HTMLInputElement>): void => setSocialProfileTwo(target.value)}
               required
               value={socialProfileTwo}
             />

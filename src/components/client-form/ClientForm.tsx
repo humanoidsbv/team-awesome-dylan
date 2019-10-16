@@ -6,7 +6,7 @@ import { ActionInterface } from '../../redux/clients/types';
 import { ValidityState } from '../../shared/types';
 
 interface ClientFormProps {
-  createClient: (newClient: {}) => ActionInterface;
+  createClient: (newClient: {}) => {};
   isClientFormVisible: boolean;
   toggleClientForm: () => void;
 }
