@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import TimeEntry from '../TimeEntry';
 
-it('converts basic button using shallow', () => {
+it('matches snapshot', () => {
   const timeEntry = shallow(
     <TimeEntry
       id={123}

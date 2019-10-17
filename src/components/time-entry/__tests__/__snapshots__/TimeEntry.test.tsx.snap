@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`converts basic button using shallow 1`] = `
+exports[`matches snapshot 1`] = `
 <div
   className="timeEntry"
 >

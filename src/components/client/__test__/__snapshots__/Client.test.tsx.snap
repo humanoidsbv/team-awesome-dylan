@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="clientEntry"
+>
+  <div
+    className="clientBasicInfo"
+  >
+    <img
+      alt="Logo"
+      className="clientAvatar"
+      src="test-file-stub"
+    />
+    <div
+      className="clientTitle"
+    >
+      <span
+        className="clientName"
+      >
+        Test
+      </span>
+    </div>
+    <div
+      className="extraInfoDesktop"
+    >
+      <div
+        className="clientNumber"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          Client Number
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          Client Number
+        </span>
+      </div>
+      <div
+        className="extraClientInfo"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          Current Project
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          New App
+        </span>
+      </div>
+      <div
+        className="extraStartingDate"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          Location
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          Utrecht
+        </span>
+      </div>
+    </div>
+    <test-file-stub
+      className="menuDownIcon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="extraInfo"
+  >
+    <div
+      className="extraInfoHeader"
+    >
+      <span
+        className="extraInfoHeaderText"
+      >
+        Detailed information about Test
+      </span>
+    </div>
+    <div
+      className="extraClientInfo"
+    >
+      <span
+        className="extraInfoMain"
+      >
+        Team Members Active
+      </span>
+      <span
+        className="extraInfoSub"
+      >
+        Team Members
+      </span>
+    </div>
+    <div
+      className="extraStartingDate"
+    >
+      <span
+        className="extraInfoMain"
+      >
+        Projects
+      </span>
+      <span
+        className="extraInfoSub"
+      >
+        Project #1
+      </span>
+    </div>
+  </div>
+</div>
+`;

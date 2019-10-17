@@ -2,11 +2,10 @@ import React, { useState, useRef } from 'react';
 
 import Input from '../../shared/components/input/Input';
 import styles from './ClientForm.module.css';
-import { ActionInterface } from '../../redux/clients/types';
 import { ValidityState } from '../../shared/types';
 
 interface ClientFormProps {
-  createClient: (newClient: {}) => {};
+  createClient: (newClient: {}) => void;
   isClientFormVisible: boolean;
   toggleClientForm: () => void;
 }

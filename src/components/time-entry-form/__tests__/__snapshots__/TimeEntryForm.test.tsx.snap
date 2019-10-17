@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<form
+  className="timeEntryForm false"
+  onSubmit={[Function]}
+>
+  <test-file-stub
+    className="iconClose"
+    onClick={[Function]}
+  />
+  <label
+    className="labelClient"
+    htmlFor="client"
+  >
+    CLIENT
+    <select
+      className="inputClient"
+      id="client"
+      name="client"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      value=""
+    >
+      <option
+        className="inputClient"
+        disabled={true}
+        value=""
+      >
+        --select a client--
+      </option>
+      <option>
+        test
+      </option>
+    </select>
+  </label>
+  <label
+    className="labelActivity"
+    htmlFor="activity"
+  >
+    ACTIVITY
+    <input
+      className="inputActivityValid inputActivityValid"
+      id="activity"
+      maxLength={35}
+      minLength={2}
+      name="activity"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="--enter an activity--"
+      required={true}
+      value=""
+    />
+  </label>
+  <label
+    className="labelDate"
+    htmlFor="date"
+  >
+    DATE
+    <input
+      className="inputDate"
+      id="date"
+      name="date"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="date"
+      value="2019-10-17"
+    />
+  </label>
+  <label
+    className="labelsTime"
+    htmlFor="startTime"
+  >
+    FROM
+    <input
+      className="inputsTime"
+      id="startTime"
+      name="startTime"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="time"
+      value="09:00"
+    />
+  </label>
+  <label
+    className="labelsTime"
+    htmlFor="stopTime"
+  >
+    TO
+    <input
+      className="inputsTime"
+      id="stopTime"
+      name="stopTime"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="type"
+      value="17:00"
+    />
+  </label>
+  <button
+    className="buttonTimeEntry"
+    disabled={true}
+    type="submit"
+  >
+    Add
+  </button>
+</form>
+`;
