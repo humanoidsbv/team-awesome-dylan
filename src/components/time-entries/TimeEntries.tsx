@@ -27,7 +27,7 @@ function TimeEntries({
     fetchTimeEntries();
   }, []);
 
-  const handleChange = (event): {} => filterTimeEntriesByClient(
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): {} => filterTimeEntriesByClient(
     !event.target.value ? null : Number(event.target.value)
   );
 

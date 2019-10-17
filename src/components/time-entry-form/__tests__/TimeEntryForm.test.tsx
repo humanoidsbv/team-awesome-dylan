@@ -11,6 +11,7 @@ it('matches snapshot', () => {
       clients ={[{
         branch:'test',
         clientName:'test',
+        id: 123
       }]}
       createTimeEntry={({}) => null}
     />

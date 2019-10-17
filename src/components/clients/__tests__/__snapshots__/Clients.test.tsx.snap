@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<Fragment>
+  <ClientForm
+    createClient={[Function]}
+    isClientFormVisible={false}
+    toggleClientForm={[Function]}
+  />
+  <div
+    className="headerClients"
+  >
+    <span
+      className="headerClientsText"
+    >
+       All Clients 
+    </span>
+    <button
+      className="newClientButton "
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      + New Client
+    </button>
+    <select
+      className="sortClientsSelector"
+    >
+      <option
+        value=""
+      >
+        Sort by:
+      </option>
+      <option
+        key="123"
+      >
+        test
+      </option>
+    </select>
+  </div>
+  <div
+    className="clientsContainer"
+  >
+    <Client
+      clientName="test"
+      key="123"
+    />
+  </div>
+</Fragment>
+`;

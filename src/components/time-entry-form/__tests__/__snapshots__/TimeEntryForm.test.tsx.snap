@@ -30,7 +30,10 @@ exports[`matches snapshot 1`] = `
       >
         --select a client--
       </option>
-      <option>
+      <option
+        key="123"
+        value={123}
+      >
         test
       </option>
     </select>

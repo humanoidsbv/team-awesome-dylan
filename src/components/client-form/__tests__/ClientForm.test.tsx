@@ -8,7 +8,7 @@ it('matches snapshot', () => {
     <ClientForm
       isClientFormVisible={true}
       createClient={({}) => {}}
-      toggleClientForm={() => {}}
+      toggleClientForm={() => null}
     />
   );
   expect(clientForm).toMatchSnapshot();

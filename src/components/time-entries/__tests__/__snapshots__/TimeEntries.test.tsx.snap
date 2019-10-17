@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="timeEntriesContainer"
+>
+  <styled.button
+    disabled={false}
+    onClick={[Function]}
+  >
+    + New Time Entry
+  </styled.button>
+  <TimeEntryForm
+    clients={
+      Array [
+        Object {
+          "branch": "test",
+          "clientName": "test",
+          "id": 123,
+        },
+      ]
+    }
+    createTimeEntry={[Function]}
+    isTimeEntryFormVisible={false}
+    toggleTimeEntryForm={[Function]}
+  />
+  <div
+    className="headerTimeEntries"
+  >
+    <span
+      className="headerTimeEntriesText"
+    >
+       Time Entries 
+    </span>
+    <select
+      className="filterClientsSelector"
+      id="filterSelect"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Filter by:
+      </option>
+      <option
+        key="123"
+        value={123}
+      >
+        test
+      </option>
+    </select>
+  </div>
+  <TimeEntryHeading
+    startTimestamp="bla"
+  />
+  <TimeEntry
+    client={
+      Object {
+        "branch": "123",
+        "clientName": "123",
+        "contactPerson": "test",
+        "contactPhoneNumber": "test",
+        "id": 123,
+        "locality": "123",
+        "postalCode": "123",
+      }
+    }
+    deleteTimeEntry={[Function]}
+    id={123}
+    startTimestamp="bla"
+    stopTimestamp="bla"
+  />
+</div>
+`;

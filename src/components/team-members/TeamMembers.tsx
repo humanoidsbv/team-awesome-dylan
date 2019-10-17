@@ -22,7 +22,7 @@ function TeamMembers({
     setTeamMemberFormVisibility(!isTeamMemberFormVisible);
   };
 
-  const handleChange = (event): ActionInterface => sortTeamMembersByField(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): ActionInterface => sortTeamMembersByField(event.target.value);
 
   useEffect(() => {
     fetchTeamMembers();
@@ -63,7 +63,7 @@ function TeamMembers({
           <button
             className={styles.sortDirectionToggle}
             type="button"
-            onClick={sortTeamMembersDirection}
+            onClick={() => sortTeamMembersDirection()}
           >
             <MenuDownIcon
               className={`${
