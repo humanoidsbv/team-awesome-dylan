@@ -4,10 +4,10 @@ import { shallow } from 'enzyme';
 import Navigation from '../Navigation';
 
 it('matches snapshot', () => {
-  const naviagation = shallow(
+  const navigation = shallow(
     <Navigation
     isMenuVisible= {true}
     />
   );
-  expect(naviagation).toMatchSnapshot();
+  expect(navigation).toMatchSnapshot();
 });

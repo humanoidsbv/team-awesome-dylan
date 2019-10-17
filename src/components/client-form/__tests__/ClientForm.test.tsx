@@ -13,3 +13,15 @@ it('matches snapshot', () => {
   );
   expect(clientForm).toMatchSnapshot();
 });
+
+it('does not display the ClientForm by default', () => {
+  const toggleClientFormSpy = jest.fn();
+  const clientForm = shallow(
+    <ClientForm
+      isClientFormVisible={true}
+      createClient={({}) => {}}
+      toggleClientForm={toggleClientFormSpy}
+    />
+  );
+  expect(toggleClientFormSpy).not.toHaveBeenCalled();
+});

@@ -66,7 +66,7 @@ function ClientForm(
   return (
     <div
       className={`${styles.clientForm} ${!isClientFormVisible
-        && styles.clientFormHide}`}
+? styles.clientFormHide : ''}`}
     >
       <div className={styles.headerClientForm}>
         <span className={styles.headerClientFormText}>Add new client</span>

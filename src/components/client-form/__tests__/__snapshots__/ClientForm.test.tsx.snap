@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="clientForm false"
+  className="clientForm "
 >
   <div
     className="headerClientForm"
