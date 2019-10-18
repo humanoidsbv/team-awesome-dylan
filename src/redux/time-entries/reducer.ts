@@ -1,4 +1,4 @@
-import { TimeEntryStateInterface } from './types';
+import { TimeEntryStateInterface, ActionInterface } from './types';
 
 import {
   CREATE_TIME_ENTRY_REQUEST,
@@ -18,7 +18,7 @@ const initialState: TimeEntryStateInterface = {
 };
 
 export default (state: TimeEntryStateInterface = initialState,
-  { type, payload }): TimeEntryStateInterface => {
+  { type, payload }: ActionInterface): TimeEntryStateInterface => {
   switch (type) {
     case CREATE_TIME_ENTRY_REQUEST:
       return {
