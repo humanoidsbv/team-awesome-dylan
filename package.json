@@ -13,7 +13,7 @@
     "serve": "gatsby serve",
     "start": "npm run develop & npm run api",
     "storybook": "start-storybook -p 6006 -s ./static",
-    "test": "jest",
+    "test": "TZ=Europe/Amsterdam jest",
     "open cypress": "cypress open"
   },
   "dependencies": {
