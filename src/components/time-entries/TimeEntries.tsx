@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Button from '../../shared/components/button/Button';
+import Button from '../../shared/components/button/Button'
 import TimeEntry from '../time-entry/TimeEntry';
 import TimeEntryForm from '../time-entry-form/TimeEntryForm';
 import TimeEntryHeading from '../time-entry-heading/TimeEntryHeading';
@@ -14,6 +14,7 @@ function TimeEntries({
   fetchClients,
   fetchTimeEntries,
   filterTimeEntriesByClient,
+  isLoading,
   timeEntries
 }: TimeEntriesProps): React.ReactElement {
   const [isTimeEntryFormVisible, setTimeEntryFormVisibility] = useState(false);
@@ -27,7 +28,7 @@ function TimeEntries({
     fetchTimeEntries();
   }, []);
 
-  const handleChange = (event): {} => filterTimeEntriesByClient(
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): {} => filterTimeEntriesByClient(
     !event.target.value ? null : Number(event.target.value)
   );
 
@@ -50,14 +51,14 @@ function TimeEntries({
           onChange={handleChange}
         >
           <option value="">Filter by:</option>
-          {clients.map(({ clientName, id }) => (
+          {!isLoading && clients.map(({ clientName, id }) => (
             <option key={id} value={id}>
               {clientName}
             </option>
           ))}
         </select>
       </div>
-      {timeEntries.map(
+      {!isLoading && timeEntries.map(
         ({
           client, id, startTimestamp, stopTimestamp
         }: TimeEntryInterface, index) => {

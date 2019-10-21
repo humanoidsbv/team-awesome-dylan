@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="containerMenuDownEmployeeAvatar"
+>
+  <button
+    className="profilebutton"
+    type="button"
+  >
+    <test-file-stub
+      className="humanoidsIcon"
+    />
+    <img
+      alt="Logo"
+      className="employeeAvatar"
+      src="test-file-stub"
+    />
+  </button>
+  <test-file-stub
+    className="menuDownIcon"
+  />
+</div>
+`;

@@ -20,6 +20,7 @@ export interface ActionInterface {
 }
 export interface TimeEntriesStatePropsInterface {
   clients: ClientInterface[];
+  isLoading?: boolean;
   timeEntries?: TimeEntryInterface[];
 }
 

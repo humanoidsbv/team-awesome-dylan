@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <TeamMemberForm
+    createTeamMember={[Function]}
+    isTeamMemberFormVisible={false}
+    toggleTeamMemberForm={[Function]}
+  />
+  <div
+    className="headerTeamMembers"
+  >
+    <span
+      className="headerTeamMembersText"
+    >
+       All Humanoids 
+    </span>
+    <button
+      className="newHumanoidButtonHeader "
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      + New Humanoid
+    </button>
+    <div
+      className="sortingWrapper"
+    >
+      <select
+        className="sortTeamMembersSelector"
+        id="sortSelect"
+        onChange={[Function]}
+      >
+        <option
+          value="firstName"
+        >
+          Sort by: First name
+        </option>
+        <option
+          value="lastName"
+        >
+          Sort by: Last name
+        </option>
+        <option
+          value="employeeFunction"
+        >
+          Sort by: Employee function
+        </option>
+        <option
+          value="employeeNumber"
+        >
+          Sort by: Employee number
+        </option>
+        <option
+          value="currentClient"
+        >
+          Sort by: Current client
+        </option>
+        <option
+          value="startingDate"
+        >
+          Sort by: Starting date
+        </option>
+      </select>
+      <button
+        className="sortDirectionToggle"
+        onClick={[Function]}
+        type="button"
+      >
+        <test-file-stub
+          className="sortDirectionAscending"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="teamMembersContainer"
+  >
+    <TeamMember
+      currentClient="string"
+      employeeFunction="string"
+      employeeNumber="string"
+      firstName="string"
+      key="3"
+      lastName="string"
+      startingDate="string"
+    />
+  </div>
+</div>
+`;

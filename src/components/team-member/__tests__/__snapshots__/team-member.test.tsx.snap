@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="teamMemberEntry"
+>
+  <div
+    className="teamMemberBasicInfo"
+  >
+    <img
+      alt="Logo"
+      className="teamMemberAvatar"
+      src="test-file-stub"
+    />
+    <div
+      className="teamMemberTitle"
+    >
+      <span
+        className="teamMemberName"
+      >
+        test test
+      </span>
+      <span
+        className="teamMemberFunction"
+      >
+        Design
+      </span>
+    </div>
+    <div
+      className="extraInfoDesktop"
+    >
+      <div
+        className="teamMemberNumber"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          HUM_001
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          Employee number
+        </span>
+      </div>
+      <div
+        className="extraClientInfo"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          Test
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          Current Client
+        </span>
+      </div>
+      <div
+        className="extraStartingDate"
+      >
+        <span
+          className="extraInfoMainDesktop"
+        >
+          Invalid Date
+        </span>
+        <span
+          className="extraInfoSubDesktop"
+        >
+          Starting date
+        </span>
+      </div>
+    </div>
+    <test-file-stub
+      className="menuDownIcon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="extraInfo"
+  >
+    <div
+      className="extraInfoHeader"
+    >
+      <span
+        className="extraInfoHeaderText"
+      >
+        Detailed information about test
+      </span>
+    </div>
+    <div
+      className="extraClientInfo"
+    >
+      <span
+        className="extraInfoMain"
+      >
+        Test
+      </span>
+      <span
+        className="extraInfoSub"
+      >
+        Current Client
+      </span>
+    </div>
+    <div
+      className="extraStartingDate"
+    >
+      <span
+        className="extraInfoMain"
+      >
+        Invalid Date
+      </span>
+      <span
+        className="extraInfoSub"
+      >
+        Starting date
+      </span>
+    </div>
+  </div>
+</div>
+`;

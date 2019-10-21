@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<nav
+  className="navigation navigationVisible"
+>
+  <ForwardRef
+    activeClassName="itemActive"
+    className="item"
+    to="/"
+  >
+    Time entries
+  </ForwardRef>
+  <ForwardRef
+    activeClassName="itemActive"
+    className="item"
+    to="/team-members"
+  >
+    Team members
+  </ForwardRef>
+  <a
+    className="item"
+    href="/"
+  >
+    Projects
+  </a>
+  <ForwardRef
+    activeClassName="itemActive"
+    className="item"
+    to="/clients"
+  >
+    Clients
+  </ForwardRef>
+  <a
+    className="item"
+    href="/about.html"
+  >
+    Documents
+  </a>
+</nav>
+`;

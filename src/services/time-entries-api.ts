@@ -1,5 +1,5 @@
 const apiUrl = `${
-  process.env.NODE_ENV === 'development'
+  process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
     ? 'http://localhost:3000'
     : 'https://my-json-server.typicode.com/humanoidsbv/team-awesome-dylan-api'
 }/time-entries?_sort=startTimestamp&_order=desc`;

@@ -6,7 +6,7 @@ import { ActionInterface } from '../../redux/team-members/types';
 import { ValidityState } from '../../shared/types';
 
 interface TeamMemberFormProps {
-  createTeamMember: (newTeamMember) => ActionInterface;
+  createTeamMember: (newTeamMember: {}) => void;
   isTeamMemberFormVisible: boolean;
   toggleTeamMemberForm: () => void;
 }
@@ -38,7 +38,7 @@ function TeamMemberForm({
 
   const formRef = useRef(null);
 
-  const handleBlur = (event): void => {
+  const handleBlur = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>): void => {
     setValidity({
       ...validity,
       form: formRef.current.checkValidity(),
@@ -63,7 +63,6 @@ function TeamMemberForm({
   };
 
   const handleCancel = (): void => {
-    event.preventDefault();
     resetFormStates();
     toggleTeamMemberForm();
   };

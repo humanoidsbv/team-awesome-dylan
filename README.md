@@ -1,6 +1,6 @@
 ## 🚀 Team Awesome
 
-To log hours worked by specific employees for specific clients and their respective projects.
+To log hours worked by specific employees for specific clients and their respective projects. Visit https://team-awesome-dylan.humanoidsbv.now.sh/ to view a deployment of the app.
 
 ### Prerequisites
 
@@ -17,7 +17,17 @@ Your site is now running at http://localhost:8000 !
 
 ## Running tests
 
-Explain how to run the automated tests for this system
+Jest (unit & snapshot) and Cypress (end-to-end) are used for testing. 
+
+To run Jest tests:
+1. Type `npm run test` in the code editor console
+2. Refer to the console to view test outcomes
+
+To run Cypress tests:
+1. Type `cypress` in the code editor console
+2. A pop-up will prompt you with a list of tests
+3. Click the intended test to run
+4. A browser window will open and testing will commence
 
 ## Running Storybook
 

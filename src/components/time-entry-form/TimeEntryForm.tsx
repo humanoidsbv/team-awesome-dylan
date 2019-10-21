@@ -38,12 +38,12 @@ function TimeEntryForm({
     });
   };
 
-  const handleCancel = (event): void => {
+  const handleCancel = (): void => {
     event.preventDefault();
     toggleTimeEntryForm();
   };
 
-  const handleSubmit = (event): void => {
+  const handleSubmit = (): void => {
     event.preventDefault();
 
     setClient('');
