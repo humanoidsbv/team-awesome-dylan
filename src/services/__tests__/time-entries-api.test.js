@@ -17,11 +17,11 @@ const mockedTimeEntries = [{
 
 it('fetches TimeEntries from the server', () => {
   const mockSuccessResponse = {mockedTimeEntries};
-  const mockJsonPromise = Promise.resolve(mockSuccessResponse); // 2
-  const mockFetchPromise = Promise.resolve({ // 3
+  const mockJsonPromise = Promise.resolve(mockSuccessResponse);
+  const mockFetchPromise = Promise.resolve({
     json: () => mockJsonPromise,
   });
-  global.fetch = jest.fn().mockImplementation(() => mockFetchPromise); // 4
+  global.fetch = jest.fn().mockImplementation(() => mockFetchPromise); 
   
   fetchTimeEntries.fetchTimeEntries()
                           

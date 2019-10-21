@@ -69,7 +69,7 @@ exports[`matches snapshot 1`] = `
       onChange={[Function]}
       required={true}
       type="date"
-      value="2019-10-18"
+      value="2019-10-21"
     />
   </label>
   <label
