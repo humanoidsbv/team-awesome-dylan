@@ -6,7 +6,6 @@ import TimeEntry from '../TimeEntry';
 it('matches snapshot', () => {
   const timeEntry = shallow(
     <TimeEntry
-      id={123}
       client={{
         branch: '123',
         clientName: '123',
@@ -17,6 +16,7 @@ it('matches snapshot', () => {
         contactPhoneNumber: 'test'
       }}
       deleteTimeEntry={(id: number) => null}
+      id={123}
       startTimestamp="2019-10-16T10:00:00.000Z"
       stopTimestamp="2019-10-16T17:30:00.000Z"
     />

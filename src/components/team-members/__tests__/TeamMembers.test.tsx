@@ -21,12 +21,12 @@ const mockedTeamMembers = [{
 it('matches snapshot', () => {
   const teamMembers = shallow(
     <TeamMembers
-      teamMembers ={mockedTeamMembers}
       createTeamMember={({}) => null}
       fetchTeamMembers={()=> null}
       sortDirection={true}
       sortTeamMembersByField={(string: string) => null }
       sortTeamMembersDirection={() => ({ type: 'bla' }) }
+      teamMembers ={mockedTeamMembers}
     />
   );
   expect(teamMembers).toMatchSnapshot();

@@ -63,7 +63,6 @@ function TeamMemberForm({
   };
 
   const handleCancel = (): void => {
-    event.preventDefault();
     resetFormStates();
     toggleTeamMemberForm();
   };

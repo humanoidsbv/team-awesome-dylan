@@ -6,8 +6,8 @@ import TeamMemberForm from '../TeamMemberForm';
 it('matches snapshot', () => {
   const teamMemberForm = shallow(
     <TeamMemberForm
-      isTeamMemberFormVisible={true}
       createTeamMember={({}) => {}}
+      isTeamMemberFormVisible={true}
       toggleTeamMemberForm={() => null}
     />
   );
