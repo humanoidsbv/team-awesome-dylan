@@ -14,7 +14,7 @@
     "start": "npm run develop & npm run api",
     "storybook": "start-storybook -p 6006 -s ./static",
     "test": "TZ=Europe/Amsterdam LANG=nl_NL.UTF-8 LC_ALL=nl_NL.UTF-8 jest",
-    "open cypress": "cypress open"
+    "open cypress": " npx cypress open"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
