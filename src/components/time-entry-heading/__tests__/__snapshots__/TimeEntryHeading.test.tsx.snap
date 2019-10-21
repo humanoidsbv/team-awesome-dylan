@@ -5,7 +5,7 @@ exports[`matches snapshot 1`] = `
   className="timeStamp"
 >
   <span>
-    woensdag 16 oktober
+    Invalid Date
   </span>
   <span
     className="duration"
