@@ -27,7 +27,7 @@ To run Cypress tests:
 1. Type `npx cypress open` in the code editor console
 2. A pop-up will prompt you with a list of tests
 3. Click the intended test to run
-4. A browser window will open and testing will comence
+4. A browser window will open and testing will commence
 
 ## Running Storybook
 
