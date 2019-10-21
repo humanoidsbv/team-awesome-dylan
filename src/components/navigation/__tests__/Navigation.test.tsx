@@ -6,7 +6,7 @@ import Navigation from '../Navigation';
 it('matches snapshot', () => {
   const navigation = shallow(
     <Navigation
-    isMenuVisible= {true}
+      isMenuVisible= {true}
     />
   );
   expect(navigation).toMatchSnapshot();

@@ -16,8 +16,7 @@ const mockedTimeEntries = [{
 }]
 
 it('fetches TimeEntries from the server', () => {
-  const mockSuccessResponse = {mockedTimeEntries};
-  const mockJsonPromise = Promise.resolve(mockSuccessResponse);
+  const mockJsonPromise = Promise.resolve(mockedTimeEntries);
   const mockFetchPromise = Promise.resolve({
     json: () => mockJsonPromise,
   });

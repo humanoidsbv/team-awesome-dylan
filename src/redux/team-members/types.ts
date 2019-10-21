@@ -33,7 +33,7 @@ export interface TeamMembersStatePropsInterface {
 export interface TeamMembersDispatchPropsInterface {
   createTeamMember: (newTeamMember: {}) => ActionInterface;
   fetchTeamMembers: () => ActionInterface;
-  sortTeamMembersByField: (string:string) => ActionInterface;
+  sortTeamMembersByField: (string: string) => ActionInterface;
   sortTeamMembersDirection: () => ActionInterface;
 }
 

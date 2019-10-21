@@ -14,11 +14,10 @@
     "start": "npm run develop & npm run api",
     "storybook": "start-storybook -p 6006 -s ./static",
     "test": "TZ=Europe/Amsterdam LANG=nl_NL.UTF-8 LC_ALL=nl_NL.UTF-8 jest",
-    "open cypress": " npx cypress open"
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
-    "cypress": "^3.4.1",
     "gatsby": "^2.15.14",
     "gatsby-plugin-typescript": "^2.1.12",
     "postcss-custom-media": "^7.0.8",
@@ -52,6 +51,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.20",
+    "cypress": "^3.4.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.2",
