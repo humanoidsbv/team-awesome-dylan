@@ -23,7 +23,7 @@ exports[`matches snapshot 1`] = `
     className="timeStamp"
   >
     <span>
-      10:00 AM - 05:30 PM
+      12:00 - 19:30
     </span>
     <span
       className="duration"

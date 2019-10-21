@@ -1,3 +1,5 @@
+process.env.TZ = 'UTC+2';
+
 module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
